@@ -1,0 +1,8 @@
+ {%load static%}
+ {%include 'registration/calendar.html'%}
+    <form method='post' id='calendar-form'>
+        {% csrf_token %}
+        {{form}}
+        <input type='submit' id='calendarSubmit'></input>
+    </form>
+<script src="{% static 'registration/calendar-form.js' %}"></script>

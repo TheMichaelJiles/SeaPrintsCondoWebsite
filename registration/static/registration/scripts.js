@@ -11,7 +11,6 @@ months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", 
 monthAndYear = document.getElementById("monthAndYear");
 showCalendar(currentMonth, currentYear);
 
-
 function next() {
     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
     currentMonth = (currentMonth + 1) % 12;

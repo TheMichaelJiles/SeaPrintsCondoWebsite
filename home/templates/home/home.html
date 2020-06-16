@@ -1,5 +1,9 @@
-{% extends "base.html"%}
-
+{% extends 'base.html'%}
+{%load static%}
 {% block content %}
-    {%include 'registration/calendar.html'%}
+    {%include 'registration/calendar_Form.html' with form=form%}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'registration/calendar-form.js' %}"></script>
 {% endblock %}
