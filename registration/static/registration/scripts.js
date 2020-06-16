@@ -68,7 +68,7 @@ function showCalendar(month, year) {
                 row.appendChild(cell);
                 date++;
             }
-            cell.onclick = function() {onCellClick(this);};
+            cell.onclick = function() {onCellClick(this)};
         }
 
         tbl.appendChild(row); // appending each row into calendar body.
@@ -96,6 +96,9 @@ function onCellClick(cell) {
             this.highlightStaySpan();
         }
     }
+
+    label = document.getElementById('testLabel');
+    label.innerHTML = "Checkin Date: " + this.checkinDate.toString() + "\n" +  "Checkout Date: " + this.checkoutDate.toString();
 }
 
 function highlightStaySpan() {
@@ -103,7 +106,7 @@ function highlightStaySpan() {
     passedCheckinDate = false;
     for (let row of days.rows) {
         for(let cell of row.cells) {
-            cell.style.backgroundColor="white";
+            cell.style.backgroundColor="transparent";
             passedCheckinDate = this.checkinDate.getDate() <= parseInt(cell.innerHTML) && parseInt(cell.innerHTML) <= this.checkoutDate.getDate();
             if(passedCheckinDate) {
                 cell.style.backgroundColor = "lightseagreen";
