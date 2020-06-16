@@ -3,6 +3,8 @@ currentMonth = today.getMonth();
 currentYear = today.getFullYear();
 selectYear = document.getElementById("year");
 selectMonth = document.getElementById("month");
+checkinDate = null;
+checkoutDate = null;
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -66,13 +68,46 @@ function showCalendar(month, year) {
                 row.appendChild(cell);
                 date++;
             }
+            cell.onclick = function() {onCellClick(this);};
         }
 
         tbl.appendChild(row); // appending each row into calendar body.
     }
-
 }
 
 function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
+}
+
+function onCellClick(cell) {
+    day = parseInt(cell.innerHTML);
+    selectedDate = new Date(this.currentYear, this.currentMonth, day);
+    if(selectedDate >= this.today) {
+        if(this.checkinDate == null) {
+            this.checkinDate = selectedDate;
+        } else if(this.checkinDate > selectedDate) {
+            this.checkoutDate = this.checkinDate;
+            this.checkinDate = selectedDate;
+        } else {
+            this.checkoutDate = selectedDate;
+        }
+
+        if(this.checkinDate != null && this.checkoutDate != null) {
+            this.highlightStaySpan();
+        }
+    }
+}
+
+function highlightStaySpan() {
+    days = document.getElementById('calendar-body');
+    passedCheckinDate = false;
+    for (let row of days.rows) {
+        for(let cell of row.cells) {
+            cell.style.backgroundColor="white";
+            passedCheckinDate = this.checkinDate.getDate() <= parseInt(cell.innerHTML) && parseInt(cell.innerHTML) <= this.checkoutDate.getDate();
+            if(passedCheckinDate) {
+                cell.style.backgroundColor = "lightseagreen";
+            }
+        }
+    }
 }
