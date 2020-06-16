@@ -80,24 +80,34 @@ function daysInMonth(iMonth, iYear) {
 
 function onCellClick(cell) {
     day = parseInt(cell.innerHTML);
-    selectedDate = new Date(this.currentYear, this.currentMonth, day);
-    if(selectedDate >= this.today) {
-        if(this.checkinDate == null) {
-            this.checkinDate = selectedDate;
-        } else if(this.checkinDate > selectedDate) {
-            this.checkoutDate = this.checkinDate;
-            this.checkinDate = selectedDate;
+    selectedDate = new Date(currentYear, currentMonth, day);
+    if(selectedDate >= today) {
+        if(checkinDate == null) {
+            setCheckinDate(selectedDate);
+        } else if(checkinDate > selectedDate) {
+            setCheckoutDate(checkinDate);
+            setCheckinDate(selectedDate);
         } else {
-            this.checkoutDate = selectedDate;
+            setCheckoutDate(selectedDate);
         }
 
-        if(this.checkinDate != null && this.checkoutDate != null) {
-            this.highlightStaySpan();
+        if(checkinDate != null && checkoutDate != null) {
+            highlightStaySpan();
         }
     }
 
     label = document.getElementById('testLabel');
-    label.innerHTML = "Checkin Date: " + this.checkinDate.toString() + "\n" +  "Checkout Date: " + this.checkoutDate.toString();
+    label.innerHTML = "Checkin Date: " + checkinDate.toString() + "\n" +  "Checkout Date: " + checkoutDate.toString();
+}
+
+function setCheckinDate(date) {
+    checkinDate = date;
+    $("#id_in_date").val(date);
+}
+
+function setCheckoutDate(date) {
+    checkoutDate = date;
+    $("#id_out_date").val(date);
 }
 
 function highlightStaySpan() {
@@ -106,10 +116,31 @@ function highlightStaySpan() {
     for (let row of days.rows) {
         for(let cell of row.cells) {
             cell.style.backgroundColor="transparent";
-            passedCheckinDate = this.checkinDate.getDate() <= parseInt(cell.innerHTML) && parseInt(cell.innerHTML) <= this.checkoutDate.getDate();
+            passedCheckinDate = checkinDate.getDate() <= parseInt(cell.innerHTML) && parseInt(cell.innerHTML) <= checkoutDate.getDate();
             if(passedCheckinDate) {
                 cell.style.backgroundColor = "lightseagreen";
             }
         }
     }
 }
+
+/*
+
+*/
+
+function checkDates() {
+    if(checkinDate == null || checkoutDate == null) {
+        alert("Invalid Dates");
+        return false;
+    }
+    return true;
+}
+
+$( document ).ready(function() {
+    
+    $('#calendar-form').submit(function(event) {
+        if(!checkDates()) {
+            event.preventDefault();
+        }
+    })
+});

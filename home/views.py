@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
-from . import forms
+from registration import forms
 
 def landing(request):
     if request.method == 'POST':

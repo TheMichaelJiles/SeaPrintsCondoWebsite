@@ -11,3 +11,4 @@ class Stay(models.Model):
     phone_contact = PhoneNumberField(null=False, blank=False, unique=True)
     email_contact = models.EmailField()
     number_of_guests = models.IntegerField(default=1)
+    is_approved = models.BooleanField(default=False)
