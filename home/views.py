@@ -8,9 +8,5 @@ def landing(request):
     if request.method == 'POST':
         print(request.POST)
         was_successful = validation.process_post_data(request.POST)
-        if was_successful:
-            # Redirect to success page.
-        else:
-            # Redirect back to registration page with error shown.
     template_name = 'home/home.html'
-    return render(request, template_name, {'form': forms.StayForm()})
+    return render(request, template_name, {'form': forms.StayForm(), 'address_form': forms.AddressForm()})

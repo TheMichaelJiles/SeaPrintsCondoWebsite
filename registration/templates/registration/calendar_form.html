@@ -1,7 +1,13 @@
- {%load static%}
- {%include 'registration/calendar.html'%}
-    <form method='post' id='calendar-form'>
-        {% csrf_token %}
-        {{form}}
-        <input type='submit' id='calendarSubmit'></input>
-    </form>
+{%load static%}
+{%include 'registration/calendar.html'%}
+<form method='post' id='calendar-form'>
+    {% csrf_token %}
+    {{ form }}
+    <br>
+    <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text">
+    <br>
+    {{ address_form }}
+    <input type='submit' id='calendarSubmit'></input>
+</form>
+<script src="{% static 'registration/auto-complete.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqcKSSgZhv3QPhbF-eyy_fpCMlirWIQVE&libraries=places&callback=initAutocomplete" async defer></script>
