@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from reviews import forms
 from .models import Review
 
 def get_all_reviews(request):
@@ -9,4 +10,5 @@ def get_all_reviews(request):
     }
     return render(request, 'reviews/reviews.html', context)
 
-# Create your views here.
+def write_review(request):
+    return render(request, 'reviews/review_form.html', {'form': forms.ReviewForm()})
