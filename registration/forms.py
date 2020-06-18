@@ -13,7 +13,7 @@ class StayForm(forms.ModelForm):
 
     class Meta():
         model = Stay
-        exclude = ["is_approved", "address"]
+        exclude = ["is_approved", "address", "total_price"]
 
     in_date = forms.DateField(widget=forms.HiddenInput())
     out_date = forms.DateField(widget=forms.HiddenInput())

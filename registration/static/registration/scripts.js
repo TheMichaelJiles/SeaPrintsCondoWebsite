@@ -1,14 +1,22 @@
-today = new Date();
-currentMonth = today.getMonth();
-currentYear = today.getFullYear();
-selectYear = document.getElementById("year");
-selectMonth = document.getElementById("month");
-checkinDate = null;
-checkoutDate = null;
+var today = new Date();
+var currentMonth = today.getMonth();
+var currentYear = today.getFullYear();
+var selectYear = document.getElementById("year");
+var selectMonth = document.getElementById("month");
+var checkinDate = null;
+var checkoutDate = null;
 
-months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-monthAndYear = document.getElementById("monthAndYear");
+var takenDates = [];
+var monthAndYear = document.getElementById("monthAndYear");
+
+$.getJSON("registration/get_taken_dates", function(dateData) {
+    for (let date of dateData) {
+        let currentDate = new Date(date);
+        takenDates.push(currentDate);
+    }
+});
 showCalendar(currentMonth, currentYear);
 
 function next() {
@@ -60,14 +68,21 @@ function showCalendar(month, year) {
             } else {
                 cell = document.createElement("td");
                 cellText = document.createTextNode(date);
-                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                    cell.classList.add("bg-info");
-                } // color today's date
                 cell.appendChild(cellText);
                 row.appendChild(cell);
+                let isTaken = false;
+                for (let taken of takenDates) {
+                    if (taken.getMonth() == month && taken.getUTCDate() == date && taken.getFullYear() == year) {
+                        isTaken = true;
+                    }
+                }
+                if (isTaken) {
+                    cell.style.backgroundColor = "red";
+                } else {
+                    cell.onclick = function() { onCellClick(this) };
+                }
                 date++;
             }
-            cell.onclick = function() {onCellClick(this)};
         }
 
         tbl.appendChild(row); // appending each row into calendar body.
@@ -81,43 +96,45 @@ function daysInMonth(iMonth, iYear) {
 function onCellClick(cell) {
     day = parseInt(cell.innerHTML);
     selectedDate = new Date(currentYear, currentMonth, day);
-    if(selectedDate >= today) {
-        if(checkinDate == null) {
+    if (selectedDate >= today) {
+        if (checkinDate == null) {
             setCheckinDate(selectedDate);
-        } else if(checkinDate > selectedDate) {
+        } else if (checkinDate > selectedDate) {
             setCheckoutDate(checkinDate);
             setCheckinDate(selectedDate);
         } else {
             setCheckoutDate(selectedDate);
         }
 
-        if(checkinDate != null && checkoutDate != null) {
+        if (checkinDate != null && checkoutDate != null) {
             highlightStaySpan();
         }
     }
 
     label = document.getElementById('testLabel');
-    label.innerHTML = "Checkin Date: " + checkinDate.toString() + "\n" +  "Checkout Date: " + checkoutDate.toString();
+    if (checkinDate != null && checkoutDate != null) {
+        label.innerHTML = "Checkin Date: " + checkinDate.toUTCString() + "\n" + "Checkout Date: " + checkoutDate.toUTCString();
+    }
 }
 
 function setCheckinDate(date) {
     checkinDate = date;
-    $("#id_in_date").val(date);
+    $("#id_in_date").val(date.toUTCString());
 }
 
 function setCheckoutDate(date) {
     checkoutDate = date;
-    $("#id_out_date").val(date);
+    $("#id_out_date").val(date.toUTCString());
 }
 
 function highlightStaySpan() {
     days = document.getElementById('calendar-body');
     passedCheckinDate = false;
     for (let row of days.rows) {
-        for(let cell of row.cells) {
-            cell.style.backgroundColor="transparent";
+        for (let cell of row.cells) {
+            cell.style.backgroundColor = "transparent";
             passedCheckinDate = checkinDate.getDate() <= parseInt(cell.innerHTML) && parseInt(cell.innerHTML) <= checkoutDate.getDate();
-            if(passedCheckinDate) {
+            if (passedCheckinDate) {
                 cell.style.backgroundColor = "lightseagreen";
             }
         }
@@ -129,18 +146,18 @@ function highlightStaySpan() {
 */
 
 function checkDates() {
-    if(checkinDate == null || checkoutDate == null) {
+    if (checkinDate == null || checkoutDate == null) {
         alert("Invalid Dates");
         return false;
     }
     return true;
 }
 
-$( document ).ready(function() {
-    
+$(document).ready(function() {
     $('#calendar-form').submit(function(event) {
-        if(!checkDates()) {
+        if (!checkDates()) {
             event.preventDefault();
         }
-    })
+    });
+
 });
