@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% if latest_review_list %}
+        <ul>
+        {% for review in latest_review_list %}
+            <li>{{review}}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews are available.</p>
+    {% endif %}
+{% endblock%}
