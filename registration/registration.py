@@ -1,10 +1,22 @@
 import registration
+
 import datetime
 import pytz
 
 def get_taken_dates():
+    '''
+    This function looks at the database Stay data. It returns a list of
+    datetime.date objects that correspond with all dates that have been taken.
+    '''
     dates_taken = []
-    # Change this back to is_approved=True when ready
+    
+    #
+    # Change the keyword argument of the filter() method below to 
+    # is_approved=True when we are ready. Since the is_approved defaults to 
+    # False when a Stay entry is created. It is easier to leave this the 
+    # way it is for testing purposes. However, we actually want only approved
+    # visits to appear as taken, so this will need to be changed eventually.
+    #
     stays = registration.models.Stay.objects.filter(is_approved=False)
     in_out_dates = set()
     for stay in stays:

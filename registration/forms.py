@@ -1,16 +1,16 @@
 from django import forms
+
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
 from phonenumber_field.formfields import PhoneNumberField
+
 from registration.models import Stay, Address
 
 class AddressForm(forms.ModelForm):
-
     class Meta():
         model = Address
         exclude = []
 
 class StayForm(forms.ModelForm):
-
     class Meta():
         model = Stay
         exclude = ["is_approved", "address", "total_price"]

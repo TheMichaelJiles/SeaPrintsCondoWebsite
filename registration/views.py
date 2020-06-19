@@ -1,4 +1,5 @@
 from django.http import JsonResponse
+
 from registration import registration as data
 
 def get_taken_dates(request):
