@@ -51,10 +51,22 @@ class SeasonPricing(models.Model):
         does not conflict with an already existing season.
         '''
         super().clean()
+        self._perform_additional_validation()
+
+    def _perform_additional_validation(self):
+        self._ensure_price_is_positive()
+        self._ensure_season_start_is_before_season_end()
+        self._ensure_does_not_conflict_with_existing_season()
+
+    def _ensure_price_is_positive(self):
         if self.price_per_night < 0:
             raise ValidationError(('The price per night should not be less than 0.'))
+
+    def _ensure_season_start_is_before_season_end(self):
         if self.start_date > self.end_date:
             raise ValidationError(('Season start date must be before or the same as the season end date.'))
+
+    def _ensure_does_not_conflict_with_existing_season(self):
         current_seasons = SeasonPricing.objects.all()
         for season in current_seasons:
             if self.end_date > season.start_date and self.start_date < season.start_date:
