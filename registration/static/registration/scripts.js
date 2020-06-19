@@ -1,3 +1,4 @@
+//Variables
 var today = new Date();
 var currentMonth = today.getMonth();
 var currentYear = today.getFullYear();
@@ -7,36 +8,57 @@ var checkinDate = null;
 var checkoutDate = null;
 
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
 var takenDates = [];
 var monthAndYear = document.getElementById("monthAndYear");
 
-$.getJSON("registration/get_taken_dates", function(dateData) {
-    for (let date of dateData) {
-        let currentDate = new Date(date);
-        takenDates.push(currentDate);
-    }
-});
-showCalendar(currentMonth, currentYear);
+//Execution:
+init();
+//End Execution
 
+/*
+Function executed when the webpage is loaded. JSON request must happen BEFORE showCalendar
+*/
+function init() {
+    $.getJSON("registration/get_taken_dates", function(dateData) {
+        for (let date of dateData) {
+            let currentDate = new Date(date);
+            takenDates.push(currentDate);
+        }
+    });
+
+    showCalendar(currentMonth, currentYear);
+}
+
+/*
+Transitions calendar to the next month, incrementing the year if necessary
+*/
 function next() {
     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
     currentMonth = (currentMonth + 1) % 12;
     showCalendar(currentMonth, currentYear);
 }
 
+/*
+Transitions calendar to the previous month, devrementing the year if necessary
+*/
 function previous() {
     currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
     currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
     showCalendar(currentMonth, currentYear);
 }
 
+/*
+Transitions calendar to the month and year selected
+*/
 function jump() {
     currentYear = parseInt(selectYear.value);
     currentMonth = parseInt(selectMonth.value);
     showCalendar(currentMonth, currentYear);
 }
 
+/*
+Builds a calendar for the passed in month and year
+*/
 function showCalendar(month, year) {
     let firstDay = (new Date(year, month)).getDay();
 
@@ -53,6 +75,7 @@ function showCalendar(month, year) {
     // creating all cells
     let date = 1;
     for (let i = 0; i < 6; i++) {
+
         // creates a table row
         let row = document.createElement("tr");
 
@@ -76,17 +99,30 @@ function showCalendar(month, year) {
                         isTaken = true;
                     }
                 }
-                if (isTaken) {
-                    cell.style.backgroundColor = "red";
+                if (isTaken || dateIsInPast(date, month, year)) {
+                    cell.classList.add('disabled-date');
                 } else {
                     cell.onclick = function() { onCellClick(this) };
+                    cell.classList.add('cell');
                 }
                 date++;
             }
         }
-
         tbl.appendChild(row); // appending each row into calendar body.
     }
+}
+
+function dateIsInPast(date, month, year) {
+    if (year < today.getFullYear()) {
+        return true;
+    }
+    if (month < today.getMonth()) {
+        return true;
+    }
+    if (date <= today.getUTCDate()) {
+        return true;
+    }
+    return false;
 }
 
 function daysInMonth(iMonth, iYear) {
@@ -117,6 +153,32 @@ function onCellClick(cell) {
     }
 }
 
+function highlightStaySpan() {
+    $("#calendar-body").each(function() {
+        $('td', this).each(function() {
+            highlightCell(this)
+            this.classList.remove('cell');
+            this.classList.add('cell-selected');
+        })
+    })
+}
+
+function highlightCell(cell) {
+    cell.classList.add('cell');
+    cellIsInStayRange = checkinDate.getDate() <= parseInt(cell.innerHTML) && parseInt(cell.innerHTML) <= checkoutDate.getDate();
+    if (cellIsInStayRange) {
+        cell.classList.add('cell-selected');
+    }
+}
+
+function datesAreNull() {
+    if (checkinDate == null || checkoutDate == null) {
+        alert("Invalid Dates");
+        return true;
+    }
+    return false;
+}
+
 function setCheckinDate(date) {
     checkinDate = date;
     $("#id_in_date").val(date.toUTCString());
@@ -127,35 +189,9 @@ function setCheckoutDate(date) {
     $("#id_out_date").val(date.toUTCString());
 }
 
-function highlightStaySpan() {
-    days = document.getElementById('calendar-body');
-    passedCheckinDate = false;
-    for (let row of days.rows) {
-        for (let cell of row.cells) {
-            cell.style.backgroundColor = "transparent";
-            passedCheckinDate = checkinDate.getDate() <= parseInt(cell.innerHTML) && parseInt(cell.innerHTML) <= checkoutDate.getDate();
-            if (passedCheckinDate) {
-                cell.style.backgroundColor = "lightseagreen";
-            }
-        }
-    }
-}
-
-/*
-
-*/
-
-function checkDates() {
-    if (checkinDate == null || checkoutDate == null) {
-        alert("Invalid Dates");
-        return false;
-    }
-    return true;
-}
-
 $(document).ready(function() {
     $('#calendar-form').submit(function(event) {
-        if (!checkDates()) {
+        if (datesAreNull()) {
             event.preventDefault();
         }
     });

@@ -25,56 +25,27 @@
   text-align: center;
 }
 
-#calendarContainer #calendar #calendar-body td:hover {
+#calendarContainer #calendar #calendar-body .cell {
+  background-color: transparent;
+}
+
+#calendarContainer #calendar #calendar-body .cell-selected {
+  background-color: lightseagreen;
+}
+
+#calendarContainer #calendar #calendar-body .cell-selected:hover {
   cursor: pointer;
   background-color: lightseagreen;
   color: white;
 }
 
-/*#calendar {
-    overflow: hidden;
-    width: 30%;
-    text-align: center;
-
-    #monthAndYear {
-        display: inline-flex;
-        font-family: futura-pt-bold, sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 1vw;
-        color: #117e99;
-        border-bottom: 0.3vw #117e99 solid;
-        border-radius: 2.5px;
-        margin-top: 1vw;
-        margin-bottom: 1vw;
-        h2 {
-            margin: 0.4vw;
-        }
-    }
-
-    #days {
-        margin-bottom: 1vw;
-        .days-column {
-            display: inline-flex;
-            flex-direction: column;
-            font-family: futura-pt, sans-serif;
-            font-size: 0.8vw;
-            h1 {
-                padding: 0.2vw;
-                width:2vw;
-                height: 2vw;
-                color: rgb(34, 34, 34);
-            }
-
-            h1:hover {
-                color: white;
-                border-radius: 50%;
-                background-color: #117e99;
-                cursor: pointer;
-            }
-        }
-    }
+#calendarContainer #calendar #calendar-body .cell:hover {
+  cursor: pointer;
+  background-color: lightseagreen;
 }
 
-*/
+#calendarContainer #calendar #calendar-body .disabled-date {
+  color: gray;
+  cursor: not-allowed;
+}
 /*# sourceMappingURL=style.css.map */
