@@ -2,9 +2,10 @@ from django.core.exceptions import ValidationError
 
 from dateutil import parser
 
-from .models import Stay, Address
+from registration.models import Stay, Address
+from reviews import utils as reviews_utils
 
-def process_post_data(postdata):
+def register_unapproved_stay(postdata):
     '''
     When a calendar form is submitted, give the resulting request.POST data
     to this function. This function handles stripping the data down and validating/creating
@@ -51,9 +52,16 @@ def process_post_data(postdata):
             additional_questions_or_concerns=additional)
         new_stay.full_clean()
         new_stay.save()
-        
+
         result = {'success': True}
     except ValidationError as e:
         result = {'success': False, 'error_message': e.messages}
     
     return result
+
+def approve_stay(stay_pk):
+    target_stay = Stay.objects.filter(pk=stay_pk)
+    target_stay.is_approved = True
+    target_stay.save()
+    
+    reviews_utils.create_unpublished_review(stay_pk)
