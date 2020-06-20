@@ -140,16 +140,17 @@ class Stay(models.Model):
             raise ValidationError(('The check-in date must be before the check-out date.'))
 
     def _ensure_global_setting_is_set(self):
-        num_days = (self.out_date - self.in_date).days
         if Globals.objects.all().count() != 1:
             raise ValidationError(('Administrative Error: Globals not set.'))
 
     def _ensure_at_least_minimum_days_of_stay(self):
+        num_days = (self.out_date - self.in_date).days
         global_setting = Globals.objects.get(pk=1)
         if num_days < global_setting.minimum_days_of_stay:
             raise ValidationError((f'A minimum of {global_setting.minimum_days_of_stay} day(s) required.'))
 
     def _ensure_no_conflicts_with_existing_stays(self):
+        num_days = (self.out_date - self.in_date).days
         taken_dates = data.get_taken_dates()
         for x in range(0, num_days):
             current_date = self.in_date + datetime.timedelta(days=x)

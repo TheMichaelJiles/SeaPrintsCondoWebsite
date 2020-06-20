@@ -44,7 +44,7 @@
   background-color: lightseagreen;
 }
 
-#calendarContainer #calendar #calendar-body .disabled-date {
+#calendarContainer #calendar #calendar-body .cell-disabled {
   color: gray;
   cursor: not-allowed;
 }
