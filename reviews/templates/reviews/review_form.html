@@ -1,6 +1,19 @@
+{% extends 'base.html' %}
 {%load static%}
+
+{% block content %}
+<!-- 
+    Here we have access to the data from the already created view. The variable is
+    called data. So we can say things like the following.
+ -->
+<p>
+    {{ data.corresponding_stay.name }}<br>
+    {{ data.corresponding_stay.in_date|date }}<br>
+    {{ data.corresponding_stay.out_date|date }}<br>
+</p>
 <form method='post' id='review-form'>
     {% csrf_token %}
     {{ form }}
     <input type='submit' id='reviewSubmit'></input>
 </form>
+{% endblock %}

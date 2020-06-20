@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.core import validators
 
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -108,10 +109,10 @@ class Stay(models.Model):
     name = models.CharField(max_length=20)
     in_date = models.DateField('check-in date', unique=True)
     out_date = models.DateField('check-out date', unique=True)
-    total_price = models.FloatField(default=0)
+    total_price = models.FloatField(default=0, validators=[validators.MinValueValidator(0),])
     phone_contact = PhoneNumberField(null=False, blank=False, unique=False)
     email_contact = models.EmailField()
-    number_of_guests = models.IntegerField(default=1)
+    number_of_guests = models.PositiveIntegerField(default=1, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(6)])
     is_approved = models.BooleanField(default=False)
     address = models.ForeignKey(Address, on_delete=models.PROTECT)
     additional_questions_or_concerns = models.TextField(default='', blank=True)
