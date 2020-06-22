@@ -1,8 +1,12 @@
 from django.contrib import admin
-from .models import Stay, Address, SeasonPricing, Globals
+from django import forms
 
-# Register your models here.
-admin.site.register(Stay)
+from registration.models import Stay, Address, SeasonPricing, Globals
+
+class StayAdmin(admin.ModelAdmin):
+    exclude = ('is_approved',)
+
+admin.site.register(Stay, StayAdmin)
 admin.site.register(Address)
 admin.site.register(SeasonPricing)
 admin.site.register(Globals)

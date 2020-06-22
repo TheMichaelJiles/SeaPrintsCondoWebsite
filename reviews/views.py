@@ -16,6 +16,6 @@ def write_review(request, publishkey):
     elif not Review.objects.filter(link_key=publishkey).exists():
         result = redirect('landing')
     else:
-        review_data = Review.objects.filter(link_key=publishkey)
+        review_data = Review.objects.get(link_key=publishkey)
         result = render(request, 'reviews/review_form.html', {'form': forms.ReviewForm(), 'data': review_data})
     return result
