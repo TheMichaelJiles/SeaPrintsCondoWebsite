@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 from django.core import validators
 
 from phonenumber_field.modelfields import PhoneNumberField
-from registration import registration as data
+from registration import api as data
 
 class Globals(models.Model):
     '''

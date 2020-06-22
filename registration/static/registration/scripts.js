@@ -199,7 +199,6 @@ function highlightStaySpan() {
 function styleCell(cell) {
     cell.className = '';
     date = parseInt(cell.innerHTML);
-    //cellIsInStayRange = checkinDate.getUTCDate() <= parseInt(cell.innerHTML) && parseInt(cell.innerHTML) <= checkoutDate.getUTCDate();
     if (cellIsInStayRange(date)) {
         cell.className = 'cell-selected';
     } else if(dateIsAvailable(date, selectMonth.value, selectYear.value)) {

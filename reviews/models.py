@@ -8,9 +8,9 @@ import datetime, random
 class Review(models.Model):
     corresponding_stay = models.ForeignKey(Stay, on_delete=models.PROTECT)
     rating = models.PositiveIntegerField(default=5, blank=True, null=True, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(5)])
-    review_text = models.TextField(required=False, blank=True, null=True)
+    review_text = models.TextField(blank=True, null=True)
     is_published = models.BooleanField(default=False)
-    publish_date = models.DateField(required=False, blank=True, null=True)
+    publish_date = models.DateField(blank=True, null=True)
     link_key = models.CharField(max_length=19)
 
     def __str__(self):
