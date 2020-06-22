@@ -60,8 +60,8 @@ def register_unapproved_stay(postdata):
     return result
 
 def approve_stay(stay_pk):
-    target_stay = Stay.objects.filter(pk=stay_pk)
+    target_stay = Stay.objects.get(pk=stay_pk)
     target_stay.is_approved = True
     target_stay.save()
     
-    reviews_utils.create_unpublished_review(stay_pk)
+    return reviews_utils.create_unpublished_review(stay_pk)
