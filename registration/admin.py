@@ -2,6 +2,8 @@ from django.contrib import admin, messages
 from django.contrib.admin.views.main import ChangeList
 from django import forms
 from django.utils.translation import ngettext
+from django.utils.html import format_html
+from django.urls import reverse
 
 from registration.models import Stay, Address, SeasonPricing, Globals
 from registration import utils as registration_utils
@@ -37,7 +39,34 @@ class StayAdmin(admin.ModelAdmin):
             ) % delta, messages.ERROR)
     approve_selected_stays.short_description = 'Approve selected stays'
 
+class AddressAdmin(admin.ModelAdmin):
+    list_display = ['__str__', 'show_linked_stay_name']
+
+    def show_linked_stay_name(self, obj):
+        try:
+            linked_stays = Stay.objects.filter(address=obj)
+            stay_anchor_string = map(
+                lambda stay: f'<a href="{reverse("admin:registration_stay_change", args=(stay.pk,))}">{stay.name}</a>', 
+                linked_stays)
+            result = format_html(', '.join(stay_anchor_string))
+        except:
+            result = 'No Linked Stay'
+        return result
+    show_linked_stay_name.short_description = 'Customer(s)'
+    show_linked_stay_name.allow_tags = True
+
+class SeasonPricingAdmin(admin.ModelAdmin):
+    list_display = ['modify_season', 'start_date', 'end_date', 'show_price_per_night']
+
+    def show_price_per_night(self, obj):
+        return '${:,.2f}'.format(obj.price_per_night)
+    show_price_per_night.short_description = 'Price / Night'
+
+    def modify_season(self, obj):
+        return 'View'
+    modify_season.short_description = 'Seasonal Pricing'
+
 admin.site.register(Stay, StayAdmin)
-admin.site.register(Address)
-admin.site.register(SeasonPricing)
+admin.site.register(Address, AddressAdmin)
+admin.site.register(SeasonPricing, SeasonPricingAdmin)
 admin.site.register(Globals)

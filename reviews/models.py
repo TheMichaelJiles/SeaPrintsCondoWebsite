@@ -3,7 +3,7 @@ from django.core import validators
 
 from registration.models import Stay
 
-import datetime, random
+import random
 
 class Review(models.Model):
     corresponding_stay = models.ForeignKey(Stay, on_delete=models.CASCADE)
