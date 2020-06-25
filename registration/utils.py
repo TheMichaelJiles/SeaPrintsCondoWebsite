@@ -55,13 +55,24 @@ def register_unapproved_stay(postdata):
 
         result = {'success': True}
     except ValidationError as e:
-        result = {'success': False, 'error_message': e.messages}
-    
+        result = {
+            'success': False,
+            'error_source': 'registration.utils.register_unapproved_stay: Validation Failed',
+            'error_details': e.message_dict,}
     return result
 
 def approve_stay(stay_pk):
-    target_stay = Stay.objects.get(pk=stay_pk)
-    target_stay.is_approved = True
-    target_stay.save()
-    
-    return reviews_utils.create_unpublished_review(stay_pk)
+    try:
+        target_stay = Stay.objects.get(pk=stay_pk)
+        if target_stay.is_approved:
+            raise ValidationError()
+        target_stay.is_approved = True
+        target_stay.save()
+        
+        result = reviews_utils.create_unpublished_review(stay_pk)
+    except:
+        result = {
+            'success': False,
+            'error_source': 'registration.utils.approve_stay: Invalid Stay Identifier',
+            'error_details': {},}
+    return result

@@ -105,6 +105,9 @@ class Stay(models.Model):
     method before the save() method is called and catch any ValidationErrors to 
     ensure the Stay is created with valid data.
     '''
+    class Meta:
+        ordering = ['is_approved', 'in_date', 'name']
+
     name = models.CharField(max_length=20)
     in_date = models.DateField('check-in date', unique=True)
     out_date = models.DateField('check-out date', unique=True)

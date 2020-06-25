@@ -14,7 +14,10 @@ def create_unpublished_review(stay_pk):
 
         result = {'success': True}
     except ValidationError as e:
-        result = {'success': False, 'errors': e.message_dict}
+        result = {
+            'success': False,
+            'error_source': 'reviews.utils.create_unpublished_review: Validation Failed.',
+            'error_details': e.message_dict,}
     return result
 
 def publish_review(link_key, postdata):
@@ -28,5 +31,14 @@ def publish_review(link_key, postdata):
 
         result = {'success': True}
     except ValidationError as e:
-        result = {'success': False, 'errors': e.message_dict}
+        result = {
+            'success': False,
+            'error_source': 'reviews.utils.publish_review: Validation Failed.',
+            'error_details': e.message_dict,}
     return result
+
+def get_all_reviews():
+    return Review.objects.all().order_by('-rating', '-publish_date')
+
+def get_top_n_reviews(n):
+    return get_all_reviews()[:n]
