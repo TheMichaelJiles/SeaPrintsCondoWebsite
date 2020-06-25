@@ -69,4 +69,3 @@ class SeasonPricingAdmin(admin.ModelAdmin):
 admin.site.register(Stay, StayAdmin)
 admin.site.register(Address, AddressAdmin)
 admin.site.register(SeasonPricing, SeasonPricingAdmin)
-admin.site.register(Globals)

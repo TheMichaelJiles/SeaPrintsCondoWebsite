@@ -4,31 +4,9 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.core import validators
 
+from home.models import Globals
 from phonenumber_field.modelfields import PhoneNumberField
 from registration import api as data
-
-class Globals(models.Model):
-    '''
-    The globals model should only ever have one row. This row contains
-    site wide data related to registration that the registration services
-    rely on.
-    '''
-    default_price_per_night = models.FloatField(default=175)
-    minimum_days_of_stay = models.IntegerField(default=4)
-
-    def __str__(self):
-        return 'Site Setting'
-
-    def clean(self):
-        '''
-        This is an overriden version of the clean method from models.Model.
-        The partial override ensures that no more than one row is created in
-        the table. A Globals object should never be instantiated manually. Instead,
-        it should be created through a ModelForm on the admin page.
-        '''
-        super().clean()
-        if Globals.objects.all().count() > 0:
-            raise ValidationError(('There is already a global setting entry. Modify it instead of creating a new setting.'))
 
 class SeasonPricing(models.Model):
     '''
