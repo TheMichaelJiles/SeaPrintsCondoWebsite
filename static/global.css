@@ -1,0 +1,92 @@
+.landing-page {
+  background-image: url("/static/assets/LandingPicture.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.landing-page .custom-nav {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.landing-page .custom-nav li {
+  font-size: 18pt;
+  margin-left: 66px;
+  color: white;
+}
+
+.landing-page .custom-nav label {
+  font-size: 18pt;
+  margin-left: 30px;
+  margin-right: 135px;
+  margin-top: 3px;
+  color: white;
+}
+
+.landing-page .custom-nav .book-button {
+  background-color: #00031C;
+  border-radius: 7px;
+  max-height: 28px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 28px;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 30px;
+  position: fixed;
+  right: 23px;
+  top: 18px;
+}
+
+.landing-page .landing-title {
+  background-image: url("/static/assets/LandingPageLines.svg");
+  background-repeat: no-repeat;
+  width: 1505px;
+  height: 618px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.landing-page .landing-title .sea-prints-title {
+  text-align: center;
+  font-family: sirenne-text-mvb, serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 180pt;
+  color: white;
+  border-bottom: 7px white solid;
+  padding-bottom: 0px;
+  height: 285px;
+  margin-bottom: 0px;
+}
+
+.landing-page .landing-title .sea-prints-caption {
+  font-family: skolar-sans-latin-extended, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  letter-spacing: 3px;
+}
+
+.landing-page .landing-title .cape-san-blas-caption {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  position: relative;
+  color: white;
+  font-size: 30px;
+  top: 12px;
+  left: 15px;
+  letter-spacing: 5px;
+  line-height: 35px;
+}
+/*# sourceMappingURL=global.css.map */

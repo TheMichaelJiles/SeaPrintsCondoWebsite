@@ -1,5 +1,36 @@
 {% extends 'base.html'%}
 {%load static%}
+<link rel="stylesheet" href="{% static 'homestyle.css' %}">
 {% block content %}
-    {%include 'registration/calendar_form.html' with form=form address_form=address_form%}
+    <div class="landing-page">
+        <nav class="navbar navbar-expand custom-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item nav-element">
+                    reviews
+                </li>
+                <li class="nav-item nav-element">
+                    <a>photos</a>
+                </li>
+                <li class="nav-item nav-element">
+                    contact
+                </li>
+            </ul>
+            <label>|</label>
+            <a href="#" class="book-button">book now</a>
+        </nav>
+
+         <div class="landing-title">
+         <div class="cape-san-blas-caption">CAPESANBLAS<br>FLORIDA</div>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-10 my-auto">
+                    <div class="sea-prints-title">Sea Prints</div>
+                    <div class="sea-prints-caption">the condo formerly known as aquablast</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+    
+    </footer>
 {% endblock %}

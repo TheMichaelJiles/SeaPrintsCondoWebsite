@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1504.415" height="617.565" viewBox="0 0 1504.415 617.565">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <g id="LandingPageLines" transform="translate(5 5)">
+    <g id="Group_5" data-name="Group 5" transform="translate(-215.585 -311.715)">
+      <path id="Path_2" data-name="Path 2" class="cls-1" d="M2634-344.285H2452.585V-159.72" transform="translate(-2237 656)"/>
+      <path id="Path_3" data-name="Path 3" class="cls-1" d="M2634-344.285H2452.585V-159.72" transform="translate(4162.585 574.996) rotate(180)"/>
+    </g>
+    <line id="Line_5" data-name="Line 5" class="cls-1" x1="88" transform="translate(1173.5 607.5)"/>
+  </g>
+</svg>
