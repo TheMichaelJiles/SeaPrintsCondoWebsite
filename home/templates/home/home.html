@@ -6,13 +6,13 @@
         <nav class="navbar navbar-expand custom-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item nav-element">
-                    reviews
+                    <a class="my-nav-link" href="#">reviews</a>
                 </li>
                 <li class="nav-item nav-element">
-                    <a>photos</a>
+                    <a class="my-nav-link" href="#">photos</a>
                 </li>
                 <li class="nav-item nav-element">
-                    contact
+                    <a class="my-nav-link" href="#">contact</a>
                 </li>
             </ul>
             <label>|</label>
@@ -30,7 +30,25 @@
         </div>
     </div>
     
-    <footer>
-    
-    </footer>
+    <div id="review-section">
+        <div class="d-flex flex-row justify-content-around review-content">
+            {% for review in reviews %}
+                <div class="review-element">
+                    <div class="rating-stars d-flex flex-row justify-content-center">
+                        {% with ''|center:review.rating as range %}
+                        {% for _ in range %}
+                        <img src="{% static 'assets/ReviewStar.svg' %}" alt="Star" width="41" height="36">
+                        {% endfor %}
+                        {% endwith %}
+                    </div>
+                    <div class="rating-text">
+                        <p>{{ review.review_text|truncatechars:125 }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="all-reviews-link-div d-flex flex-row justify-content-end">
+            <a class="all-reviews-link" href="#">all reviews ></a>
+        </div>
+    </div>
 {% endblock %}

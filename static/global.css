@@ -18,6 +18,11 @@
   color: white;
 }
 
+.landing-page .custom-nav li .my-nav-link {
+  text-decoration: none;
+  color: white;
+}
+
 .landing-page .custom-nav label {
   font-size: 18pt;
   margin-left: 30px;
@@ -88,5 +93,47 @@
   left: 15px;
   letter-spacing: 5px;
   line-height: 35px;
+}
+
+#review-section {
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: white;
+  background-color: black;
+  height: 265px;
+}
+
+#review-section .review-content {
+  width: 80%;
+  margin: auto;
+}
+
+#review-section .review-content .review-element {
+  width: 25%;
+}
+
+#review-section .review-content .review-element .rating-text {
+  text-align: center;
+  font-size: 20px;
+}
+
+#review-section .review-content .review-element .rating-stars {
+  border-bottom: 5px solid white;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+#review-section .review-content .review-element .rating-stars img {
+  margin-right: 5px;
+}
+
+#review-section .all-reviews-link-div .all-reviews-link {
+  margin-right: 50px;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
 }
 /*# sourceMappingURL=global.css.map */
