@@ -36,7 +36,7 @@
                     <div class="rating-stars d-flex flex-row justify-content-center">
                         {% with ''|center:review.rating as range %}
                         {% for _ in range %}
-                        <img src="{% static 'assets/ReviewStar.svg' %}" alt="Star" width="41" height="36">
+                        <img src="{% static 'assets/ReviewStar.svg' %}" alt="Star" style="width: 41px; height: 36px;">
                         {% endfor %}
                         {% endwith %}
                     </div>
@@ -51,7 +51,41 @@
         </div>
     </div>
 
-<div id="carouselExampleIndicators" class="carousel slide custom-carousel" data-ride="carousel">
+    <div class="container-fluid p-0 m-0">
+        <div class="row">
+            <div class="col left-column">
+                <img src="{% static 'assets/OrangeImage.png' %}" alt="Chairs on the beach" style="height: 1065px;">
+                <div id="room-for-everyone">
+                    <strong id="room-title">Room for Everyone</strong>
+                    <p>
+                        With 3 bedrooms and 2 full bathrooms, there is plenty of space for you, your
+                        family, and even a couple of friends, too.
+                    </p>
+                </div>
+                <img src="{% static 'assets/NavyImage.png' %}" alt="Kitchen" style="height: 1425px;">
+            </div>
+            <div class="col right-column">
+                <div id="steps-from-the-beach">
+                    <strong id="steps-title">Steps From the Beach</strong>
+                    <p>
+                        We have the privilege of being one of the only condos located among the dunes.
+                        Heading out for a day on the beach is only a few steps from your back door.
+                    </p>
+                </div>
+                <img src="{% static 'assets/BlueImage.png' %}" alt="Living Room" style="height: 1383px;">
+                <div id="fully-equipped-kitchen">
+                    <strong id="fully-title">Fully Equipped Kitchen</strong>
+                    <p>
+                        In addition to the great restaurants around the cape, Sea Prints has a full kitchen
+                        including an electric stove, oven, dishwasher, microwave, and full-size refrigerator
+                        with a freezer drawer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide custom-carousel" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -82,9 +116,83 @@
   </a>
 </div>
 
+    <div id="amenities" class="container-fluid p-0">
+        <div class="row">
+            <div class="col left-column">
+                <div id="amenities-list" class="container">
+                    <div class="row">
+                        <div class="col general-column">
+                            <strong>General:</strong>
+                            <ul>
+                                <li>Air Conditioning</li>
+                                <li>No Smoking</li>
+                                <li>Washer &amp; Dryer</li>
+                                <li>Cable</li>
+                                <li>TV</li>
+                                <li>Board Games</li>
+                                <li>Novels</li>
+                                <li>Children Welcome</li>
+                                <li>Internet</li>
+                                <li>Heater</li>
+                                <li>Parking</li>
+                                <li>Deadbolt Lock</li>
+                                <li>Smoke Detector</li>
+                                <li>Fire Extinguisher</li>
+                                <li>Carbon-monoxide Detector</li>
+                                <li>Exterior Lighting</li>
+                                <li>Telephone</li>
+                                <li>Luxury linens</li>
+                                <li>Iron &amp; Board</li>
+                                <li>Hair Dryer</li>
+                                <li>Paper Towels</li>
+                                <li>Living Room</li>
+                                <li>Dining Room</li>
+                                <li>Deck/Patio</li>
+                            </ul>
+                        </div>
+                        <div class="col bathroom-kitchen-column">
+                            <strong>Bathrooms:</strong>
+
+                            Bathroom 1:
+                            <ul>
+                                <li>Toilet</li>
+                                <li>Shower</li>
+                            </ul>
+
+                            Bathroom 2:
+                            <ul>
+                                <li>Toilet</li>
+                                <li>Combination Tub/Shower</li>
+                            </ul>
+
+                            <strong>Kitchen:</strong>
+                            <ul>
+                                <li>Dishwasher</li>
+                                <li>Refrigerator</li>
+                                <li>Glass Top Stove</li>
+                                <li>Oven</li>
+                                <li>Microwave</li>
+                                <li>Coffee Maker</li>
+                                <li>Toaster</li>
+                                <li>Blender</li>
+                                <li>Ice Maker</li>
+                                <li>Lobster pot</li>
+                                <li>Pantry Items</li>
+                                <li>Dishes &amp; Utensils</li>
+                                <li>Stainless Steel Pots/Pans</li>
+                                <li>Kettle</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col right-column" id="amenities-block">
+                <img src="{% static 'assets/Amenities.svg' %}" style="height: 900px;">
+            </div>
+        </div>
+    </div>
+
 <footer>
     <div class="footer-content">website designed by luke whaley and michael jiles | contact us</div>
 </footer>
-
-    
 {% endblock %}
