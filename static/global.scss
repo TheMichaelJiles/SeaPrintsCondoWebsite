@@ -154,9 +154,9 @@ body {
     padding-top: 4vw;
 }
 
-.carousel-inner > .item {
+.carousel-inner>.item {
     height: 939px;
- }
+}
 
 #steps-from-the-beach {
     font-family: futura-pt, sans-serif;
@@ -168,6 +168,7 @@ body {
     margin-right: 5%;
     #steps-title {
         font-weight: 700;
+        color: #00031C;
         border-bottom: 7px solid #F5AB43;
         width: 100%;
         display: block;
@@ -182,6 +183,7 @@ body {
         font-size: 30px;
         width: 90%;
         margin-left: auto;
+        color: #444444;
     }
 }
 
@@ -195,6 +197,7 @@ body {
     margin-left: 5%;
     #room-title {
         font-weight: 700;
+        color: #00031C;
         border-bottom: 7px solid #5ECBD8;
         width: 100%;
         display: block;
@@ -209,6 +212,7 @@ body {
         font-size: 30px;
         width: 90%;
         margin-right: auto;
+        color: #444444;
     }
 }
 
@@ -222,6 +226,7 @@ body {
     margin-right: 5%;
     #fully-title {
         font-weight: 700;
+        color: #00031C;
         border-bottom: 7px solid #00031C;
         width: 100%;
         display: block;
@@ -236,6 +241,7 @@ body {
         font-size: 30px;
         width: 90%;
         margin-left: auto;
+        color: #444444;
     }
 }
 
@@ -244,6 +250,7 @@ body {
     font-style: normal;
     margin-top: 75px;
     margin-top: 177px;
+    width: 100%;
     #amenities-block {
         margin-left: 0;
         margin-right: auto;
@@ -258,8 +265,8 @@ body {
         border-top-right-radius: 55px;
         border-bottom-right-radius: 55px;
         font-size: 28px;
-        width: 80%;
         margin-left: 0;
+        margin-right: 0;
         strong {
             display: block;
             margin-bottom: 10px;
@@ -286,22 +293,22 @@ footer {
     margin-top: 177px;
     align-items: center;
     .footer-content {
-       align-items: center;
-       width: 100%;
-       text-align: center;
-       color: #F5AB43;
-       font-family: futura-pt, sans-serif;
-       font-weight: 500;
-       font-style: normal;
-       font-size: 20px;
-       line-height: 100px;
-       letter-spacing: 5px;
-       #contact-designers {
-           cursor: pointer;
-           color: white;
-       }
-       #contact-designers:hover {
+        align-items: center;
+        width: 100%;
+        text-align: center;
         color: #F5AB43;
+        font-family: futura-pt, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 100px;
+        letter-spacing: 5px;
+        #contact-designers {
+            cursor: pointer;
+            color: white;
+        }
+        #contact-designers:hover {
+            color: #F5AB43;
+        }
     }
-   }
 }
