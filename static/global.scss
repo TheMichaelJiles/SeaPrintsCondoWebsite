@@ -22,6 +22,15 @@ body {
                 text-decoration: none;
                 color: white;
             }
+            .reviews-link:hover {
+                border-bottom: 3px #F5AB43 solid;
+            }
+            .photos-link:hover {
+                border-bottom: 3px #5ECBD8 solid;
+            }
+            .contact-link:hover {
+                border-bottom: 3px #00031C solid;
+            }
         }
         label {
             font-size: 18pt;
@@ -45,6 +54,9 @@ body {
             right: 23px;
             top: 18px;
             z-index: 1;
+        }
+        .book-button:hover {
+            background-color: #48a0aa;
         }
     }
     .landing-title {
@@ -128,6 +140,18 @@ body {
             font-size: 24px;
         }
     }
+}
+
+#carousel-title {
+    font-family: futura-pt, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 80px;
+    color: #00031C;
+    width: 100%;
+    text-align: right;
+    padding-right: 1vw;
+    padding-top: 4vw;
 }
 
 .carousel-inner > .item {
@@ -265,12 +289,19 @@ footer {
        align-items: center;
        width: 100%;
        text-align: center;
-       color: white;
+       color: #F5AB43;
        font-family: futura-pt, sans-serif;
        font-weight: 500;
        font-style: normal;
        font-size: 20px;
        line-height: 100px;
        letter-spacing: 5px;
+       #contact-designers {
+           cursor: pointer;
+           color: white;
+       }
+       #contact-designers:hover {
+        color: #F5AB43;
+    }
    }
 }

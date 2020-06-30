@@ -29,6 +29,18 @@ body {
   color: white;
 }
 
+.landing-page .custom-nav li .reviews-link:hover {
+  border-bottom: 3px #F5AB43 solid;
+}
+
+.landing-page .custom-nav li .photos-link:hover {
+  border-bottom: 3px #5ECBD8 solid;
+}
+
+.landing-page .custom-nav li .contact-link:hover {
+  border-bottom: 3px #00031C solid;
+}
+
 .landing-page .custom-nav label {
   font-size: 18pt;
   margin-left: 30px;
@@ -52,6 +64,10 @@ body {
   right: 23px;
   top: 18px;
   z-index: 1;
+}
+
+.landing-page .custom-nav .book-button:hover {
+  background-color: #48a0aa;
 }
 
 .landing-page .landing-title {
@@ -142,6 +158,18 @@ body {
   text-decoration: none;
   color: white;
   font-size: 24px;
+}
+
+#carousel-title {
+  font-family: futura-pt, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 80px;
+  color: #00031C;
+  width: 100%;
+  text-align: right;
+  padding-right: 1vw;
+  padding-top: 4vw;
 }
 
 .carousel-inner > .item {
@@ -296,12 +324,21 @@ footer .footer-content {
           align-items: center;
   width: 100%;
   text-align: center;
-  color: white;
+  color: #F5AB43;
   font-family: futura-pt, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 20px;
   line-height: 100px;
   letter-spacing: 5px;
+}
+
+footer .footer-content #contact-designers {
+  cursor: pointer;
+  color: white;
+}
+
+footer .footer-content #contact-designers:hover {
+  color: #F5AB43;
 }
 /*# sourceMappingURL=global.css.map */
