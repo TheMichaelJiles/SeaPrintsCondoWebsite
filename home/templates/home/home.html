@@ -178,7 +178,22 @@
         </div>
     </div>
 
-<footer>
+<footer id="contactSection">
     <div class="footer-content">website designed by luke whaley and michael jiles | <a id="contact-designers">contact designers</a></div>
 </footer>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $("#photosLink").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#carousel-title").offset().top
+        }, 2000);
+    });
+    $("#contactLink").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#contactSection").offset().top
+        }, 2000);
+    });
+</script>
 {% endblock %}

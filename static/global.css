@@ -41,6 +41,10 @@ body {
   overflow: hidden;
 }
 
+.landing-page a {
+  cursor: pointer;
+}
+
 .landing-page label {
   font-size: 18pt;
   margin-left: 30px;
