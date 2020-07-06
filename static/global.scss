@@ -1,3 +1,5 @@
+$site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
+
 body {
     overflow-x: hidden;
 }
@@ -23,13 +25,13 @@ body {
                 color: white;
             }
             .reviews-link:hover {
-                border-bottom: 3px #F5AB43 solid;
+                border-bottom: 3px map-get($site-colors, "orange") solid;
             }
             .photos-link:hover {
-                border-bottom: 3px #5ECBD8 solid;
+                border-bottom: 3px map-get($site-colors, "cyan") solid;
             }
             .contact-link:hover {
-                border-bottom: 3px #00031C solid;
+                border-bottom: 3px map-get($site-colors, "navy") solid;
             }
         }
         label {
@@ -40,7 +42,7 @@ body {
             color: white;
         }
         .book-button {
-            background-color: #00031C;
+            background-color: map-get($site-colors, "navy");
             border-radius: 7px;
             max-height: 28px;
             text-align: center;
@@ -111,7 +113,7 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
     color: white;
-    background-color: #00031C;
+    background-color: map-get($site-colors, "navy");
     height: 265px;
     .review-content {
         width: 80%;
@@ -147,7 +149,7 @@ body {
     font-weight: 800;
     font-style: normal;
     font-size: 80px;
-    color: #00031C;
+    color: map-get($site-colors, "navy");
     width: 100%;
     text-align: right;
     padding-right: 1vw;
@@ -168,8 +170,8 @@ body {
     margin-right: 5%;
     #steps-title {
         font-weight: 700;
-        color: #00031C;
-        border-bottom: 7px solid #F5AB43;
+        color: map-get($site-colors, "navy");
+        border-bottom: 7px solid map-get($site-colors, "orange");
         width: 100%;
         display: block;
         font-size: 60px;
@@ -183,7 +185,7 @@ body {
         font-size: 30px;
         width: 90%;
         margin-left: auto;
-        color: #444444;
+        color: map-get($site-colors, "gray");
     }
 }
 
@@ -197,8 +199,8 @@ body {
     margin-left: 5%;
     #room-title {
         font-weight: 700;
-        color: #00031C;
-        border-bottom: 7px solid #5ECBD8;
+        color: map-get($site-colors, "navy");
+        border-bottom: 7px solid map-get($site-colors, "cyan");
         width: 100%;
         display: block;
         font-size: 60px;
@@ -212,7 +214,7 @@ body {
         font-size: 30px;
         width: 90%;
         margin-right: auto;
-        color: #444444;
+        color: map-get($site-colors, "gray");
     }
 }
 
@@ -226,8 +228,8 @@ body {
     margin-right: 5%;
     #fully-title {
         font-weight: 700;
-        color: #00031C;
-        border-bottom: 7px solid #00031C;
+        color: map-get($site-colors, "navy");
+        border-bottom: 7px solid map-get($site-colors, "navy");
         width: 100%;
         display: block;
         font-size: 60px;
@@ -241,7 +243,7 @@ body {
         font-size: 30px;
         width: 90%;
         margin-left: auto;
-        color: #444444;
+        color: map-get($site-colors, "gray");
     }
 }
 
@@ -256,7 +258,7 @@ body {
         margin-right: auto;
     }
     #amenities-list {
-        background-color: #00031C;
+        background-color: map-get($site-colors, "navy");
         color: white;
         padding-top: 2%;
         padding-bottom: 2%;
@@ -289,14 +291,14 @@ body {
 footer {
     height: 100px;
     width: 100%;
-    background-color: #00031C;
+    background-color: map-get($site-colors, "navy");
     margin-top: 177px;
     align-items: center;
     .footer-content {
         align-items: center;
         width: 100%;
         text-align: center;
-        color: #F5AB43;
+        color: map-get($site-colors, "orange");
         font-family: futura-pt, sans-serif;
         font-weight: 500;
         font-style: normal;
@@ -308,7 +310,7 @@ footer {
             color: white;
         }
         #contact-designers:hover {
-            color: #F5AB43;
+            color: map-get($site-colors, "orange");
         }
     }
 }
