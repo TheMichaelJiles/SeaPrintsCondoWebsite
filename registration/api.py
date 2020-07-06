@@ -1,7 +1,25 @@
 import registration
+import home
 
 import datetime
 import pytz
+
+def get_rates():
+    seasons = []
+    seasonal_objects = registration.models.SeasonPricing.objects.all()
+    for obj in seasonal_objects:
+        obj_dict = {
+            'start': obj.start_date,
+            'end': obj.end_date,
+            'price': obj.price_per_night, 
+        }
+        seasons.append(obj_dict)
+    return {
+        'default': {
+            'price': home.models.Globals.objects.get(pk=1).default_price_per_night,
+        },
+        'seasons': seasons,
+    }
 
 def get_taken_dates():
     '''
@@ -9,14 +27,6 @@ def get_taken_dates():
     datetime.date objects that correspond with all dates that have been taken.
     '''
     dates_taken = []
-    
-    #
-    # Change the keyword argument of the filter() method below to 
-    # is_approved=True when we are ready. Since the is_approved defaults to 
-    # False when a Stay entry is created. It is easier to leave this the 
-    # way it is for testing purposes. However, we actually want only approved
-    # visits to appear as taken, so this will need to be changed eventually.
-    #
     stays = registration.models.Stay.objects.filter(is_approved=False)
     in_out_dates = set()
     for stay in stays:
