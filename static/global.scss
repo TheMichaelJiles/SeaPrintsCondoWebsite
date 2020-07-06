@@ -4,6 +4,30 @@ body {
     overflow-x: hidden;
 }
 
+.landing-nav {
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    li {
+        font-size: 18pt;
+        margin-left: 66px;
+        color: white;
+        .my-nav-link {
+            text-decoration: none;
+            color: white;
+        }
+        .reviews-link:hover {
+            border-bottom: 3px map-get($site-colors, "orange") solid;
+        }
+        .photos-link:hover {
+            border-bottom: 3px map-get($site-colors, "cyan") solid;
+        }
+        .contact-link:hover {
+            border-bottom: 3px map-get($site-colors, "navy") solid;
+        }
+    }
+}
+
 .landing-page {
     background: url("/static/assets/LandingPicture.jpg");
     background-repeat: no-repeat;
@@ -12,28 +36,6 @@ body {
     width: 100vw;
     position: relative;
     overflow: hidden;
-    .custom-nav {
-        font-family: futura-pt, sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        li {
-            font-size: 18pt;
-            margin-left: 66px;
-            color: white;
-            .my-nav-link {
-                text-decoration: none;
-                color: white;
-            }
-            .reviews-link:hover {
-                border-bottom: 3px map-get($site-colors, "orange") solid;
-            }
-            .photos-link:hover {
-                border-bottom: 3px map-get($site-colors, "cyan") solid;
-            }
-            .contact-link:hover {
-                border-bottom: 3px map-get($site-colors, "navy") solid;
-            }
-        }
         label {
             font-size: 18pt;
             margin-left: 30px;
@@ -60,7 +62,6 @@ body {
         .book-button:hover {
             background-color: #48a0aa;
         }
-    }
     .landing-title {
         background-image: url("/static/assets/LandingPageLines.svg");
         background-repeat: no-repeat;
@@ -321,7 +322,56 @@ footer {
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-    position: fixed;
+    background-attachment: fixed;
+}
+
+.review-nav {
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    li {
+        font-size: 18pt;
+        margin-left: 66px;
+        .my-nav-link {
+            text-decoration: none;
+            color: map-get($site-colors, "navy");
+        }
+        .reviews-link:hover {
+            border-bottom: 3px map-get($site-colors, "orange") solid;
+        }
+        .photos-link:hover {
+            border-bottom: 3px map-get($site-colors, "cyan") solid;
+        }
+        .contact-link:hover {
+            border-bottom: 3px map-get($site-colors, "navy") solid;
+        }
+    }
+    label {
+        font-size: 18pt;
+        margin-left: 30px;
+        margin-right: 135px;
+        margin-top: 3px;
+        color: map-get($site-colors, "navy");
+    }
+    .book-button {
+        background-color: map-get($site-colors, "navy");
+        border-radius: 7px;
+        max-height: 28px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 28px;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 30px;
+        top: 2%;
+        right: 14%;
+        position: fixed;
+        z-index: 1;
+    }
+    .book-button:hover {
+        background-color: #48a0aa;
+    }
 }
 
 .review-container {
@@ -329,10 +379,41 @@ footer {
     width: 75%;
     margin: auto;
     min-height: 100vh;
-}
 
-.review-header {
-    width: 637px;
-    text-align: right;
-    color: map-get($site-colors, "gray");
+    .review {
+        padding-bottom: 6%;
+        .review-header {
+            width: 637px;
+            border-bottom: 5px map-get($site-colors , "orange") solid;
+            h2 {
+                padding-top:5%;
+                text-align: right;
+            }
+        }
+    
+        h1 {
+            color: map-get($site-colors, "navy");
+            font-family: futura-pt, sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 50px;
+        }
+    
+        h2 {
+            color: map-get($site-colors, "gray");
+            font-family: futura-pt, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 25px;
+        }
+    
+        p {
+            color: map-get($site-colors, "navy");
+            font-family: futura-pt, sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 27px;
+            width: 75%;
+        }
+    }
 }

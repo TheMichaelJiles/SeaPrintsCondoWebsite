@@ -2,11 +2,13 @@
 {% load static %}
 {% block content %}
     <div id="review-page">
-    
     {% if latest_review_list %}
         <div class="review-container">
+            {% include 'reviews/review_navbar.html' %}
             <ul>
                 {% for review in latest_review_list %}
+                    <div class="review">
+
                     <div class="review-header">
                         <div class="row">
                             <div class="col-md">
@@ -17,9 +19,14 @@
                                 {% endwith %}
                             </div>
                             <div class="col-md">
-                                {{review.corresponding_stay.in_date}}
+                                <h2>{{review.corresponding_stay.in_date}}</h2>
                             </div>
                         </div>
+                    </div>
+                    <h1>{{review.corresponding_stay.name}}</h1>
+                    <p>{{review.review_text}}</p>
+                    <h2>{{review.publish_date}}</h2>
+
                     </div>
                 {% endfor %}
             </ul>

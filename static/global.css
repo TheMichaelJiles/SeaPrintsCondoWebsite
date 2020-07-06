@@ -2,6 +2,35 @@ body {
   overflow-x: hidden;
 }
 
+.landing-nav {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.landing-nav li {
+  font-size: 18pt;
+  margin-left: 66px;
+  color: white;
+}
+
+.landing-nav li .my-nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.landing-nav li .reviews-link:hover {
+  border-bottom: 3px #F5AB43 solid;
+}
+
+.landing-nav li .photos-link:hover {
+  border-bottom: 3px #5ECBD8 solid;
+}
+
+.landing-nav li .contact-link:hover {
+  border-bottom: 3px #00031C solid;
+}
+
 .landing-page {
   background: url("/static/assets/LandingPicture.jpg");
   background-repeat: no-repeat;
@@ -12,36 +41,7 @@ body {
   overflow: hidden;
 }
 
-.landing-page .custom-nav {
-  font-family: futura-pt, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.landing-page .custom-nav li {
-  font-size: 18pt;
-  margin-left: 66px;
-  color: white;
-}
-
-.landing-page .custom-nav li .my-nav-link {
-  text-decoration: none;
-  color: white;
-}
-
-.landing-page .custom-nav li .reviews-link:hover {
-  border-bottom: 3px #F5AB43 solid;
-}
-
-.landing-page .custom-nav li .photos-link:hover {
-  border-bottom: 3px #5ECBD8 solid;
-}
-
-.landing-page .custom-nav li .contact-link:hover {
-  border-bottom: 3px #00031C solid;
-}
-
-.landing-page .custom-nav label {
+.landing-page label {
   font-size: 18pt;
   margin-left: 30px;
   margin-right: 135px;
@@ -49,7 +49,7 @@ body {
   color: white;
 }
 
-.landing-page .custom-nav .book-button {
+.landing-page .book-button {
   background-color: #00031C;
   border-radius: 7px;
   max-height: 28px;
@@ -66,7 +66,7 @@ body {
   z-index: 1;
 }
 
-.landing-page .custom-nav .book-button:hover {
+.landing-page .book-button:hover {
   background-color: #48a0aa;
 }
 
@@ -355,7 +355,64 @@ footer .footer-content #contact-designers:hover {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
+  background-attachment: fixed;
+}
+
+.review-nav {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.review-nav li {
+  font-size: 18pt;
+  margin-left: 66px;
+}
+
+.review-nav li .my-nav-link {
+  text-decoration: none;
+  color: #00031C;
+}
+
+.review-nav li .reviews-link:hover {
+  border-bottom: 3px #F5AB43 solid;
+}
+
+.review-nav li .photos-link:hover {
+  border-bottom: 3px #5ECBD8 solid;
+}
+
+.review-nav li .contact-link:hover {
+  border-bottom: 3px #00031C solid;
+}
+
+.review-nav label {
+  font-size: 18pt;
+  margin-left: 30px;
+  margin-right: 135px;
+  margin-top: 3px;
+  color: #00031C;
+}
+
+.review-nav .book-button {
+  background-color: #00031C;
+  border-radius: 7px;
+  max-height: 28px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 28px;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 30px;
+  top: 2%;
+  right: 14%;
   position: fixed;
+  z-index: 1;
+}
+
+.review-nav .book-button:hover {
+  background-color: #48a0aa;
 }
 
 .review-container {
@@ -365,9 +422,42 @@ footer .footer-content #contact-designers:hover {
   min-height: 100vh;
 }
 
-.review-header {
+.review-container .review {
+  padding-bottom: 6%;
+}
+
+.review-container .review .review-header {
   width: 637px;
+  border-bottom: 5px #F5AB43 solid;
+}
+
+.review-container .review .review-header h2 {
+  padding-top: 5%;
   text-align: right;
+}
+
+.review-container .review h1 {
+  color: #00031C;
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.review-container .review h2 {
   color: #444444;
+  font-family: futura-pt, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 25px;
+}
+
+.review-container .review p {
+  color: #00031C;
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 27px;
+  width: 75%;
 }
 /*# sourceMappingURL=global.css.map */
