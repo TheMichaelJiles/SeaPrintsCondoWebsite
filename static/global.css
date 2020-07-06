@@ -49,6 +49,35 @@ body {
   color: white;
 }
 
+.landing-page .landing-nav {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.landing-page .landing-nav li {
+  font-size: 18pt;
+  margin-left: 66px;
+  color: white;
+}
+
+.landing-page .landing-nav li .my-nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.landing-page .landing-nav li .reviews-link:hover {
+  border-bottom: 3px #F5AB43 solid;
+}
+
+.landing-page .landing-nav li .photos-link:hover {
+  border-bottom: 3px #5ECBD8 solid;
+}
+
+.landing-page .landing-nav li .contact-link:hover {
+  border-bottom: 3px #00031C solid;
+}
+
 .landing-page .book-button {
   background-color: #00031C;
   border-radius: 7px;
@@ -420,6 +449,23 @@ footer .footer-content #contact-designers:hover {
   width: 75%;
   margin: auto;
   min-height: 100vh;
+}
+
+.review-container .review-navigator {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  font-size: 33px;
+  padding-bottom: 75px;
+}
+
+.review-container .review-navigator span {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.review-container .review-navigator a {
+  text-decoration: none;
 }
 
 .review-container .review {

@@ -2,11 +2,10 @@
 {% load static %}
 {% block content %}
     <div id="review-page">
-    {% if latest_review_list %}
         <div class="review-container">
             {% include 'reviews/review_navbar.html' %}
             <ul>
-                {% for review in latest_review_list %}
+                {% for review in review_list %}
                     <div class="review">
 
                     <div class="review-header">
@@ -30,10 +29,17 @@
                     </div>
                 {% endfor %}
             </ul>
+            <div class="review-navigator">
+                {% if is_first_page is False %}
+                <a href="{% url 'all_reviews' previous_page %}">&#60;</a>
+                {% endif %}
+                
+                <span id="pageNumber">{{ current_page }}</span>
+                
+                {% if is_last_page is False %}
+                <a href="{% url 'all_reviews' next_page %}">&#62;</a>
+                {% endif %}
+            </div>
         </div>
-    {% else %}
-        <p>No reviews</p>
-    {% endif %}
-
     </div>
 {% endblock%}
