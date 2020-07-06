@@ -314,3 +314,25 @@ footer {
         }
     }
 }
+
+#review-page {
+    background-image: url(assets/OceanTopView.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.review-container {
+    background-color: white;
+    width: 75%;
+    margin: auto;
+    min-height: 100vh;
+}
+
+.review-header {
+    width: 637px;
+    text-align: right;
+    color: map-get($site-colors, "gray");
+}

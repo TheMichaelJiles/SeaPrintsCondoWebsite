@@ -1,13 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <div id="review-page">
+    
     {% if latest_review_list %}
-        <ul>
-        {% for review in latest_review_list %}
-            <li>{{review}}</li>
-        {% endfor %}
-        </ul>
+        <div class="review-container">
+            <ul>
+                {% for review in latest_review_list %}
+                    <div class="review-header">
+                        <div class="row">
+                            <div class="col-md">
+                                {% with ''|center:review.rating as range %}
+                                {% for _ in range %}
+                                    <img src="{% static 'assets/ReviewStarNavy.svg' %}" alt="Star" style="width: 50px; height: 44px;">
+                                {% endfor %}
+                                {% endwith %}
+                            </div>
+                            <div class="col-md">
+                                {{review.corresponding_stay.in_date}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
     {% else %}
         <p>No reviews</p>
     {% endif %}
+
+    </div>
 {% endblock%}
