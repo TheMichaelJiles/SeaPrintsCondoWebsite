@@ -80,6 +80,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
             }
             .cell-disabled {
                 color: gray;
+                cursor: default; 
                 margin: 0;
             }
         }

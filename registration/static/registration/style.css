@@ -89,6 +89,7 @@
 
 #calendarContainer #calendar #calendar-body .cell-disabled {
   color: gray;
+  cursor: default;
   margin: 0;
 }
 /*# sourceMappingURL=style.css.map */
