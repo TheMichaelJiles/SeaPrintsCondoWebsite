@@ -538,16 +538,21 @@ footer .footer-content #contact-designers:hover {
   max-width: 100%;
 }
 
-.info_section {
+#registrationContent #logo-image {
+  height: 100vh;
+  display: block;
+}
+
+#registrationContent .info_section {
   background: url(assets/RegistrationBackground-02.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   margin: 0;
-  padding: 0;
+  padding-left: 0;
   border: 0;
 }
 
-#dateSection {
+#registrationContent .info_section #dateSection {
   width: 76%;
   margin: auto;
   margin-top: 15%;
@@ -558,20 +563,32 @@ footer .footer-content #contact-designers:hover {
   background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
 }
 
-#dateSection #the-calendar {
+#registrationContent .info_section #dateSection #the-calendar {
   width: 50%;
 }
 
-#dateSection #the-info {
+#registrationContent .info_section #dateSection #the-info {
   width: 45%;
 }
 
-#dateSection #the-info #top {
+#registrationContent .info_section #dateSection #the-info #top {
   padding-bottom: 10px;
   border-bottom: 5px solid black;
 }
 
-#dateSection #the-info #top strong {
+#registrationContent .info_section #dateSection #the-info #top strong {
   font-size: 34px;
+}
+
+#registrationContent .info_section #contract-section {
+  margin-top: 50%;
+}
+
+#registrationContent .info_section #contract-section #pdf-viewer {
+  width: 60%;
+  height: 90vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*# sourceMappingURL=global.css.map */

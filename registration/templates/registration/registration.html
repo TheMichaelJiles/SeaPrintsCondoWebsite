@@ -4,10 +4,11 @@
 {% block content %}
 <div id="registrationContent" class="container m-0 p-0">
     <div class="row">
-        <div class="col-md-auto img-column" style="padding: 0;">
-            <img src="{% static 'assets/LogoSoon.jpg' %}" alt="Logo Image" style="height: 100vh; display: block;">
+        <div class="col-md-3 img-column fixed-top" style="padding: 0;">
+            <img src="{% static 'assets/LogoSoon.jpg' %}" alt="Logo Image" id="logo-image">
         </div>
-        <div class="col content-column info_section">
+        <div class="col-md-3"></div>
+        <div class="col-md-9 content-column offset-md-3 info_section">
             <div id="dateSection" class="d-flex justify-content-between align-items-center">
                 <div id="the-calendar" class="align-self-start">
                     {% include 'registration/calendar.html' %}
@@ -18,6 +19,9 @@
                         <span id="price-per-night">$150/night</span>
                     </div>
                 </div>
+            </div>
+            <div id="contract-section">
+                <iframe id="pdf-viewer" frameborder="0" scrolling="no" src="https://drive.google.com/file/d/1Zgf-shhZRz_xCA34ORFTz7_b7biMiPcH/preview"></iframe>
             </div>
         </div>
     </div>
