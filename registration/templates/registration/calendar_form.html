@@ -12,7 +12,6 @@
     {% csrf_token %}
     {{ form|crispy }}
     <br>
-    <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text">
     <br>
     {{ address_form|crispy }}
     <input type='submit' id='calendarSubmit'></input>

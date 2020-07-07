@@ -468,7 +468,19 @@ footer {
     max-width: 100%;
 }
 
+#dateSectionSubText {
+    font-family: futura-pt-bold, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    width: 76%;
+    margin: auto;
+    text-align: right;
+    margin-top: 10px;
+}
+
 #dateSection {
+    font-family: futura-pt-bold, sans-serif;
+    font-style: normal;
     width: 76%;
     margin: auto;
     margin-top: 15%;
@@ -485,6 +497,54 @@ footer {
             border-bottom: 5px solid black;
             strong {
                 font-size: 34px;
+                font-weight: 600;
+            }
+            span {
+                font-weight: 500;
+                margin-bottom: 5px;
+                font-size: 22px;
+                color: map-get($site-colors, "cyan");
+                font-weight: bold;
+            }
+        }
+        #middle {
+            border-bottom: 5px solid black;
+            padding-left: 15px;
+            padding-right: 15px;
+            strong {
+                font-weight: 500;
+                font-size: 34px;
+                font-weight: normal;
+            }
+            span {
+                font-weight: 500;
+                margin-bottom: 5px;
+                font-size: 22px;
+                color: map-get($site-colors, "cyan");
+                font-weight: bold;
+            }
+            div {
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+            div:first-of-type {
+                margin-top: 45px;
+            }
+            div:last-of-type {
+                margin-bottom: 45px;
+            }
+        }
+        #bottom {
+            margin-top: 35px;
+            strong {
+                font-size: 34px;
+                font-weight: 600;
+            }
+            span {
+                font-weight: 600;
+                font-size: 40px;
+                color: map-get($site-colors, "orange");
+                font-weight: bold;
             }
         }
     }
