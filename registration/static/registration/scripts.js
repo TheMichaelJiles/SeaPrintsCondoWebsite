@@ -17,15 +17,11 @@ Date.prototype.addDays = function(days) {
     return date;
 }
 
-//Execution:
-init();
-//End Execution
-
 /**
  * Function executed when the webpage is loaded. JSON request must happen BEFORE showCalendar
  */
 function init() {
-    $.getJSON("registration/get_taken_dates", function(dateData) {
+    $.getJSON("/registration/get_taken_dates/", function(dateData) {
         for (let date of dateData) {
             let currentDate = new Date(date);
             takenDates.push(currentDate);
@@ -106,7 +102,7 @@ function showCalendar(month, year) {
         tbl.appendChild(row);
     }
 
-    if(checkinDate != null && checkoutDate != null) {
+    if (checkinDate != null && checkoutDate != null) {
         highlightStaySpan();
     }
 }
@@ -221,10 +217,10 @@ function resetCalendar() {
  * @param startDate  the startDate 
  * @param endDate  the endDate 
  */
-function takenDatesBetween(startDate, endDate ) {
+function takenDatesBetween(startDate, endDate) {
     for (let taken of takenDates) {
         console.log(taken);
-        if (startDate <= taken && taken <= endDate ) {
+        if (startDate <= taken && taken <= endDate) {
             console.log(taken + " was in range");
             return true;
         }
@@ -242,8 +238,8 @@ function highlightStaySpan() {
     $("#calendar-body").each(function() {
         $('td', this).each(function() {
             styleCell(this)
-        })
-    })
+        });
+    });
 }
 
 /**
@@ -251,11 +247,10 @@ function highlightStaySpan() {
  * @param cell the cell to be styled
  */
 function styleCell(cell) {
-    cell.className = '';
     date = parseInt(cell.innerHTML);
     if (cellIsInStayRange(date)) {
         cell.className = 'cell-selected';
-    } else if(dateIsAvailable(date, selectMonth.value, selectYear.value)) {
+    } else if (dateIsAvailable(date, selectMonth.value, selectYear.value)) {
         cell.className = 'cell';
     } else {
         cell.className = 'cell-disabled';
@@ -309,7 +304,7 @@ $(document).ready(function() {
             event.preventDefault();
         }
     });
-
+    init();
 });
 
 /**

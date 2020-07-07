@@ -7,9 +7,7 @@ from registration.models import Stay
 import random
 
 class Review(models.Model):
-    corresponding_stay = models.ForeignKey(Stay, on_delete=models.CASCADE)
-    # TODO: Change this later. Don't want to rebuild tables right now.
-    # corresponding_stay = models.OneToOneField(Stay, on_delete=models.CASCADE)
+    corresponding_stay = models.OneToOneField(Stay, on_delete=models.CASCADE)
     rating = models.PositiveIntegerField(default=5, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(5)])
     review_text = models.TextField(blank=True)
     is_published = models.BooleanField(default=False)

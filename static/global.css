@@ -531,4 +531,37 @@ footer .footer-content #contact-designers:hover {
   font-size: 27px;
   width: 75%;
 }
+
+#registrationContent {
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+#dateSection {
+  width: 76%;
+  margin: auto;
+  margin-top: 15%;
+  border-radius: 15px;
+  padding: 25px;
+  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+}
+
+#dateSection #the-calendar {
+  width: 50%;
+}
+
+#dateSection #the-info {
+  width: 45%;
+}
+
+#dateSection #the-info #top {
+  padding-bottom: 10px;
+  border-bottom: 5px solid black;
+}
+
+#dateSection #the-info #top strong {
+  font-size: 34px;
+}
 /*# sourceMappingURL=global.css.map */

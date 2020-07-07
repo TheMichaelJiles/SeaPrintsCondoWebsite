@@ -2,18 +2,18 @@ $site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444
 body {
     overflow-x: hidden;
     animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards; 
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
-@keyframes fadeInAnimation { 
-    0% { 
-        opacity: 0; 
-    } 
-    100% { 
-        opacity: 1; 
-     } 
-} 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .landing-nav {
     font-family: futura-pt, sans-serif;
@@ -319,7 +319,6 @@ body {
             font-weight: 500;
             line-height: 34px;
             font-size: 22px;
-            
         }
     }
 }
@@ -459,6 +458,34 @@ footer {
             font-style: normal;
             font-size: 27px;
             width: 75%;
+        }
+    }
+}
+
+#registrationContent {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+#dateSection {
+    width: 76%;
+    margin: auto;
+    margin-top: 15%;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+    #the-calendar {
+        width: 50%;
+    }
+    #the-info {
+        width: 45%;
+        #top {
+            padding-bottom: 10px;
+            border-bottom: 5px solid black;
+            strong {
+                font-size: 34px;
+            }
         }
     }
 }

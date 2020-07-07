@@ -1,42 +1,69 @@
 #calendarContainer {
-    text-align: center;
-    width: 15%;
-    margin: auto;
     #monthAndYear {
         font-family: futura-pt-bold, sans-serif;
         font-style: normal;
         font-weight: 700;
-        font-size: 16pt;
+        font-size: 32pt;
+    }
+    #previous {
+        border: none;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    #next {
+        border: none;
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #jumpForm {
+        width: 100%;
+        font-weight: bold;
+        font-size: 24px;
+        label {
+            margin-right: 15px;
+        }
+        select {
+            width: 33%;
+        }
     }
     #calendar {
-        text-align: center;
-        margin: auto;
         th {
             font-family: futura-pt, sans-serif;
+            font-size: 24px;
+            text-align: center;
         }
         #calendar-body {
             tr {
                 font-family: sofia-pro, sans-serif;
                 text-align: center;
+                font-size: 24px;
+                margin: 0;
             }
             .cell {
                 background-color: transparent;
+                margin: 0;
             }
             .cell-selected {
                 background-color: lightseagreen;
+                margin: 0;
             }
             .cell-selected:hover {
                 cursor: pointer;
                 background-color: lightseagreen;
                 color: white;
+                margin: 0;
             }
             .cell:hover {
                 cursor: pointer;
                 background-color: lightseagreen;
+                margin: 0;
             }
             .cell-disabled {
                 color: gray;
                 cursor: not-allowed;
+                margin: 0;
             }
         }
     }

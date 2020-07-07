@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Globals(models.Model):
     '''
@@ -7,8 +8,10 @@ class Globals(models.Model):
     site wide data related to registration that the registration services
     rely on.
     '''
-    default_price_per_night = models.FloatField(default=175)
-    minimum_days_of_stay = models.IntegerField(default=4)
+    default_price_per_night = models.FloatField(default=175, validators=[MinValueValidator(0),])
+    minimum_days_of_stay = models.IntegerField(default=4, validators=[MinValueValidator(0),])
+    cleaning_fee = models.FloatField(default=150, validators=[MinValueValidator(0),])
+    tax_rate_percent = models.IntegerField(default=12, validators=[MinValueValidator(0), MaxValueValidator(100),])
 
     def __str__(self):
         return 'Site Setting'

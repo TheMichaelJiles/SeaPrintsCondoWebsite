@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="registrationContent" class="container m-0 p-0">
+    <div class="row">
+        <div class="col-md-auto img-column">
+            <img src="{% static 'assets/LogoSoon.jpg' %}" alt="Logo Image" style="height: 100vh; display: block;">
+        </div>
+        <div class="col content-column">
+            <div id="dateSection" class="d-flex justify-content-between align-items-center">
+                <div id="the-calendar" class="align-self-start">
+                    {% include 'registration/calendar.html' %}
+                </div>
+                <div id="the-info" class="align-self-start">
+                    <div id="top" class="d-flex justify-content-between align-items-end">
+                        <strong id="nights-text">Select Dates</strong>
+                        <span id="price-per-night">$150/night</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'registration/scripts.js' %}"></script>
+<script src="{% static 'registration/auto-complete.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqcKSSgZhv3QPhbF-eyy_fpCMlirWIQVE&libraries=places&callback=initAutocomplete" async defer></script>
+{% endblock %}

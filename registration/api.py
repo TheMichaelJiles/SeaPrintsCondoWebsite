@@ -27,7 +27,7 @@ def get_taken_dates():
     datetime.date objects that correspond with all dates that have been taken.
     '''
     dates_taken = []
-    stays = registration.models.Stay.objects.filter(is_approved=False)
+    stays = registration.models.Stay.objects.all()
     in_out_dates = set()
     for stay in stays:
         start = datetime.datetime.combine(stay.in_date, datetime.datetime.min.time()).astimezone(pytz.utc)

@@ -90,6 +90,7 @@ class Stay(models.Model):
     in_date = models.DateField('check-in date', unique=True)
     out_date = models.DateField('check-out date', unique=True)
     total_price = models.FloatField(default=0, validators=[validators.MinValueValidator(0),])
+    age = models.PositiveIntegerField(default=25, validators=[validators.MinValueValidator(25),])
     phone_contact = PhoneNumberField(null=False, blank=False, unique=False)
     email_contact = models.EmailField()
     number_of_guests = models.PositiveIntegerField(default=1, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(6)])
@@ -150,6 +151,9 @@ class Stay(models.Model):
             current_date = self.in_date + datetime.timedelta(days=x)
             price_for_day = self._get_rate(current_date)
             self.total_price += price_for_day
+        global_obj = Globals.objects.get(pk=1)
+        self.total_price += global_obj.cleaning_fee
+        self.total_price *= ((global_obj.tax_rate_percent / 100.0) + 1)
 
     def _get_rate(self, date):
         price = Globals.objects.get(pk=1).default_price_per_night
