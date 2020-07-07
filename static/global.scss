@@ -1,64 +1,21 @@
-$site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
-$font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
-
-body {
-    overflow-x: hidden;
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
+    $site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
+    $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
+    body {
+        overflow-x: hidden;
+        animation: fadeInAnimation ease 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
     }
-    100% {
-        opacity: 1;
-    }
-}
-
-.landing-nav {
-    font-family: futura-pt, sans-serif;
-    font-weight: map-get($font-weights, "heavy");
-    font-style: normal;
-    li {
-        font-size: 18pt;
-        margin-left: 66px;
-        color: white;
-        .my-nav-link {
-            text-decoration: none;
-            color: white;
+    
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
         }
-        .reviews-link:hover {
-            border-bottom: 3px map-get($site-colors, "orange") solid;
-        }
-        .photos-link:hover {
-            border-bottom: 3px map-get($site-colors, "cyan") solid;
-        }
-        .contact-link:hover {
-            border-bottom: 3px map-get($site-colors, "navy") solid;
+        100% {
+            opacity: 1;
         }
     }
-}
-
-.landing-page {
-    background: url("/static/assets/LandingPicture.jpg");
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    overflow: hidden;
-    a {
-        cursor: pointer;
-    }
-    label {
-        font-size: 18pt;
-        margin-left: 30px;
-        margin-right: 135px;
-        margin-top: 3px;
-        color: white;
-    }
+    
     .landing-nav {
         font-family: futura-pt, sans-serif;
         font-weight: map-get($font-weights, "heavy");
@@ -82,438 +39,540 @@ body {
             }
         }
     }
-    .book-button {
-        background-color: map-get($site-colors, "navy");
-        border-radius: 7px;
-        max-height: 28px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 28px;
-        color: white;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-left: 30px;
-        position: fixed;
-        right: 23px;
-        top: 18px;
-        z-index: 1;
-    }
-    .book-button:hover {
-        background-color: #48a0aa;
-    }
-    .landing-title {
-        background-image: url("/static/assets/LandingPageLines.svg");
+    
+    .landing-page {
+        background: url("/static/assets/LandingPicture.jpg");
         background-repeat: no-repeat;
-        width: 1505px;
-        height: 618px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        .sea-prints-title {
-            text-align: center;
-            font-family: sirenne-text-mvb, serif;
-            font-weight: map-get($font-weights, "heavy");
-            font-style: normal;
-            font-size: 180pt;
-            color: white;
-            border-bottom: 7px white solid;
-            padding-bottom: 0px;
-            height: 285px;
-            margin-bottom: 0px;
+        background-size: 100vw 100vh;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        overflow: hidden;
+        a {
+            cursor: pointer;
         }
-        .sea-prints-caption {
-            font-family: skolar-sans-latin-extended, sans-serif;
-            font-weight: map-get($font-weights, "regular");
-            font-style: normal;
-            font-size: 50px;
-            text-align: center;
+        label {
+            font-size: 18pt;
+            margin-left: 30px;
+            margin-right: 135px;
+            margin-top: 3px;
             color: white;
-            letter-spacing: 3px;
         }
-        .cape-san-blas-caption {
+        .landing-nav {
             font-family: futura-pt, sans-serif;
             font-weight: map-get($font-weights, "heavy");
             font-style: normal;
-            position: relative;
-            color: white;
-            font-size: 30px;
-            top: 12px;
-            left: 15px;
-            letter-spacing: 5px;
-            line-height: 35px;
-        }
-    }
-}
-
-#review-section {
-    font-family: futura-pt, sans-serif;
-    font-weight: map-get($font-weights, "regular");
-    font-style: normal;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    color: white;
-    background-color: map-get($site-colors, "navy");
-    height: 265px;
-    .review-content {
-        width: 80%;
-        margin: auto;
-        .review-element {
-            width: 25%;
-            .rating-text {
-                text-align: center;
-                font-size: 20px;
-            }
-            .rating-stars {
-                border-bottom: 5px solid white;
-                margin-bottom: 10px;
-                padding-bottom: 10px;
-                img {
-                    margin-right: 5px;
+            li {
+                font-size: 18pt;
+                margin-left: 66px;
+                color: white;
+                .my-nav-link {
+                    text-decoration: none;
+                    color: white;
+                }
+                .reviews-link:hover {
+                    border-bottom: 3px map-get($site-colors, "orange") solid;
+                }
+                .photos-link:hover {
+                    border-bottom: 3px map-get($site-colors, "cyan") solid;
+                }
+                .contact-link:hover {
+                    border-bottom: 3px map-get($site-colors, "navy") solid;
                 }
             }
         }
-    }
-    .all-reviews-link-div {
-        .all-reviews-link {
-            margin-right: 50px;
+        .book-button {
+            background-color: map-get($site-colors, "navy");
+            border-radius: 7px;
+            max-height: 28px;
+            text-align: center;
             text-decoration: none;
+            line-height: 28px;
             color: white;
-            font-size: 24px;
-        }
-    }
-}
-
-#carousel-title {
-    font-family: futura-pt, sans-serif;
-    font-weight: map-get($font-weights, "bold");
-    font-style: normal;
-    font-size: 80px;
-    color: map-get($site-colors, "navy");
-    width: 100%;
-    text-align: right;
-    padding-right: 1vw;
-    padding-top: 4vw;
-}
-
-.carousel-inner>.item {
-    height: 939px;
-}
-
-#steps-from-the-beach {
-    font-family: futura-pt, sans-serif;
-    font-style: normal;
-    width: 75%;
-    margin-top: 325px;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: 5%;
-    #steps-title {
-        font-weight: map-get($font-weights, "heavy");
-        color: map-get($site-colors, "navy");
-        border-bottom: 7px solid map-get($site-colors, "orange");
-        width: 100%;
-        display: block;
-        font-size: 60px;
-        text-align: right;
-        letter-spacing: 4px;
-    }
-    p {
-        font-weight: map-get($font-weights, "medium");
-        margin-top: 20px;
-        text-align: right;
-        font-size: 30px;
-        width: 90%;
-        margin-left: auto;
-        color: map-get($site-colors, "gray");
-    }
-}
-
-#room-for-everyone {
-    font-family: futura-pt, sans-serif;
-    font-style: normal;
-    width: 75%;
-    margin-top: 325px;
-    margin-bottom: 400px;
-    margin-right: auto;
-    margin-left: 5%;
-    #room-title {
-        font-weight: map-get($font-weights, "heavy");
-        color: map-get($site-colors, "navy");
-        border-bottom: 7px solid map-get($site-colors, "cyan");
-        width: 100%;
-        display: block;
-        font-size: 60px;
-        text-align: left;
-        letter-spacing: 4px;
-    }
-    p {
-        font-weight: map-get($font-weights, "medium");
-        margin-top: 20px;
-        text-align: left;
-        font-size: 30px;
-        width: 90%;
-        margin-right: auto;
-        color: map-get($site-colors, "gray");
-    }
-}
-
-#fully-equipped-kitchen {
-    font-family: futura-pt, sans-serif;
-    font-style: normal;
-    width: 85%;
-    margin-top: 550px;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: 5%;
-    #fully-title {
-        font-weight: map-get($font-weights, "heavy");
-        color: map-get($site-colors, "navy");
-        border-bottom: 7px solid map-get($site-colors, "navy");
-        width: 100%;
-        display: block;
-        font-size: 60px;
-        text-align: right;
-        letter-spacing: 4px;
-    }
-    p {
-        font-weight: map-get($font-weights, "medium");
-        margin-top: 20px;
-        text-align: right;
-        font-size: 30px;
-        width: 90%;
-        margin-left: auto;
-        color: map-get($site-colors, "gray");
-    }
-}
-
-#amenities {
-    font-family: futura-pt, sans-serif;
-    font-style: normal;
-    width: 100%;
-    h1 {
-        font-family: futura-pt, sans-serif;
-        font-style: normal;
-        font-weight: map-get($font-weights, "extra-bold");
-        font-size: 14vw;
-        color: map-get($site-colors, "orange");
-        letter-spacing: 30px;
-        text-align: center;
-        padding-top: 0;
-    }
-    #amenities-list {
-        background-color: map-get($site-colors, "navy");
-        color: white;
-        width: 100%;
-        font-size: 28px;
-        strong {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: map-get($font-weights, "heavy");
-            font-size: 40px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
             padding-left: 5px;
-            font-weight: map-get($font-weights, "medium");
-            line-height: 34px;
-            font-size: 22px;
+            padding-right: 5px;
+            margin-left: 30px;
+            position: fixed;
+            right: 23px;
+            top: 18px;
+            z-index: 1;
         }
-    }
-}
-
-footer {
-    height: 100px;
-    width: 100%;
-    background-color: map-get($site-colors, "navy");
-    margin-top: 177px;
-    align-items: center;
-    .footer-content {
-        align-items: center;
-        width: 100%;
-        text-align: center;
-        color: map-get($site-colors, "orange");
-        font-family: futura-pt, sans-serif;
-        font-weight: map-get($font-weights, "medium");
-        font-style: normal;
-        font-size: 20px;
-        line-height: 100px;
-        letter-spacing: 5px;
-        #contact-designers {
-            cursor: pointer;
-            color: white;
+        .book-button:hover {
+            background-color: #48a0aa;
         }
-        #contact-designers:hover {
-            color: map-get($site-colors, "orange");
-        }
-    }
-}
-
-#review-page {
-    background-image: url(assets/OceanTopView.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    background-attachment: fixed;
-}
-
-.review-nav {
-    font-family: futura-pt, sans-serif;
-    font-weight: map-get($font-weights, "heavy");
-    font-style: normal;
-    li {
-        font-size: 18pt;
-        margin-left: 66px;
-        .my-nav-link {
-            text-decoration: none;
-            color: map-get($site-colors, "navy");
-        }
-        .reviews-link:hover {
-            border-bottom: 3px map-get($site-colors, "orange") solid;
-        }
-        .photos-link:hover {
-            border-bottom: 3px map-get($site-colors, "cyan") solid;
-        }
-        .contact-link:hover {
-            border-bottom: 3px map-get($site-colors, "navy") solid;
-        }
-    }
-    label {
-        font-size: 18pt;
-        margin-left: 30px;
-        margin-right: 135px;
-        margin-top: 3px;
-        color: map-get($site-colors, "navy");
-    }
-    .book-button {
-        background-color: map-get($site-colors, "navy");
-        border-radius: 7px;
-        max-height: 28px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 28px;
-        color: white;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-left: 30px;
-        top: 2%;
-        right: 14%;
-        position: fixed;
-        z-index: 1;
-    }
-    .book-button:hover {
-        background-color: #48a0aa;
-    }
-}
-
-.review-container {
-    background-color: white;
-    width: 75%;
-    margin: auto;
-    min-height: 100vh;
-    .review-navigator {
-        width: 60%;
-        margin: auto;
-        text-align: center;
-        font-size: 33px;
-        padding-bottom: 75px;
-        span {
-            margin-left: 25px;
-            margin-right: 25px;
-        }
-        a {
-            text-decoration: none;
-        }
-    }
-    .review {
-        padding-bottom: 6%;
-        .review-header {
-            width: 637px;
-            border-bottom: 5px map-get($site-colors, "orange") solid;
-            h2 {
-                padding-top: 5%;
-                text-align: right;
+        .landing-title {
+            background-image: url("/static/assets/LandingPageLines.svg");
+            background-repeat: no-repeat;
+            width: 1505px;
+            height: 618px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .sea-prints-title {
+                text-align: center;
+                font-family: sirenne-text-mvb, serif;
+                font-weight: map-get($font-weights, "heavy");
+                font-style: normal;
+                font-size: 180pt;
+                color: white;
+                border-bottom: 7px white solid;
+                padding-bottom: 0px;
+                height: 285px;
+                margin-bottom: 0px;
+            }
+            .sea-prints-caption {
+                font-family: skolar-sans-latin-extended, sans-serif;
+                font-weight: map-get($font-weights, "regular");
+                font-style: normal;
+                font-size: 50px;
+                text-align: center;
+                color: white;
+                letter-spacing: 3px;
+            }
+            .cape-san-blas-caption {
+                font-family: futura-pt, sans-serif;
+                font-weight: map-get($font-weights, "heavy");
+                font-style: normal;
+                position: relative;
+                color: white;
+                font-size: 30px;
+                top: 12px;
+                left: 15px;
+                letter-spacing: 5px;
+                line-height: 35px;
             }
         }
-        h1 {
-            color: map-get($site-colors, "navy");
-            font-family: futura-pt, sans-serif;
-            font-weight: map-get($font-weights, "demi");
-            font-style: normal;
-            font-size: 50px;
+    }
+    
+    #review-section {
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "regular");
+        font-style: normal;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        color: white;
+        background-color: map-get($site-colors, "navy");
+        height: 265px;
+        .review-content {
+            width: 80%;
+            margin: auto;
+            .review-element {
+                width: 25%;
+                .rating-text {
+                    text-align: center;
+                    font-size: 20px;
+                }
+                .rating-stars {
+                    border-bottom: 5px solid white;
+                    margin-bottom: 10px;
+                    padding-bottom: 10px;
+                    img {
+                        margin-right: 5px;
+                    }
+                }
+            }
         }
-        h2 {
+        .all-reviews-link-div {
+            .all-reviews-link {
+                margin-right: 50px;
+                text-decoration: none;
+                color: white;
+                font-size: 24px;
+            }
+        }
+    }
+    
+    #carousel-title {
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "bold");
+        font-style: normal;
+        font-size: 80px;
+        color: map-get($site-colors, "navy");
+        width: 100%;
+        text-align: right;
+        padding-right: 1vw;
+        padding-top: 4vw;
+    }
+    
+    .carousel-inner>.item {
+        height: 939px;
+    }
+    
+    #steps-from-the-beach {
+        font-family: futura-pt, sans-serif;
+        font-style: normal;
+        width: 75%;
+        margin-top: 325px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: 5%;
+        #steps-title {
+            font-weight: map-get($font-weights, "heavy");
+            color: map-get($site-colors, "navy");
+            border-bottom: 7px solid map-get($site-colors, "orange");
+            width: 100%;
+            display: block;
+            font-size: 60px;
+            text-align: right;
+            letter-spacing: 4px;
+        }
+        p {
+            font-weight: map-get($font-weights, "medium");
+            margin-top: 20px;
+            text-align: right;
+            font-size: 30px;
+            width: 90%;
+            margin-left: auto;
             color: map-get($site-colors, "gray");
+        }
+    }
+    
+    #room-for-everyone {
+        font-family: futura-pt, sans-serif;
+        font-style: normal;
+        width: 75%;
+        margin-top: 325px;
+        margin-bottom: 400px;
+        margin-right: auto;
+        margin-left: 5%;
+        #room-title {
+            font-weight: map-get($font-weights, "heavy");
+            color: map-get($site-colors, "navy");
+            border-bottom: 7px solid map-get($site-colors, "cyan");
+            width: 100%;
+            display: block;
+            font-size: 60px;
+            text-align: left;
+            letter-spacing: 4px;
+        }
+        p {
+            font-weight: map-get($font-weights, "medium");
+            margin-top: 20px;
+            text-align: left;
+            font-size: 30px;
+            width: 90%;
+            margin-right: auto;
+            color: map-get($site-colors, "gray");
+        }
+    }
+    
+    #fully-equipped-kitchen {
+        font-family: futura-pt, sans-serif;
+        font-style: normal;
+        width: 85%;
+        margin-top: 550px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: 5%;
+        #fully-title {
+            font-weight: map-get($font-weights, "heavy");
+            color: map-get($site-colors, "navy");
+            border-bottom: 7px solid map-get($site-colors, "navy");
+            width: 100%;
+            display: block;
+            font-size: 60px;
+            text-align: right;
+            letter-spacing: 4px;
+        }
+        p {
+            font-weight: map-get($font-weights, "medium");
+            margin-top: 20px;
+            text-align: right;
+            font-size: 30px;
+            width: 90%;
+            margin-left: auto;
+            color: map-get($site-colors, "gray");
+        }
+    }
+    
+    #amenities {
+        font-family: futura-pt, sans-serif;
+        font-style: normal;
+        width: 100%;
+        h1 {
+            font-family: futura-pt, sans-serif;
+            font-style: normal;
+            font-weight: map-get($font-weights, "extra-bold");
+            font-size: 14vw;
+            color: map-get($site-colors, "orange");
+            letter-spacing: 30px;
+            text-align: center;
+            padding-top: 0;
+        }
+        #amenities-list {
+            background-color: map-get($site-colors, "navy");
+            color: white;
+            width: 100%;
+            font-size: 28px;
+            strong {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: map-get($font-weights, "heavy");
+                font-size: 40px;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            li {
+                padding-left: 5px;
+                font-weight: map-get($font-weights, "medium");
+                line-height: 34px;
+                font-size: 22px;
+            }
+        }
+    }
+    
+    footer {
+        height: 100px;
+        width: 100%;
+        background-color: map-get($site-colors, "navy");
+        margin-top: 177px;
+        align-items: center;
+        .footer-content {
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            color: map-get($site-colors, "orange");
             font-family: futura-pt, sans-serif;
             font-weight: map-get($font-weights, "medium");
             font-style: normal;
-            font-size: 25px;
+            font-size: 20px;
+            line-height: 100px;
+            letter-spacing: 5px;
+            #contact-designers {
+                cursor: pointer;
+                color: white;
+            }
+            #contact-designers:hover {
+                color: map-get($site-colors, "orange");
+            }
         }
-        p {
+    }
+    
+    #review-page {
+        background-image: url(assets/OceanTopView.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        background-attachment: fixed;
+    }
+    
+    .review-nav {
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "heavy");
+        font-style: normal;
+        li {
+            font-size: 18pt;
+            margin-left: 66px;
+            .my-nav-link {
+                text-decoration: none;
+                color: map-get($site-colors, "navy");
+            }
+            .reviews-link:hover {
+                border-bottom: 3px map-get($site-colors, "orange") solid;
+            }
+            .photos-link:hover {
+                border-bottom: 3px map-get($site-colors, "cyan") solid;
+            }
+            .contact-link:hover {
+                border-bottom: 3px map-get($site-colors, "navy") solid;
+            }
+        }
+        label {
+            font-size: 18pt;
+            margin-left: 30px;
+            margin-right: 135px;
+            margin-top: 3px;
             color: map-get($site-colors, "navy");
-            font-family: futura-pt, sans-serif;
-            font-weight: map-get($font-weights, "demi");
-            font-style: normal;
-            font-size: 27px;
-            width: 75%;
+        }
+        .book-button {
+            background-color: map-get($site-colors, "navy");
+            border-radius: 7px;
+            max-height: 28px;
+            text-align: center;
+            text-decoration: none;
+            line-height: 28px;
+            color: white;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-left: 30px;
+            top: 2%;
+            right: 14%;
+            position: fixed;
+            z-index: 1;
+        }
+        .book-button:hover {
+            background-color: #48a0aa;
         }
     }
-}
-
-#registrationContent {
-    min-width: 100%;
-    width: 100%;
-    max-width: 100%;
-    #logo-image {
-        height: 100vh;
-        display: block;
+    
+    .review-container {
+        background-color: white;
+        width: 75%;
+        margin: auto;
+        min-height: 100vh;
+        .review-navigator {
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            font-size: 33px;
+            padding-bottom: 75px;
+            span {
+                margin-left: 25px;
+                margin-right: 25px;
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+        .review {
+            padding-bottom: 6%;
+            .review-header {
+                width: 637px;
+                border-bottom: 5px map-get($site-colors, "orange") solid;
+                h2 {
+                    padding-top: 5%;
+                    text-align: right;
+                }
+            }
+            h1 {
+                color: map-get($site-colors, "navy");
+                font-family: futura-pt, sans-serif;
+                font-weight: map-get($font-weights, "demi");
+                font-style: normal;
+                font-size: 50px;
+            }
+            h2 {
+                color: map-get($site-colors, "gray");
+                font-family: futura-pt, sans-serif;
+                font-weight: map-get($font-weights, "medium");
+                font-style: normal;
+                font-size: 25px;
+            }
+            p {
+                color: map-get($site-colors, "navy");
+                font-family: futura-pt, sans-serif;
+                font-weight: map-get($font-weights, "demi");
+                font-style: normal;
+                font-size: 27px;
+                width: 75%;
+            }
+        }
     }
-
+    
+    #registrationContent {
+        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+        #logo-image {
+            height: 100vh;
+            display: block;
+        }
+    }
+    
+    #dateSectionSubText {
+        font-family: futura-pt-bold, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        width: 76%;
+        margin: auto;
+        text-align: right;
+        margin-top: 10px;
+    }
+    
     .info_section {
         background: url(assets/RegistrationBackground-02.svg);
         background-repeat: no-repeat;
         background-size: 100%;
         margin: 0;
-        padding-left: 0;
+        padding: 0;
         border: 0;
+    }
     
-        #dateSection {
-            width: 76%;
-            margin: auto;
-            margin-top: 15%;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-            background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
-            #the-calendar {
-                width: 50%;
+    #dateSection {
+        font-family: futura-pt-bold, sans-serif;
+        font-style: normal;
+        width: 76%;
+        margin: auto;
+        margin-top: 15%;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+        background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+        #the-calendar {
+            width: 50%;
+        }
+        #the-info {
+            width: 45%;
+            #top {
+                padding-bottom: 10px;
+                border-bottom: 5px solid black;
+                strong {
+                    font-size: 34px;
+                    font-weight: 600;
+                }
+                span {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    font-size: 22px;
+                    color: map-get($site-colors, "cyan");
+                    font-weight: bold;
+                }
             }
-            #the-info {
-                width: 45%;
-                #top {
-                    padding-bottom: 10px;
-                    border-bottom: 5px solid black;
-                    strong {
-                        font-size: 34px;
-                    }
+            #middle {
+                border-bottom: 5px solid black;
+                padding-left: 15px;
+                padding-right: 15px;
+                strong {
+                    font-weight: 500;
+                    font-size: 34px;
+                    font-weight: normal;
+                }
+                span {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    font-size: 22px;
+                    color: map-get($site-colors, "cyan");
+                    font-weight: bold;
+                }
+                div {
+                    margin-top: 25px;
+                    margin-bottom: 25px;
+                }
+                div:first-of-type {
+                    margin-top: 45px;
+                }
+                div:last-of-type {
+                    margin-bottom: 45px;
+                }
+            }
+            #bottom {
+                margin-top: 35px;
+                strong {
+                    font-size: 34px;
+                    font-weight: 600;
+                }
+                span {
+                    font-weight: 600;
+                    font-size: 40px;
+                    color: map-get($site-colors, "orange");
+                    font-weight: bold;
                 }
             }
         }
+    }
 
-        #contract-section {
-            margin-top: 50%;
+    #contract-section {
+        margin-top: 50%;
 
-            #pdf-viewer {
-                width: 60%;
-                height: 90vh;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;           
-            }
+        #pdf-viewer {
+            width: 60%;
+            height: 90vh;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;           
         }
     }
-}

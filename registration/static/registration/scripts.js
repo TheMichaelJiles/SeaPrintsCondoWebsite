@@ -168,8 +168,6 @@ function onCellClick(cell) {
     if (selectedDate >= today) {
         assignCheckinAndCheckoutDates(selectedDate, cell);
     }
-
-    displayTestLabel();
 }
 
 /**
@@ -189,6 +187,7 @@ function assignCheckinAndCheckoutDates(selectedDate, cell) {
         } else {
             setCheckoutDate(checkinDate);
             setCheckinDate(selectedDate);
+            showInformation(getAvgNightlyCost(), getNumberDays());
         }
         highlightStaySpan();
     } else {
@@ -197,9 +196,31 @@ function assignCheckinAndCheckoutDates(selectedDate, cell) {
             alert('Dates conflict with another stay, please select a new range.');
         } else {
             setCheckoutDate(selectedDate);
+            showInformation(getAvgNightlyCost(), getNumberDays());
         }
         highlightStaySpan();
     }
+}
+
+function getAvgNightlyCost() {
+    let totalCost = 0;
+    for (var d = new Date(checkinDate); d < checkoutDate; d.setDate(d.getDate() + 1)) {
+        let rate = defaultPricePerNight;
+        for (let season of seasons) {
+            let startOfSeason = new Date(season.start);
+            let endOfSeason = new Date(season.end);
+            if (startOfSeason <= d && d <= endOfSeason) {
+                rate = season.price;
+            }
+        }
+        console.log("Date: " + d + " - Price: " + rate);
+        totalCost += rate;
+    }
+    return totalCost / getNumberDays();
+}
+
+function getNumberDays() {
+    return checkoutDate.getUTCDate() - checkinDate.getUTCDate();
 }
 
 /**
@@ -209,6 +230,7 @@ function assignCheckinAndCheckoutDates(selectedDate, cell) {
 function resetCalendar() {
     checkinDate = null;
     checkoutDate = null;
+    hideInformation();
     highlightStaySpan();
 }
 
@@ -219,9 +241,7 @@ function resetCalendar() {
  */
 function takenDatesBetween(startDate, endDate) {
     for (let taken of takenDates) {
-        console.log(taken);
         if (startDate <= taken && taken <= endDate) {
-            console.log(taken + " was in range");
             return true;
         }
     }
@@ -306,13 +326,3 @@ $(document).ready(function() {
     });
     init();
 });
-
-/**
- * Displays a test label, this is for simple debugging
- */
-function displayTestLabel() {
-    if (checkinDate != null && checkoutDate != null) {
-        label = document.getElementById('testLabel');
-        label.innerHTML = "Checkin Date: " + checkinDate.toUTCString() + "\n" + "Checkout Date: " + checkoutDate.toUTCString();
-    }
-}

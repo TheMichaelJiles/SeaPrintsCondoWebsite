@@ -18,8 +18,32 @@
                         <strong id="nights-text">Select Dates</strong>
                         <span id="price-per-night">$150/night</span>
                     </div>
+                    <div id="middle">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong id="price-text">5 x 150:</strong>
+                            <span id="price-total-text">$750.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong id="cleaning-fee">Cleaning Fee:</strong>
+                            <span id="cleaning-total-fee">$72.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong id="tax">Tax:</strong>
+                            <span id="tax-total-fee">12%</span>
+                        </div>
+                    </div>
+                    <div id="bottom">
+                        <div class="d-flex justify-content-between align-items-end">
+                            <strong id="total" class="align-self-center">Total:</strong>
+                            <span id="total-fee">$839.95</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <p id="dateSectionSubText">
+                ** $500 due at time of booking to hold dates **<br>
+                Balance due 30 days prior to check in date
+            </p>
             <div id="contract-section">
                 <iframe id="pdf-viewer" frameborder="0" scrolling="no" src="https://drive.google.com/file/d/1Zgf-shhZRz_xCA34ORFTz7_b7biMiPcH/preview"></iframe>
             </div>
@@ -29,7 +53,6 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="{% static 'registration/date-info-picker.js' %}"></script>
 <script src="{% static 'registration/scripts.js' %}"></script>
-<script src="{% static 'registration/auto-complete.js' %}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqcKSSgZhv3QPhbF-eyy_fpCMlirWIQVE&libraries=places&callback=initAutocomplete" async defer></script>
 {% endblock %}

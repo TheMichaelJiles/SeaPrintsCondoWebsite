@@ -543,16 +543,28 @@ footer .footer-content #contact-designers:hover {
   display: block;
 }
 
-#registrationContent .info_section {
+#dateSectionSubText {
+  font-family: futura-pt-bold, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  width: 76%;
+  margin: auto;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.info_section {
   background: url(assets/RegistrationBackground-02.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   margin: 0;
-  padding-left: 0;
+  padding: 0;
   border: 0;
 }
 
-#registrationContent .info_section #dateSection {
+#dateSection {
+  font-family: futura-pt-bold, sans-serif;
+  font-style: normal;
   width: 76%;
   margin: auto;
   margin-top: 15%;
@@ -563,28 +575,86 @@ footer .footer-content #contact-designers:hover {
   background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
 }
 
-#registrationContent .info_section #dateSection #the-calendar {
+#dateSection #the-calendar {
   width: 50%;
 }
 
-#registrationContent .info_section #dateSection #the-info {
+#dateSection #the-info {
   width: 45%;
 }
 
-#registrationContent .info_section #dateSection #the-info #top {
+#dateSection #the-info #top {
   padding-bottom: 10px;
   border-bottom: 5px solid black;
 }
 
-#registrationContent .info_section #dateSection #the-info #top strong {
+#dateSection #the-info #top strong {
   font-size: 34px;
+  font-weight: 600;
 }
 
-#registrationContent .info_section #contract-section {
+#dateSection #the-info #top span {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: #5ECBD8;
+  font-weight: bold;
+}
+
+#dateSection #the-info #middle {
+  border-bottom: 5px solid black;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#dateSection #the-info #middle strong {
+  font-weight: 500;
+  font-size: 34px;
+  font-weight: normal;
+}
+
+#dateSection #the-info #middle span {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: #5ECBD8;
+  font-weight: bold;
+}
+
+#dateSection #the-info #middle div {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#dateSection #the-info #middle div:first-of-type {
+  margin-top: 45px;
+}
+
+#dateSection #the-info #middle div:last-of-type {
+  margin-bottom: 45px;
+}
+
+#dateSection #the-info #bottom {
+  margin-top: 35px;
+}
+
+#dateSection #the-info #bottom strong {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+#dateSection #the-info #bottom span {
+  font-weight: 600;
+  font-size: 40px;
+  color: #F5AB43;
+  font-weight: bold;
+}
+
+#contract-section {
   margin-top: 50%;
 }
 
-#registrationContent .info_section #contract-section #pdf-viewer {
+#contract-section #pdf-viewer {
   width: 60%;
   height: 90vh;
   display: block;

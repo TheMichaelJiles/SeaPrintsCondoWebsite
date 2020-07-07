@@ -14,11 +14,14 @@ def get_rates():
             'price': obj.price_per_night, 
         }
         seasons.append(obj_dict)
+    global_obj = home.models.Globals.objects.get(pk=1)
     return {
         'default': {
-            'price': home.models.Globals.objects.get(pk=1).default_price_per_night,
+            'price': global_obj.default_price_per_night,
         },
         'seasons': seasons,
+        'cleaning_fee': global_obj.cleaning_fee,
+        'tax_rate': global_obj.tax_rate_percent,
     }
 
 def get_taken_dates():
