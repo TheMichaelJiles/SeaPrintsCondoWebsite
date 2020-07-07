@@ -103,10 +103,10 @@
   </a>
 </div>
 
-    <div id="amenities" class="container-fluid p-0">
-        <div class="row">
-            <div id="amenities-column" class="col-md-5 left-column">
-                <div id="amenities-list" class="container">
+    <div id="amenities">
+        <h1>AMENITIES</h1>
+
+                <div id="amenities-list">
                     <div class="row">
                         <div class="col general-column">
                             <strong>General:</strong>
@@ -123,6 +123,10 @@
                                 <li>Heater</li>
                                 <li>Parking</li>
                                 <li>Deadbolt Lock</li>
+                            </ul>
+                        </div>
+                        <div class="col general-column">
+                            <ul>
                                 <li>Smoke Detector</li>
                                 <li>Fire Extinguisher</li>
                                 <li>Carbon-monoxide Detector</li>
@@ -146,11 +150,13 @@
                                 <li>Shower</li>
                             </ul>
 
+                        <div class="col bathroom-kitchen-column">
                             Bathroom 2:
                             <ul>
                                 <li>Toilet</li>
                                 <li>Combination Tub/Shower</li>
                             </ul>
+                        </div>
 
                             <strong>Kitchen:</strong>
                             <ul>
@@ -172,11 +178,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col right-column" id="amenities-block">
-                <img src="{% static 'assets/Amenities.svg' %}" style="height: 900px;">
-            </div>
-        </div>
     </div>
 
 <footer id="contactSection">

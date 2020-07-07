@@ -329,28 +329,25 @@ body {
 #amenities {
   font-family: futura-pt, sans-serif;
   font-style: normal;
-  margin-top: 75px;
-  margin-top: 177px;
   width: 100%;
 }
 
-#amenities #amenities-block {
-  margin-left: 0;
-  margin-right: auto;
+#amenities h1 {
+  font-family: futura-pt, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14vw;
+  color: #F5AB43;
+  letter-spacing: 30px;
+  text-align: center;
+  padding-top: 0;
 }
 
 #amenities #amenities-list {
   background-color: #00031C;
   color: white;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  padding-left: 8%;
-  padding-right: 5%;
-  border-top-right-radius: 55px;
-  border-bottom-right-radius: 55px;
+  width: 100%;
   font-size: 28px;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 #amenities #amenities-list strong {
