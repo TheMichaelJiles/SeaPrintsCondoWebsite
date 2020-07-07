@@ -4,10 +4,10 @@
 {% block content %}
 <div id="registrationContent" class="container m-0 p-0">
     <div class="row">
-        <div class="col-md-auto img-column">
+        <div class="col-md-auto img-column" style="padding: 0;">
             <img src="{% static 'assets/LogoSoon.jpg' %}" alt="Logo Image" style="height: 100vh; display: block;">
         </div>
-        <div class="col content-column">
+        <div class="col content-column info_section">
             <div id="dateSection" class="d-flex justify-content-between align-items-center">
                 <div id="the-calendar" class="align-self-start">
                     {% include 'registration/calendar.html' %}

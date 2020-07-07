@@ -9,6 +9,12 @@
   border: none;
   font-size: 24px;
   font-weight: bold;
+  background: transparent;
+  outline: none;
+}
+
+#calendarContainer #previous:hover {
+  color: #F5AB43;
 }
 
 #calendarContainer #next {
@@ -17,6 +23,12 @@
   font-weight: bold;
   margin-left: 10px;
   margin-right: 10px;
+  background: transparent;
+  outline: none;
+}
+
+#calendarContainer #next:hover {
+  color: #F5AB43;
 }
 
 #calendarContainer #jumpForm {
@@ -37,6 +49,7 @@
   font-family: futura-pt, sans-serif;
   font-size: 24px;
   text-align: center;
+  border: none;
 }
 
 #calendarContainer #calendar #calendar-body tr {
@@ -44,6 +57,11 @@
   text-align: center;
   font-size: 24px;
   margin: 0;
+  border: none;
+}
+
+#calendarContainer #calendar #calendar-body td {
+  border: none;
 }
 
 #calendarContainer #calendar #calendar-body .cell {
@@ -52,26 +70,25 @@
 }
 
 #calendarContainer #calendar #calendar-body .cell-selected {
-  background-color: lightseagreen;
+  background-color: #5ECBD8;
   margin: 0;
 }
 
 #calendarContainer #calendar #calendar-body .cell-selected:hover {
   cursor: pointer;
-  background-color: lightseagreen;
+  background-color: #5ECBD8;
   color: white;
   margin: 0;
 }
 
 #calendarContainer #calendar #calendar-body .cell:hover {
   cursor: pointer;
-  background-color: lightseagreen;
+  background-color: #5ECBD8;
   margin: 0;
 }
 
 #calendarContainer #calendar #calendar-body .cell-disabled {
   color: gray;
-  cursor: not-allowed;
   margin: 0;
 }
 /*# sourceMappingURL=style.css.map */
