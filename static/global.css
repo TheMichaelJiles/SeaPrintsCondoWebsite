@@ -548,6 +548,15 @@ footer .footer-content #contact-designers:hover {
   margin-top: 10px;
 }
 
+.info_section {
+  background: url(assets/RegistrationBackground-02.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 #dateSection {
   font-family: futura-pt-bold, sans-serif;
   font-style: normal;
@@ -558,6 +567,7 @@ footer .footer-content #contact-designers:hover {
   padding: 25px;
   -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
           box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+  background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
 }
 
 #dateSection #the-calendar {

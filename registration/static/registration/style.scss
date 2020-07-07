@@ -1,14 +1,22 @@
+$site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
+$font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
+
 #calendarContainer {
     #monthAndYear {
         font-family: futura-pt-bold, sans-serif;
         font-style: normal;
-        font-weight: 700;
+        font-weight: map-get($font-weights, "heavy");
         font-size: 32pt;
     }
     #previous {
         border: none;
         font-size: 24px;
         font-weight: bold;
+        background: transparent;
+        outline: none;
+    }
+    #previous:hover {
+        color: map-get($site-colors, "orange");
     }
     #next {
         border: none;
@@ -16,6 +24,11 @@
         font-weight: bold;
         margin-left: 10px;
         margin-right: 10px;
+        background: transparent;
+        outline: none;
+    }
+    #next:hover {
+        color: map-get($site-colors, "orange");
     }
     #jumpForm {
         width: 100%;
@@ -33,6 +46,7 @@
             font-family: futura-pt, sans-serif;
             font-size: 24px;
             text-align: center;
+            border: none;
         }
         #calendar-body {
             tr {
@@ -40,29 +54,32 @@
                 text-align: center;
                 font-size: 24px;
                 margin: 0;
+                border: none;
+            }
+            td {
+                border: none;
             }
             .cell {
                 background-color: transparent;
                 margin: 0;
             }
             .cell-selected {
-                background-color: lightseagreen;
+                background-color: map-get($site-colors, "cyan");
                 margin: 0;
             }
             .cell-selected:hover {
                 cursor: pointer;
-                background-color: lightseagreen;
+                background-color: map-get($site-colors, "cyan");
                 color: white;
                 margin: 0;
             }
             .cell:hover {
                 cursor: pointer;
-                background-color: lightseagreen;
+                background-color: map-get($site-colors, "cyan");
                 margin: 0;
             }
             .cell-disabled {
                 color: gray;
-                cursor: not-allowed;
                 margin: 0;
             }
         }
