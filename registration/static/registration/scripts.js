@@ -169,7 +169,12 @@ function onCellClick(cell) {
         assignCheckinAndCheckoutDates(selectedDate, cell);
     }
 
-    setContractDisplay(checkinDate != null && checkoutDate != null);
+    if (checkinDate != null && checkoutDate != null) {
+        setContractDisplay(true);
+    }
+    if (checkoutDate == null) {
+        hideInformation();
+    }
 }
 
 /**
