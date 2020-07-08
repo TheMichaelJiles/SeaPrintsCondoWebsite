@@ -168,6 +168,8 @@ function onCellClick(cell) {
     if (selectedDate >= today) {
         assignCheckinAndCheckoutDates(selectedDate, cell);
     }
+
+    setContractDisplay(checkinDate != null && checkoutDate != null);
     if (checkoutDate == null) {
         hideInformation();
     }

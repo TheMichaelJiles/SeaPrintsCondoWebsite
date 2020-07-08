@@ -146,12 +146,10 @@ class Stay(models.Model):
 
     def _set_calculated_total_price(self):
         num_days = (self.out_date - self.in_date).days
-        print(f'Num Days: {num_days}')
         self.total_price = 0
         for x in range(0, num_days):
             current_date = self.in_date + datetime.timedelta(days=x)
             price_for_day = self._get_rate(current_date)
-            print(f'Current Date: {current_date} - Price: {price_for_day}')
             self.total_price += price_for_day
         global_obj = Globals.objects.get(pk=1)
         self.total_price += global_obj.cleaning_fee

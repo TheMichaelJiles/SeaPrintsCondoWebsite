@@ -543,6 +543,30 @@ footer .footer-content #contact-designers:hover {
   display: block;
 }
 
+.registration-nav {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.registration-nav li {
+  font-size: 18pt;
+  margin-right: 1vw;
+}
+
+.registration-nav li .my-nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.registration-nav li .my-nav-link:hover {
+  border-bottom: 3px white solid;
+}
+
+.registration-link {
+  color: white;
+}
+
 #dateSectionSubText {
   font-family: futura-pt-bold, sans-serif;
   font-style: normal;
@@ -558,12 +582,13 @@ footer .footer-content #contact-designers:hover {
 }
 
 .info_section {
-  background: url(assets/RegistrationBackground-02.svg);
+  background: url(assets/FullRegistrationBackground-03.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   margin: 0;
   padding: 0;
   border: 0;
+  min-height: 100vh;
 }
 
 #dateSection {
@@ -571,7 +596,7 @@ footer .footer-content #contact-designers:hover {
   font-style: normal;
   width: 76%;
   margin: auto;
-  margin-top: 15%;
+  margin-top: 10%;
   border-radius: 15px;
   padding: 25px;
   -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
@@ -655,18 +680,45 @@ footer .footer-content #contact-designers:hover {
 }
 
 #contract-section {
-  margin-top: 50%;
+  margin-top: 31%;
+  margin-bottom: 5%;
+}
+
+#contract-section h2 {
+  text-align: center;
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: none;
 }
 
 #contract-section #pdf-viewer {
   width: 60%;
-  height: 90vh;
+  height: 80vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
   -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
           box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-  margin-bottom: 50px;
+  margin-bottom: 2vh;
+  overflow: scroll;
+}
+
+#contract-section p {
+  text-align: center;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: none;
+  color: #444444;
+  font-size: 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+#contract-section .form-check-label {
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: none;
+  font-size: 25px;
 }
 
 #form-section {
@@ -676,17 +728,17 @@ footer .footer-content #contact-designers:hover {
   border-radius: 15px;
   width: 76%;
   margin: auto;
+  margin-top: 15%;
   padding: 25px;
   -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
           box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
   background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
-  margin-top: 25%;
-  margin-bottom: 15%;
+  margin-bottom: 6%;
 }
 
 #form-section #submit-id-submit {
-  background-color: #F5AB43;
-  color: #00031C;
+  background-color: #00031C;
+  color: white;
   border: none;
   margin: auto;
   width: 20%;
@@ -694,6 +746,6 @@ footer .footer-content #contact-designers:hover {
 }
 
 #form-section #submit-id-submit:hover {
-  color: white;
+  background-color: #5ECBD8;
 }
 /*# sourceMappingURL=global.css.map */

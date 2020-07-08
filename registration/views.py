@@ -17,7 +17,14 @@ def approve_stay(request, staypk):
     return redirect(reverse('admin:registration_stay_changelist'))
 
 def register(request):
-    return render(request, 'registration/registration.html', {
-        'form': registration_forms.CombinedStayAddressForm(),
-        'helper': registration_forms.CombinedFormHelper()
-    })
+    if request.method == 'POST':
+        register_result = utils.register_unapproved_stay(request.POST)
+        if register_result['success']:
+            result = redirect(reverse('landing'))
+        # else redirect back to the same page saying an error occurred.
+    else:
+        result = render(request, 'registration/registration.html', {
+            'form': registration_forms.CombinedStayAddressForm(),
+            'helper': registration_forms.CombinedFormHelper()
+        })
+    return result

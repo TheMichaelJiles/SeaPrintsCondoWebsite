@@ -23,7 +23,9 @@
 {% endblock %}
 {% endif %}
 
-{% block content %}<div id="content-main">
+{% block content %}
+{% block approve_form %}{% endblock %}
+<div id="content-main">
 {% block object-tools %}
 {% if change %}{% if not is_popup %}
   <ul class="object-tools">
@@ -33,8 +35,6 @@
   </ul>
 {% endif %}{% endif %}
 {% endblock %}
-
-{% block approve_form %}{% endblock %}
 
 <form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.model_name }}_form" novalidate>{% csrf_token %}{% block form_top %}{% endblock %}
 <div>

@@ -21,6 +21,8 @@ class StayForm(forms.ModelForm):
     in_date = forms.DateField(widget=forms.HiddenInput())
     out_date = forms.DateField(widget=forms.HiddenInput())
     phone_contact = PhoneNumberField(widget=PhoneNumberPrefixWidget())
+    age = forms.IntegerField(min_value=25)
+    number_of_guests = forms.IntegerField(min_value=1)
 
 class CombinedStayAddressForm(forms.Form):
     form_classes = [StayForm, AddressForm]

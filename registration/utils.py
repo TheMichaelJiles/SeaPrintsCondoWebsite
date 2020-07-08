@@ -17,6 +17,7 @@ def register_unapproved_stay(postdata):
     containing the list of error messages.
     '''
     name = postdata['name'].strip()
+    age = int(postdata['age'].strip())
     phone = postdata['phone_contact_0'] + postdata['phone_contact_1'].strip()
     email = postdata['email_contact'].strip()
     num_guests = int(postdata['number_of_guests'].strip())
@@ -42,7 +43,8 @@ def register_unapproved_stay(postdata):
         new_address.save()
 
         new_stay = Stay(
-            name=name, 
+            name=name,
+            age=age,
             in_date=in_date, 
             out_date=out_date, 
             phone_contact=phone, 
@@ -52,6 +54,7 @@ def register_unapproved_stay(postdata):
             additional_questions_or_concerns=additional)
         new_stay.full_clean()
         new_stay.save()
+
 
         result = {'success': True}
     except ValidationError as e:

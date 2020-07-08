@@ -473,6 +473,27 @@
         }
     }
     
+    .registration-nav {
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "heavy");
+        font-style: normal;
+        li {
+            font-size: 18pt;
+            margin-right: 1vw;
+            .my-nav-link {
+                text-decoration: none;
+                color: white;
+            }
+            .my-nav-link:hover {
+                border-bottom: 3px white solid;
+            }
+        }
+    }
+    
+    .registration-link {
+        color: white;
+    }
+    
     #dateSectionSubText {
         font-family: futura-pt-bold, sans-serif;
         font-style: normal;
@@ -488,12 +509,13 @@
     }
     
     .info_section {
-        background: url(assets/RegistrationBackground-02.svg);
+        background: url(assets/FullRegistrationBackground-03.svg);
         background-repeat: no-repeat;
         background-size: 100%;
         margin: 0;
         padding: 0;
         border: 0;
+        min-height: 100vh;
     }
     
     #dateSection {
@@ -501,7 +523,7 @@
         font-style: normal;
         width: 76%;
         margin: auto;
-        margin-top: 15%;
+        margin-top: 10%;
         border-radius: 15px;
         padding: 25px;
         box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
@@ -570,15 +592,39 @@
     }
     
     #contract-section {
-        margin-top: 50%;
+        margin-top: 31%;
+        margin-bottom: 5%;
+        h2 {
+            text-align: center;
+            font-family: futura-pt, sans-serif;
+            font-weight: map-get($font-weights, "demi");
+            font-style: none;
+        }
         #pdf-viewer {
             width: 60%;
-            height: 90vh;
+            height: 80vh;
             display: block;
             margin-left: auto;
             margin-right: auto;
             box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-            margin-bottom: 50px;
+            margin-bottom: 2vh;
+            overflow: scroll;
+        }
+        p {
+            text-align: center;
+            font-family: futura-pt, sans-serif;
+            font-weight: map-get($font-weights, "regular");
+            font-style: none;
+            color: map-get($site-colors, "gray");
+            font-size: 20px;
+            width: 60%;
+            margin: 0 auto;
+        }
+        .form-check-label {
+            font-family: futura-pt, sans-serif;
+            font-weight: map-get($font-weights, "demi");
+            font-style: none;
+            font-size: 25px;
         }
     }
     
@@ -589,20 +635,20 @@
         border-radius: 15px;
         width: 76%;
         margin: auto;
+        margin-top: 15%;
         padding: 25px;
         box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
         background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
-        margin-top: 25%;
-        margin-bottom: 15%;
+        margin-bottom: 6%;
         #submit-id-submit {
-            background-color: map-get($site-colors, "orange");
-            color: map-get($site-colors, "navy");
+            background-color: map-get($site-colors, "navy");
+            color: white;
             border: none;
             margin: auto;
             width: 20%;
             margin-top: 10px;
         }
         #submit-id-submit:hover {
-            color: white;
+            background-color: map-get($site-colors, "cyan");
         }
     }
