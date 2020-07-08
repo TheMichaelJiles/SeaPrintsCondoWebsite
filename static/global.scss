@@ -472,6 +472,26 @@
             display: block;
         }
     }
+
+    .registration-nav {
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "heavy");
+        font-style: normal;
+        li {
+            font-size: 18pt;
+            margin-right: 1vw;
+            .my-nav-link {
+                text-decoration: none;
+                color: white;
+            }
+            .my-nav-link:hover {
+                border-bottom: 3px white solid;
+            }
+        }
+    }
+    .registration-link {
+        color: white;
+    }
     
     #dateSectionSubText {
         font-family: futura-pt-bold, sans-serif;
@@ -501,7 +521,7 @@
         font-style: normal;
         width: 76%;
         margin: auto;
-        margin-top: 15%;
+        margin-top: 10%;
         border-radius: 15px;
         padding: 25px;
         box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32); 
@@ -570,8 +590,8 @@
     }
     
     #contract-section {
-        margin-top: 30%;
-        margin-bottom: 10%;
+        margin-top: 31%;
+        margin-bottom: 15%;
         h2 {
             text-align: center;
             font-family: futura-pt, sans-serif;
@@ -618,16 +638,16 @@
         padding: 25px;
         box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
         background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
-        margin-bottom: 15%;
+        margin-bottom: 6%;
         #submit-id-submit {
-            background-color: map-get($site-colors, "orange");
-            color: map-get($site-colors, "navy");
+            background-color: map-get($site-colors, "navy");
+            color: white;
             border: none;
             margin: auto;
             width: 20%;
             margin-top: 10px;
         }
         #submit-id-submit:hover {
-            color: white;
+            background-color:  map-get($site-colors, "cyan");
         }
     }

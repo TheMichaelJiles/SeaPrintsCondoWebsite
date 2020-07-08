@@ -20,7 +20,7 @@ class StayForm(forms.ModelForm):
 
     in_date = forms.DateField(widget=forms.HiddenInput())
     out_date = forms.DateField(widget=forms.HiddenInput())
-    phone_contact = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='United States'))
+    phone_contact = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='United States +1'))
 
 class CombinedStayAddressForm(forms.Form):
     form_classes = [StayForm, AddressForm]
