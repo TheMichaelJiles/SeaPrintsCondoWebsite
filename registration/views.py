@@ -18,6 +18,6 @@ def approve_stay(request, staypk):
 
 def register(request):
     return render(request, 'registration/registration.html', {
-        'form': registration_forms.StayForm(),
-        'address_form': registration_forms.AddressForm(),
+        'form': registration_forms.CombinedStayAddressForm(),
+        'helper': registration_forms.CombinedFormHelper()
     })
