@@ -170,9 +170,6 @@ function onCellClick(cell) {
     }
 
     setContractDisplay(checkinDate != null && checkoutDate != null);
-    if (checkoutDate == null) {
-        hideInformation();
-    }
 }
 
 /**
@@ -221,7 +218,6 @@ function getAvgNightlyCost() {
         totalCost += rate;
     }
     let numDays = getNumberDays();
-    console.log(numDays);
     return totalCost / numDays;
 }
 
