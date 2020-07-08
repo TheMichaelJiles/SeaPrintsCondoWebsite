@@ -551,6 +551,10 @@ footer .footer-content #contact-designers:hover {
   margin: auto;
   text-align: right;
   margin-top: 10px;
+  color: white;
+  text-align: center;
+  float: right;
+  padding-left: 14vw;
 }
 
 .info_section {
@@ -585,7 +589,7 @@ footer .footer-content #contact-designers:hover {
 
 #dateSection #the-info #top {
   padding-bottom: 10px;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid #5ECBD8;
 }
 
 #dateSection #the-info #top strong {
@@ -594,21 +598,21 @@ footer .footer-content #contact-designers:hover {
 }
 
 #dateSection #the-info #top span {
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 5px;
   font-size: 22px;
-  color: #5ECBD8;
+  color: #444444;
   font-weight: bold;
 }
 
 #dateSection #the-info #middle {
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid #5ECBD8;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 #dateSection #the-info #middle strong {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 34px;
   font-weight: normal;
 }
@@ -617,7 +621,7 @@ footer .footer-content #contact-designers:hover {
   font-weight: 500;
   margin-bottom: 5px;
   font-size: 22px;
-  color: #5ECBD8;
+  color: #444444;
   font-weight: bold;
 }
 
@@ -660,5 +664,8 @@ footer .footer-content #contact-designers:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+  margin-bottom: 50px;
 }
 /*# sourceMappingURL=global.css.map */

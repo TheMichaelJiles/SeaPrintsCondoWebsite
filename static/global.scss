@@ -481,6 +481,10 @@
         margin: auto;
         text-align: right;
         margin-top: 10px;
+        color: white;
+        text-align: center;
+        float: right;
+        padding-left: 14vw;
     }
     
     .info_section {
@@ -509,25 +513,25 @@
             width: 45%;
             #top {
                 padding-bottom: 10px;
-                border-bottom: 5px solid black;
+                border-bottom: 5px solid map-get($site-colors, "cyan");
                 strong {
                     font-size: 34px;
-                    font-weight: 600;
+                    font-weight: map-get($font-weights, "demi");
                 }
                 span {
-                    font-weight: 500;
+                    font-weight: map-get($font-weights, "regular");
                     margin-bottom: 5px;
                     font-size: 22px;
-                    color: map-get($site-colors, "cyan");
+                    color: map-get($site-colors, "gray");
                     font-weight: bold;
                 }
             }
             #middle {
-                border-bottom: 5px solid black;
+                border-bottom: 5px solid map-get($site-colors, "cyan");
                 padding-left: 15px;
                 padding-right: 15px;
                 strong {
-                    font-weight: 500;
+                    font-weight: map-get($font-weights, "regular");
                     font-size: 34px;
                     font-weight: normal;
                 }
@@ -535,7 +539,7 @@
                     font-weight: 500;
                     margin-bottom: 5px;
                     font-size: 22px;
-                    color: map-get($site-colors, "cyan");
+                    color: map-get($site-colors, "gray");
                     font-weight: bold;
                 }
                 div {
@@ -573,6 +577,8 @@
             height: 90vh;
             display: block;
             margin-left: auto;
-            margin-right: auto;           
+            margin-right: auto;
+            box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+            margin-bottom: 50px;
         }
     }
