@@ -488,7 +488,7 @@
     }
     
     .info_section {
-        background: url(assets/RegistrationBackground-02.svg);
+        background: url(assets/FullRegistrationBackground-03.svg);
         background-repeat: no-repeat;
         background-size: 100%;
         margin: 0;
@@ -504,7 +504,7 @@
         margin-top: 15%;
         border-radius: 15px;
         padding: 25px;
-        box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+        box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32); 
         background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
         #the-calendar {
             width: 50%;
@@ -570,15 +570,41 @@
     }
 
     #contract-section {
-        margin-top: 50%;
+        margin-top: 30%;
+        margin-bottom: 30%;
+        h2 {
+            text-align: center;
+            font-family: futura-pt, sans-serif;
+            font-weight: map-get($font-weights, "demi");
+            font-style: none;
+        }
 
         #pdf-viewer {
             width: 60%;
-            height: 90vh;
+            height: 80vh;
             display: block;
             margin-left: auto;
             margin-right: auto;
             box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-            margin-bottom: 50px;
+            margin-bottom: 2vh;
+            overflow: scroll;
+        }
+
+        p {
+            text-align: center;
+            font-family: futura-pt, sans-serif;
+            font-weight: map-get($font-weights, "regular");
+            font-style: none;
+            color: map-get($site-colors, "gray");
+            font-size: 20px;
+            width: 60%;
+            margin:0 auto;
+        }
+
+        .form-check-label {
+            font-family: futura-pt, sans-serif;
+            font-weight: map-get($font-weights, "demi");
+            font-style: none;
+            font-size: 25px;
         }
     }

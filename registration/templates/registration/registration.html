@@ -9,6 +9,7 @@
         </div>
         <div class="col-md-3"></div>
         <div class="col-md-9 content-column offset-md-3 info_section">
+            <div id="blur-background" class="d-flex justify-content-between align-items-center"></div>
             <div id="dateSection" class="d-flex justify-content-between align-items-center">
                 <div id="the-calendar" class="align-self-start">
                     {% include 'registration/calendar.html' %}
@@ -45,7 +46,17 @@
                 Balance due 30 days prior to check in date
             </p>
             <div id="contract-section">
-                <iframe id="pdf-viewer" frameborder="0" scrolling="no" src="https://drive.google.com/file/d/1Zgf-shhZRz_xCA34ORFTz7_b7biMiPcH/preview"></iframe>
+                <h2>This contract includes details concerning payment</h2>
+                <iframe id="pdf-viewer" frameborder="0" scrolling="yes" src="https://drive.google.com/file/d/1Zgf-shhZRz_xCA34ORFTz7_b7biMiPcH/preview"></iframe>
+                <p>By checking the boxes below, you are legally bound to the contents of the above rules and contract.</p>
+                <div class="form-check text-center">
+                    <input type="checkbox" class="custom-check" id="rules-checkbox" disabled>
+                    <label class="form-check-label" for="rules-checkbox">I agree to the rules</label>
+                </div>
+                <div class="form-check text-center">
+                    <input type="checkbox" class="custom-check" id="contract-checkbox" disabled>
+                    <label class="form-check-label" for="contract-checkbox">I agree to the contract</label>
+                </div>
             </div>
         </div>
     </div>
@@ -55,4 +66,5 @@
 {% block scripts %}
 <script src="{% static 'registration/date-info-picker.js' %}"></script>
 <script src="{% static 'registration/scripts.js' %}"></script>
+<script src="{% static 'registration/contract.js' %}"></script>
 {% endblock %}

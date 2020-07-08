@@ -558,7 +558,7 @@ footer .footer-content #contact-designers:hover {
 }
 
 .info_section {
-  background: url(assets/RegistrationBackground-02.svg);
+  background: url(assets/FullRegistrationBackground-03.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   margin: 0;
@@ -655,17 +655,44 @@ footer .footer-content #contact-designers:hover {
 }
 
 #contract-section {
-  margin-top: 50%;
+  margin-top: 30%;
+  margin-bottom: 30%;
+}
+
+#contract-section h2 {
+  text-align: center;
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: none;
 }
 
 #contract-section #pdf-viewer {
   width: 60%;
-  height: 90vh;
+  height: 80vh;
   display: block;
   margin-left: auto;
   margin-right: auto;
   -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
           box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-  margin-bottom: 50px;
+  margin-bottom: 2vh;
+  overflow: scroll;
+}
+
+#contract-section p {
+  text-align: center;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: none;
+  color: #444444;
+  font-size: 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+#contract-section .form-check-label {
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: none;
+  font-size: 25px;
 }
 /*# sourceMappingURL=global.css.map */
