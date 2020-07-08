@@ -168,6 +168,9 @@ function onCellClick(cell) {
     if (selectedDate >= today) {
         assignCheckinAndCheckoutDates(selectedDate, cell);
     }
+    if (checkoutDate == null) {
+        hideInformation();
+    }
 }
 
 /**
@@ -213,14 +216,22 @@ function getAvgNightlyCost() {
                 rate = season.price;
             }
         }
-        console.log("Date: " + d + " - Price: " + rate);
         totalCost += rate;
     }
-    return totalCost / getNumberDays();
+    let numDays = getNumberDays();
+    console.log(numDays);
+    return totalCost / numDays;
 }
 
 function getNumberDays() {
-    return checkoutDate.getUTCDate() - checkinDate.getUTCDate();
+    var msPerDay = 24 * 60 * 60 * 1000;
+    return (treatAsUTC(checkoutDate) - treatAsUTC(checkinDate)) / msPerDay;
+}
+
+function treatAsUTC(date) {
+    var result = new Date(date);
+    result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
+    return result;
 }
 
 /**
@@ -230,7 +241,6 @@ function getNumberDays() {
 function resetCalendar() {
     checkinDate = null;
     checkoutDate = null;
-    hideInformation();
     highlightStaySpan();
 }
 

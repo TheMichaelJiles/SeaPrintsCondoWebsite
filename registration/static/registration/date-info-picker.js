@@ -6,7 +6,7 @@ var seasons;
 var taxRate;
 
 function hideInformation() {
-    $("#nights-text").val("Select Dates");
+    $("#nights-text").html("Select Dates");
     $("#price-per-night").css('visibility', 'hidden');
     $("#middle").css("visibility", "hidden");
     $("#bottom").css("visibility", "hidden");

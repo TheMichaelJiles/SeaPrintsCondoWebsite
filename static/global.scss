@@ -568,17 +568,16 @@
             }
         }
     }
-
+    
     #contract-section {
         margin-top: 30%;
-        margin-bottom: 30%;
+        margin-bottom: 10%;
         h2 {
             text-align: center;
             font-family: futura-pt, sans-serif;
             font-weight: map-get($font-weights, "demi");
             font-style: none;
         }
-
         #pdf-viewer {
             width: 60%;
             height: 80vh;
@@ -606,5 +605,29 @@
             font-weight: map-get($font-weights, "demi");
             font-style: none;
             font-size: 25px;
+        }
+    }
+    
+    #form-section {
+        font-family: futura-pt-bold, sans-serif;
+        font-style: normal;
+        font-weight: map-get($font-weights, "regular");
+        border-radius: 15px;
+        width: 76%;
+        margin: auto;
+        padding: 25px;
+        box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+        background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+        margin-bottom: 15%;
+        #submit-id-submit {
+            background-color: map-get($site-colors, "orange");
+            color: map-get($site-colors, "navy");
+            border: none;
+            margin: auto;
+            width: 20%;
+            margin-top: 10px;
+        }
+        #submit-id-submit:hover {
+            color: white;
         }
     }

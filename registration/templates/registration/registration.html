@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div id="registrationContent" class="container m-0 p-0">
@@ -45,6 +46,7 @@
                 ** $500 due at time of booking to hold dates **<br>
                 Balance due 30 days prior to check in date
             </p>
+
             <div id="contract-section">
                 <h2>This contract includes details concerning payment</h2>
                 <iframe id="pdf-viewer" frameborder="0" scrolling="yes" src="https://drive.google.com/file/d/1Zgf-shhZRz_xCA34ORFTz7_b7biMiPcH/preview"></iframe>
@@ -57,6 +59,10 @@
                     <input type="checkbox" class="custom-check" id="contract-checkbox" disabled>
                     <label class="form-check-label" for="contract-checkbox">I agree to the contract</label>
                 </div>
+            </div>
+
+            <div id="form-section">
+                {% crispy form helper %}
             </div>
         </div>
     </div>

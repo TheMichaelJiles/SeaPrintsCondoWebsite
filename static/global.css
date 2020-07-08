@@ -695,4 +695,32 @@ footer .footer-content #contact-designers:hover {
   font-style: none;
   font-size: 25px;
 }
+
+#form-section {
+  font-family: futura-pt-bold, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  border-radius: 15px;
+  width: 76%;
+  margin: auto;
+  padding: 25px;
+  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+  background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+  margin-top: 25%;
+  margin-bottom: 15%;
+}
+
+#form-section #submit-id-submit {
+  background-color: #F5AB43;
+  color: #00031C;
+  border: none;
+  margin: auto;
+  width: 20%;
+  margin-top: 10px;
+}
+
+#form-section #submit-id-submit:hover {
+  color: white;
+}
 /*# sourceMappingURL=global.css.map */
