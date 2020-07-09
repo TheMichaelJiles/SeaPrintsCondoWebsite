@@ -540,6 +540,7 @@ footer .footer-content #contact-designers:hover {
 
 #registrationContent #logo-image {
   height: 100vh;
+  width: 25vw;
   display: block;
 }
 
@@ -596,7 +597,7 @@ footer .footer-content #contact-designers:hover {
   font-style: normal;
   width: 76%;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 9vw;
   border-radius: 15px;
   padding: 25px;
   -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);

@@ -19,8 +19,9 @@ def approve_stay(request, staypk):
 def register(request):
     if request.method == 'POST':
         register_result = utils.register_unapproved_stay(request.POST)
-        if register_result['success']:
-            result = redirect(reverse('landing'))
+        #if register_result['success']:
+        print(register_result)
+        result = redirect(reverse('landing'))
         # else redirect back to the same page saying an error occurred.
     else:
         result = render(request, 'registration/registration.html', {
