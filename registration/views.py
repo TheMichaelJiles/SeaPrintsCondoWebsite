@@ -20,8 +20,18 @@ def register(request):
     if request.method == 'POST':
         register_result = utils.register_unapproved_stay(request.POST)
         if register_result['success']:
+            messages.success(request, 'Successfully Processed Stay Request.')
             result = redirect(reverse('landing'))
-        # else redirect back to the same page saying an error occurred.
+        else:
+            error_descriptions = []
+            for source, descriptions in register_result['error_details'].items():
+                for description in descriptions:
+                    error_descriptions.append(description)
+            result = render(request, 'registration/registration.html', {
+                'form': registration_forms.CombinedStayAddressForm(),
+                'helper': registration_forms.CombinedFormHelper(),
+                'errors': error_descriptions,
+            })
     else:
         result = render(request, 'registration/registration.html', {
             'form': registration_forms.CombinedStayAddressForm(),
