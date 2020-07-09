@@ -8,7 +8,7 @@
         <div class="col-md-3 img-column fixed-top" style="padding: 0;">
             <img src="{% static 'assets/LogoSoon.jpg' %}" alt="Logo Image" id="logo-image">
         </div>
-        <div class="col-md-3"></div>
+        <div class="img-column col-md-3"></div>
         <div class="col-md-9 content-column offset-md-3 info_section">
             {% include "registration/registration-navbar.html" %}
             <div id="blur-background" class="d-flex justify-content-between align-items-center"></div>
@@ -51,8 +51,8 @@
             <div id="contract-section">
                 <h2>This contract includes details concerning payment</h2>
                 
-                <object id="pdf-viewer" data= {% static 'assets/Aqua Blast rules.pdf' %} type="application/pdf">
-                    <embed src={% static 'assets/Aqua Blast rules.pdf' %} type="application/pdf" />
+                <object id="pdf-viewer" data="{% static 'assets/Aqua Blast rules.pdf' %}" type="application/pdf">
+                    <embed src="{% static 'assets/Aqua Blast rules.pdf' %}" type="application/pdf" />
                 </object>
                 <p>By checking the boxes below, you are legally bound to the contents of the above rules and contract.</p>
                 <div class="form-check text-center">

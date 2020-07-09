@@ -532,6 +532,19 @@ footer .footer-content #contact-designers:hover {
   width: 75%;
 }
 
+.img-column {
+  width: 24%;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.img-column #logo-image {
+  width: 100%;
+  margin: 0;
+}
+
 #registrationContent {
   min-width: 100%;
   width: 100%;
