@@ -468,10 +468,6 @@
         padding: 0;
         margin: 0;
         box-sizing: content-box;
-        #logo-image {
-            width: 100%;
-            margin: 0;
-        }
     }
     
     #registrationContent {
@@ -480,9 +476,10 @@
         max-width: 100%;
         #logo-image {
             height: 100vh;
-            width: 25vw;
+            width: 100%;
             display: block;
             z-index: 1;
+            box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
         }
     }
     
@@ -515,20 +512,32 @@
         margin: auto;
         text-align: right;
         margin-top: 10px;
-        color: map-get($site-colors, "navy");
+        color: white;
         text-align: center;
         float: right;
         padding-left: 14vw;
     }
     
     .info_section {
-        background: url(assets/FullRegistrationBackground-03.svg);
+        background: url(assets/FullRegistrationBackground-01.svg);
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 1449px;
+        background-position: center top;
         margin: 0;
         padding: 0;
         border: 0;
         min-height: 100vh;
+    }
+
+    .registration-left {
+        background-color: map-get($site-colors, "navy" );
+        padding: 0;
+        margin: 0;
+        border: 0;
+        height: 100vh;
+            width: 25vw;
+            display: block;
+            z-index: 1;
     }
     
     #dateSection {
@@ -536,7 +545,7 @@
         font-style: normal;
         width: 76%;
         margin: auto;
-        margin-top: 9vw;
+        margin-top: 190px;
         border-radius: 15px;
         padding: 25px;
         box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
@@ -548,7 +557,7 @@
             width: 45%;
             #top {
                 padding-bottom: 10px;
-                border-bottom: 5px solid map-get($site-colors, "cyan");
+                border-bottom: 5px solid map-get($site-colors, "orange");
                 strong {
                     font-size: 30px;
                     font-weight: map-get($font-weights, "demi");
@@ -562,7 +571,7 @@
                 }
             }
             #middle {
-                border-bottom: 5px solid map-get($site-colors, "cyan");
+                border-bottom: 5px solid map-get($site-colors, "orange");
                 padding-left: 15px;
                 padding-right: 15px;
                 strong {
@@ -605,17 +614,18 @@
     }
     
     #contract-section {
-        margin-top: 31%;
+        margin-top: 450px;
         margin-bottom: 5%;
         h2 {
             text-align: center;
             font-family: futura-pt, sans-serif;
             font-weight: map-get($font-weights, "demi");
             font-style: none;
+            font-size: 1.6vw;
         }
         #pdf-viewer {
             width: 60%;
-            height: 80vh;
+            height: 800px;
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -648,11 +658,11 @@
         border-radius: 15px;
         width: 76%;
         margin: auto;
-        margin-top: 15%;
+        margin-top: 190px;
+        margin-bottom: 50px;
         padding: 35px;
         box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
         background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
-        margin-bottom: 6%;
         box-sizing: content-box;
         div {
             width: 100%;

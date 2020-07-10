@@ -4,11 +4,11 @@
 
 {% block content %}
 <div id="registrationContent" class="container m-0 p-0">
-    <div class="row">
-        <div class="col-md-3 img-column fixed-top" style="padding: 0;">
-            <img src="{% static 'assets/LogoSoon.jpg' %}" alt="Logo Image" id="logo-image">
+    <div class="row justify-content-center">
+        <div class="col-md-3 img-column fixed-top" style="width: 50%;">
+            <img src="{% static 'assets/Sand.jpg' %}" alt="Logo Image" id="logo-image">
         </div>
-        <div class="img-column col-md-3"></div>
+        <div class="img-column col-md-3" style="width: 25%;"></div>
         <div class="col-md-9 content-column offset-md-3 info_section">
             {% include "registration/registration-navbar.html" %}
             <div id="blur-background" class="d-flex justify-content-between align-items-center"></div>
@@ -43,11 +43,11 @@
                     </div>
                 </div>
             </div>
-            <p id="dateSectionSubText">
+            <!-- <p id="dateSectionSubText">
                 ** $500 due at time of booking to hold dates **<br>
                 Balance due 30 days prior to check in date
             </p>
-
+            -->
             <div id="contract-section">
                 <h2>This contract includes details concerning payment</h2>
                 
