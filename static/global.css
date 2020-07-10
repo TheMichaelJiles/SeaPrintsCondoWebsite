@@ -569,7 +569,7 @@ footer .footer-content #contact-designers:hover {
 }
 
 #registrationContent #logo-image {
-  height: 100vh;
+  height: auto;
   width: 100%;
   display: block;
   z-index: 1;
