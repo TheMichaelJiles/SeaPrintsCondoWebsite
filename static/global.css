@@ -532,6 +532,29 @@ footer .footer-content #contact-designers:hover {
   width: 75%;
 }
 
+#review-form-header {
+  background: url(assets/ReviewFormBackground.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 500px;
+}
+
+#review-form-header #review-form-nav {
+  text-align: right;
+  padding-top: 0.4vw;
+}
+
+#review-form-header #home-link {
+  color: white;
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 1.5vw;
+  padding-right: 1.7vw;
+}
+
 .img-column {
   width: 24%;
   padding: 0;
