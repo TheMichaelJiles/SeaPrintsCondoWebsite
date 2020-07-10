@@ -357,11 +357,18 @@
         margin: 0;
         padding: 0;
         width: 100%;
+        min-height: 100vh;
+        background-image: url('/static/assets/ReviewOcean.jpg');
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: 25% auto;
+        background-attachment: fixed;
+        background-color: map-get($site-colors, "cyan");
         #review-navigator {
             width: 75%;
             text-align: center;
             font-size: 34px;
-            margin-bottom: 40px;
+            padding-bottom: 40px;
             margin-left: 10%;
             margin-right: auto;
             #pageNumber {
@@ -370,18 +377,25 @@
             }
         }
         #review-container {
+            background-image: url('/static/assets/ReviewBackground.svg');
+            background-position: 50% 0px;
+            background-size: 100% auto;
+            background-color: white;
             width: 75%;
-            margin-left: 10%;
-            margin-right: auto;
+            padding-left: 5%;
+            padding-right: auto;
+            min-height: 100vh;
+            padding-top: 5%;
             #review-content {
-                width: 75%;
+                width: 90%;
                 .review-item {
                     text-align: center;
-                    width: 75%;
+                    width: 85%;
                     border-radius: 25px;
                     box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
                     margin-bottom: 75px;
                     padding: 20px;
+                    background-color: white;
                     .review-item-header-name {
                         font-weight: map-get($font-weights, "bold");
                         font-size: 34px;
@@ -438,12 +452,18 @@
         font-family: futura-pt, sans-serif;
         font-weight: map-get($font-weights, "heavy");
         font-style: normal;
+        position: fixed;
+        top: 6%;
+        right: 0;
+        width: 25%;
+        padding: 2%;
+        padding-top: 0;
         li {
             font-size: 18pt;
-            margin-left: 66px;
+            margin-left: 20%;
             .my-nav-link {
                 text-decoration: none;
-                color: map-get($site-colors, "navy");
+                color: white;
             }
             .reviews-link:hover {
                 border-bottom: 3px map-get($site-colors, "orange") solid;
@@ -455,10 +475,6 @@
                 border-bottom: 3px map-get($site-colors, "navy") solid;
             }
         }
-        .list-links {
-            margin-right: 155px;
-            margin-top: 6px;
-        }
         .book-button {
             background-color: map-get($site-colors, "navy");
             border-radius: 7px;
@@ -469,9 +485,8 @@
             color: white;
             padding-left: 5px;
             padding-right: 5px;
-            margin-left: 30px;
             top: 2%;
-            right: 2%;
+            right: 1%;
             position: fixed;
             z-index: 1;
         }

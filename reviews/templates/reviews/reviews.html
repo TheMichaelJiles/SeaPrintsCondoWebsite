@@ -19,7 +19,7 @@
                     <span class="review-item-header-stay-indate review-date">Checked in on {{ review.corresponding_stay.in_date }}</span>
                     <div class="review-item-content">
                         <p class="review-item-content-text">{{ review.review_text }}</p>
-                        <span class="review-item-content-publishdate review-date">published on {{ review.publish_date }}</span>
+                        <span class="review-item-content-publishdate review-date">Published on {{ review.publish_date }}</span>
                     </div>
                 </div>
             {% endfor %}
@@ -38,3 +38,7 @@
     </div>
 </div>
 {% endblock%} 
+
+{% block scripts %}
+<script src="{% static 'reviews/parallax.js' %}"></script>
+{% endblock %}
