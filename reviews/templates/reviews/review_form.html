@@ -6,6 +6,10 @@
     Here we have access to the data from the already created view. The variable is
     called data. So we can say things like the following.
  -->
+
+<div id="review-form-header">
+    <nav id="review-form-nav"><a id="home-link" href="{% url 'landing' %}">home</a>
+</div>
 <p>
     {{ data.corresponding_stay.name }}<br>
     {{ data.corresponding_stay.in_date|date }}<br>

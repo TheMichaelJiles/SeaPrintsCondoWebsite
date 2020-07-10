@@ -351,6 +351,39 @@
         }
     }
     
+    #review-form-header {
+        background: url(assets/ReviewFormBackground.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 500px;
+        #review-form-nav {
+            text-align: right;
+            padding-top: 0.4vw;
+        }
+        #home-link {
+            color: white;
+            font-family: futura-pt, sans-serif;
+            font-weight: map-get($font-weights, "demi");
+            font-style: normal;
+            text-decoration: none;
+            font-size: 1.5vw;
+            padding-right: 1.7vw;
+        }
+    }
+    
+    #review-box-shadow {
+        width: 25%;
+        position: fixed;
+        box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
+        height: 100%;
+        margin-right: 0;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
     #review-page {
         font-family: futura-pt, sans-serif;
         font-style: normal;
@@ -379,7 +412,7 @@
         #review-container {
             background-image: url('/static/assets/ReviewBackground.svg');
             background-position: 50% 0px;
-            background-size: 100% auto;
+            background-size: auto 2600px;
             background-color: white;
             width: 75%;
             padding-left: 5%;

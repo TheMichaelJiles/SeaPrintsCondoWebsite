@@ -2,8 +2,10 @@
 {% load static %} 
 
 {% block content %}
-<div id="review-page">
+<div id="review-box-shadow">
     {% include 'reviews/review_navbar.html' %}
+</div>
+<div id="review-page">
     <div id="review-container">
         <div id="review-content" class="d-flex flex-column justify-content-between">
             {% for review in review_list %}
