@@ -7,7 +7,7 @@ REVIEWS_PER_PAGE = 5
 
 def get_all_reviews(request, page):
     all_reviews = utils.get_all_reviews()
-    max_pages = int((all_reviews.count() / REVIEWS_PER_PAGE) + 1)
+    max_pages = all_reviews.count() // REVIEWS_PER_PAGE
     if page > max_pages:
         target_page = max_pages
     elif page < 1:

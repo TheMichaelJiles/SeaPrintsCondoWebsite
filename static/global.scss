@@ -352,12 +352,86 @@
     }
     
     #review-page {
-        background-image: url(assets/OceanTopView.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100%;
+        font-family: futura-pt, sans-serif;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
         width: 100%;
-        background-attachment: fixed;
+        #review-navigator {
+            width: 75%;
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 40px;
+            margin-left: 10%;
+            margin-right: auto;
+            #pageNumber {
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+        }
+        #review-container {
+            width: 75%;
+            margin-left: 10%;
+            margin-right: auto;
+            #review-content {
+                width: 75%;
+                .review-item {
+                    text-align: center;
+                    width: 75%;
+                    border-radius: 25px;
+                    box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+                    margin-bottom: 75px;
+                    padding: 20px;
+                    .review-item-header-name {
+                        font-weight: map-get($font-weights, "bold");
+                        font-size: 34px;
+                        letter-spacing: 2px;
+                    }
+                    .review-item-content {
+                        font-weight: map-get($font-weights, "demi");
+                        padding: 15px;
+                        p {
+                            text-align: justify;
+                            font-size: 20px;
+                        }
+                    }
+                    .review-date {
+                        font-weight: map-get($font-weights, "medium");
+                        color: map-get($site-colors, "gray");
+                    }
+                    .review-item-stars {
+                        margin-bottom: 10px;
+                    }
+                }
+                .review-item:nth-child(even) {
+                    align-self: end;
+                }
+                .review-item:nth-child(3n-2) {
+                    svg path {
+                        fill: map-get($site-colors, "cyan") !important;
+                    }
+                    .review-item-content {
+                        border-top: 5px solid map-get($site-colors, "cyan");
+                    }
+                }
+                .review-item:nth-child(3n-1) {
+                    svg path {
+                        fill: map-get($site-colors, "orange") !important;
+                    }
+                    .review-item-content {
+                        border-top: 5px solid map-get($site-colors, "orange");
+                    }
+                }
+                .review-item:nth-child(3n) {
+                    svg path {
+                        fill: map-get($site-colors, "navy") !important;
+                    }
+                    .review-item-content {
+                        border-top: 5px solid map-get($site-colors, "navy");
+                    }
+                }
+            }
+        }
     }
     
     .review-nav {
@@ -381,12 +455,9 @@
                 border-bottom: 3px map-get($site-colors, "navy") solid;
             }
         }
-        label {
-            font-size: 18pt;
-            margin-left: 30px;
-            margin-right: 135px;
-            margin-top: 3px;
-            color: map-get($site-colors, "navy");
+        .list-links {
+            margin-right: 155px;
+            margin-top: 6px;
         }
         .book-button {
             background-color: map-get($site-colors, "navy");
@@ -400,66 +471,12 @@
             padding-right: 5px;
             margin-left: 30px;
             top: 2%;
-            right: 14%;
+            right: 2%;
             position: fixed;
             z-index: 1;
         }
         .book-button:hover {
             background-color: #48a0aa;
-        }
-    }
-    
-    .review-container {
-        background-color: white;
-        width: 75%;
-        margin: auto;
-        min-height: 100vh;
-        .review-navigator {
-            width: 60%;
-            margin: auto;
-            text-align: center;
-            font-size: 33px;
-            padding-bottom: 75px;
-            span {
-                margin-left: 25px;
-                margin-right: 25px;
-            }
-            a {
-                text-decoration: none;
-            }
-        }
-        .review {
-            padding-bottom: 6%;
-            .review-header {
-                width: 637px;
-                border-bottom: 5px map-get($site-colors, "orange") solid;
-                h2 {
-                    padding-top: 5%;
-                    text-align: right;
-                }
-            }
-            h1 {
-                color: map-get($site-colors, "navy");
-                font-family: futura-pt, sans-serif;
-                font-weight: map-get($font-weights, "demi");
-                font-style: normal;
-                font-size: 50px;
-            }
-            h2 {
-                color: map-get($site-colors, "gray");
-                font-family: futura-pt, sans-serif;
-                font-weight: map-get($font-weights, "medium");
-                font-style: normal;
-                font-size: 25px;
-            }
-            p {
-                color: map-get($site-colors, "navy");
-                font-family: futura-pt, sans-serif;
-                font-weight: map-get($font-weights, "demi");
-                font-style: normal;
-                font-size: 27px;
-                width: 75%;
-            }
         }
     }
     
@@ -528,16 +545,16 @@
         border: 0;
         min-height: 100vh;
     }
-
+    
     .registration-left {
-        background-color: map-get($site-colors, "navy" );
+        background-color: map-get($site-colors, "navy");
         padding: 0;
         margin: 0;
         border: 0;
         height: 100vh;
-            width: 25vw;
-            display: block;
-            z-index: 1;
+        width: 25vw;
+        display: block;
+        z-index: 1;
     }
     
     #dateSection {

@@ -1,45 +1,40 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} 
+{% load static %} 
+
 {% block content %}
-    <div id="review-page">
-        <div class="review-container">
-            {% include 'reviews/review_navbar.html' %}
-            <ul>
-                {% for review in review_list %}
-                    <div class="review">
-
-                    <div class="review-header">
-                        <div class="row">
-                            <div class="col-md">
-                                {% with ''|center:review.rating as range %}
-                                {% for _ in range %}
-                                    <img src="{% static 'assets/ReviewStarNavy.svg' %}" alt="Star" style="width: 50px; height: 44px;">
-                                {% endfor %}
-                                {% endwith %}
-                            </div>
-                            <div class="col-md">
-                                <h2>{{review.corresponding_stay.in_date}}</h2>
-                            </div>
-                        </div>
+<div id="review-page">
+    {% include 'reviews/review_navbar.html' %}
+    <div id="review-container">
+        <div id="review-content" class="d-flex flex-column justify-content-between">
+            {% for review in review_list %}
+                <div class="review-item">
+                    <span class="review-item-header-name">{{ review.corresponding_stay.name }}</span>
+                    <div class="review-item-stars">
+                        {% with ''|center:review.rating as range %}
+                        {% for _ in range %}
+                        {% include 'reviews/review_star.html' %}
+                        {% endfor %}
+                        {% endwith %}
                     </div>
-                    <h1>{{review.corresponding_stay.name}}</h1>
-                    <p>{{review.review_text}}</p>
-                    <h2>{{review.publish_date}}</h2>
-
+                    <span class="review-item-header-stay-indate review-date">Checked in on {{ review.corresponding_stay.in_date }}</span>
+                    <div class="review-item-content">
+                        <p class="review-item-content-text">{{ review.review_text }}</p>
+                        <span class="review-item-content-publishdate review-date">published on {{ review.publish_date }}</span>
                     </div>
-                {% endfor %}
-            </ul>
-            <div class="review-navigator">
-                {% if is_first_page is False %}
-                <a href="{% url 'all_reviews' previous_page %}">&#60;</a>
-                {% endif %}
-                
-                <span id="pageNumber">{{ current_page }}</span>
-                
-                {% if is_last_page is False %}
-                <a href="{% url 'all_reviews' next_page %}">&#62;</a>
-                {% endif %}
-            </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div id="review-navigator">
+            {% if is_first_page is False %}
+            <a href="{% url 'all_reviews' previous_page %}">&#60;</a> 
+            {% endif %}
+
+            <span id="pageNumber">{{ current_page }}</span> 
+
+            {% if is_last_page is False %}
+            <a href="{% url 'all_reviews' next_page %}">&#62;</a> 
+            {% endif %}
         </div>
     </div>
-{% endblock%}
+</div>
+{% endblock%} 

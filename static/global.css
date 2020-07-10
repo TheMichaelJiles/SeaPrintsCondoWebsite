@@ -404,12 +404,100 @@ footer .footer-content #contact-designers:hover {
 }
 
 #review-page {
-  background-image: url(assets/OceanTopView.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
+  font-family: futura-pt, sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  background-attachment: fixed;
+}
+
+#review-page #review-navigator {
+  width: 75%;
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 40px;
+  margin-left: 10%;
+  margin-right: auto;
+}
+
+#review-page #review-navigator #pageNumber {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#review-page #review-container {
+  width: 75%;
+  margin-left: 10%;
+  margin-right: auto;
+}
+
+#review-page #review-container #review-content {
+  width: 75%;
+}
+
+#review-page #review-container #review-content .review-item {
+  text-align: center;
+  width: 75%;
+  border-radius: 25px;
+  -webkit-box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 75px;
+  padding: 20px;
+}
+
+#review-page #review-container #review-content .review-item .review-item-header-name {
+  font-weight: 800;
+  font-size: 34px;
+  letter-spacing: 2px;
+}
+
+#review-page #review-container #review-content .review-item .review-item-content {
+  font-weight: 600;
+  padding: 15px;
+}
+
+#review-page #review-container #review-content .review-item .review-item-content p {
+  text-align: justify;
+  font-size: 20px;
+}
+
+#review-page #review-container #review-content .review-item .review-date {
+  font-weight: 500;
+  color: #444444;
+}
+
+#review-page #review-container #review-content .review-item .review-item-stars {
+  margin-bottom: 10px;
+}
+
+#review-page #review-container #review-content .review-item:nth-child(even) {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+#review-page #review-container #review-content .review-item:nth-child(3n-2) svg path {
+  fill: #5ECBD8 !important;
+}
+
+#review-page #review-container #review-content .review-item:nth-child(3n-2) .review-item-content {
+  border-top: 5px solid #5ECBD8;
+}
+
+#review-page #review-container #review-content .review-item:nth-child(3n-1) svg path {
+  fill: #F5AB43 !important;
+}
+
+#review-page #review-container #review-content .review-item:nth-child(3n-1) .review-item-content {
+  border-top: 5px solid #F5AB43;
+}
+
+#review-page #review-container #review-content .review-item:nth-child(3n) svg path {
+  fill: #00031C !important;
+}
+
+#review-page #review-container #review-content .review-item:nth-child(3n) .review-item-content {
+  border-top: 5px solid #00031C;
 }
 
 .review-nav {
@@ -440,12 +528,9 @@ footer .footer-content #contact-designers:hover {
   border-bottom: 3px #00031C solid;
 }
 
-.review-nav label {
-  font-size: 18pt;
-  margin-left: 30px;
-  margin-right: 135px;
-  margin-top: 3px;
-  color: #00031C;
+.review-nav .list-links {
+  margin-right: 155px;
+  margin-top: 6px;
 }
 
 .review-nav .book-button {
@@ -460,76 +545,13 @@ footer .footer-content #contact-designers:hover {
   padding-right: 5px;
   margin-left: 30px;
   top: 2%;
-  right: 14%;
+  right: 2%;
   position: fixed;
   z-index: 1;
 }
 
 .review-nav .book-button:hover {
   background-color: #48a0aa;
-}
-
-.review-container {
-  background-color: white;
-  width: 75%;
-  margin: auto;
-  min-height: 100vh;
-}
-
-.review-container .review-navigator {
-  width: 60%;
-  margin: auto;
-  text-align: center;
-  font-size: 33px;
-  padding-bottom: 75px;
-}
-
-.review-container .review-navigator span {
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-.review-container .review-navigator a {
-  text-decoration: none;
-}
-
-.review-container .review {
-  padding-bottom: 6%;
-}
-
-.review-container .review .review-header {
-  width: 637px;
-  border-bottom: 5px #F5AB43 solid;
-}
-
-.review-container .review .review-header h2 {
-  padding-top: 5%;
-  text-align: right;
-}
-
-.review-container .review h1 {
-  color: #00031C;
-  font-family: futura-pt, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 50px;
-}
-
-.review-container .review h2 {
-  color: #444444;
-  font-family: futura-pt, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 25px;
-}
-
-.review-container .review p {
-  color: #00031C;
-  font-family: futura-pt, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 27px;
-  width: 75%;
 }
 
 .img-column {
