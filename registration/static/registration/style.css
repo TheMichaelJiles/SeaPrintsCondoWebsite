@@ -2,12 +2,12 @@
   font-family: futura-pt-bold, sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 32pt;
+  font-size: 28pt;
 }
 
 #calendarContainer #previous {
   border: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   background: transparent;
   outline: none;
@@ -19,7 +19,7 @@
 
 #calendarContainer #next {
   border: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin-left: 10px;
   margin-right: 10px;
@@ -34,20 +34,21 @@
 #calendarContainer #jumpForm {
   width: 100%;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 #calendarContainer #jumpForm label {
-  margin-right: 15px;
+  display: block;
+  width: 100%;
 }
 
 #calendarContainer #jumpForm select {
-  width: 33%;
+  width: 45%;
 }
 
 #calendarContainer #calendar th {
   font-family: futura-pt, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   border: none;
 }
@@ -55,7 +56,7 @@
 #calendarContainer #calendar #calendar-body tr {
   font-family: sofia-pro, sans-serif;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   margin: 0;
   border: none;
 }

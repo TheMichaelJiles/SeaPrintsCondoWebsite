@@ -6,11 +6,11 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
         font-family: futura-pt-bold, sans-serif;
         font-style: normal;
         font-weight: map-get($font-weights, "heavy");
-        font-size: 32pt;
+        font-size: 28pt;
     }
     #previous {
         border: none;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
         background: transparent;
         outline: none;
@@ -20,7 +20,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
     }
     #next {
         border: none;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
         margin-left: 10px;
         margin-right: 10px;
@@ -33,18 +33,19 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
     #jumpForm {
         width: 100%;
         font-weight: bold;
-        font-size: 24px;
+        font-size: 20px;
         label {
-            margin-right: 15px;
+            display: block;
+            width: 100%;
         }
         select {
-            width: 33%;
+            width: 45%;
         }
     }
     #calendar {
         th {
             font-family: futura-pt, sans-serif;
-            font-size: 24px;
+            font-size: 20px;
             text-align: center;
             border: none;
         }
@@ -52,7 +53,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
             tr {
                 font-family: sofia-pro, sans-serif;
                 text-align: center;
-                font-size: 24px;
+                font-size: 18px;
                 margin: 0;
                 border: none;
             }

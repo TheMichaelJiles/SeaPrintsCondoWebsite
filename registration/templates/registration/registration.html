@@ -8,7 +8,7 @@
         <div class="col-md-3 img-column fixed-top" style="padding: 0;">
             <img src="{% static 'assets/LogoSoon.jpg' %}" alt="Logo Image" id="logo-image">
         </div>
-        <div class="col-md-3"></div>
+        <div class="img-column col-md-3"></div>
         <div class="col-md-9 content-column offset-md-3 info_section">
             {% include "registration/registration-navbar.html" %}
             <div id="blur-background" class="d-flex justify-content-between align-items-center"></div>
@@ -17,26 +17,26 @@
                     {% include 'registration/calendar.html' %}
                 </div>
                 <div id="the-info" class="align-self-start">
-                    <div id="top" class="d-flex justify-content-between align-items-end">
+                    <div id="top" class="d-flex justify-content-between align-items-end flex-wrap">
                         <strong id="nights-text">Select Dates</strong>
                         <span id="price-per-night">$150/night</span>
                     </div>
                     <div id="middle">
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
                             <strong id="price-text">5 x 150:</strong>
                             <span id="price-total-text">$750.00</span>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
                             <strong id="cleaning-fee">Cleaning Fee:</strong>
                             <span id="cleaning-total-fee">$72.00</span>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
                             <strong id="tax">Tax:</strong>
                             <span id="tax-total-fee">12%</span>
                         </div>
                     </div>
                     <div id="bottom">
-                        <div class="d-flex justify-content-between align-items-end">
+                        <div class="d-flex justify-content-between align-items-end flex-wrap">
                             <strong id="total" class="align-self-center">Total:</strong>
                             <span id="total-fee">$839.95</span>
                         </div>
@@ -51,8 +51,8 @@
             <div id="contract-section">
                 <h2>This contract includes details concerning payment</h2>
                 
-                <object id="pdf-viewer" data= {% static 'assets/Aqua Blast rules.pdf' %} type="application/pdf">
-                    <embed src={% static 'assets/Aqua Blast rules.pdf' %} type="application/pdf" />
+                <object id="pdf-viewer" data="{% static 'assets/Aqua Blast rules.pdf' %}" type="application/pdf">
+                    <embed src="{% static 'assets/Aqua Blast rules.pdf' %}" type="application/pdf" />
                 </object>
                 <p>By checking the boxes below, you are legally bound to the contents of the above rules and contract.</p>
                 <div class="form-check text-center">
