@@ -26,6 +26,7 @@ body {
   }
 }
 
+/*   --------    LANDING PAGE   --------    */
 .landing-nav {
   font-family: futura-pt, sans-serif;
   font-weight: 700;
@@ -403,6 +404,7 @@ footer .footer-content #contact-designers:hover {
   color: #F5AB43;
 }
 
+/*   --------    REVIEW PAGE   --------    */
 #review-form-header {
   background: url(assets/ReviewFormBackground.svg);
   background-repeat: no-repeat;
@@ -558,13 +560,16 @@ footer .footer-content #contact-designers:hover {
   top: 6%;
   right: 0;
   width: 25%;
+  height: auto;
   padding: 2%;
-  padding-top: 0;
+  padding-top: 1%;
+  text-align: right;
 }
 
 .review-nav li {
   font-size: 18pt;
   margin-left: 20%;
+  margin-right: auto;
 }
 
 .review-nav li .my-nav-link {
@@ -604,27 +609,266 @@ footer .footer-content #contact-designers:hover {
   background-color: #48a0aa;
 }
 
-.img-column {
-  width: 24%;
-  padding: 0;
+/*   --------    REGISTRATION PAGE   --------    */
+#registration-box-shadow {
+  width: 25%;
+  position: fixed;
+  -webkit-box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  margin-left: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#registration-content {
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  background: url(assets/Sand.jpg);
+  background-size: 25% auto;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#registration-content #registration-container {
+  width: 75%;
+  margin-right: 0;
+  margin-left: auto;
+  text-align: center;
+  background: url(assets/RegistrationBackground-01.svg);
+  background-size: auto 6200px;
+  background-position: center top;
+}
+
+#registration-content #registration-container .info_section {
+  background-size: auto 6200px;
+  background-position: center top;
   margin: 0;
+  padding: 0;
+  border: 0;
+  min-height: 100vh;
+}
+
+#registration-content #registration-container .info_section #dateSection {
+  font-family: futura-pt-bold, sans-serif;
+  font-style: normal;
+  width: 76%;
+  margin: auto;
+  margin-top: 190px;
+  border-radius: 15px;
+  padding: 25px;
+  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+  background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+}
+
+#registration-content #registration-container .info_section #dateSection #the-calendar {
+  width: 45%;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info {
+  width: 45%;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #top {
+  padding-bottom: 10px;
+  border-bottom: 5px solid #F5AB43;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #top strong {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #top span {
+  font-weight: 400;
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: #444444;
+  font-weight: bold;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle {
+  border-bottom: 5px solid #F5AB43;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle strong {
+  font-weight: 400;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle span {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: #444444;
+  font-weight: bold;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle div {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle div:first-of-type {
+  margin-top: 45px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle div:last-of-type {
+  margin-bottom: 45px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #bottom {
+  margin-top: 35px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #bottom strong {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #bottom span {
+  font-weight: 600;
+  font-size: 40px;
+  color: #F5AB43;
+  font-weight: bold;
+}
+
+#registration-content #registration-container .info_section #contract-section {
+  margin-top: 550px;
+  margin-bottom: 5%;
+}
+
+#registration-content #registration-container .info_section #contract-section #pdf-viewer {
+  width: 60%;
+  height: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+  margin-bottom: 2vh;
+  overflow: scroll;
+}
+
+#registration-content #registration-container .info_section #contract-section p {
+  text-align: center;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: none;
+  color: #444444;
+  font-size: 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+#registration-content #registration-container .info_section #contract-section .form-check-label {
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: none;
+  font-size: 25px;
+}
+
+#registration-content #registration-container #form-section {
+  font-family: futura-pt-bold, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  border-radius: 15px;
+  width: 76%;
+  margin: auto;
+  margin-top: 190px;
+  margin-bottom: 50px;
+  padding: 35px;
+  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+  background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
 
-#registrationContent {
-  min-width: 100%;
+#registration-content #registration-container #form-section div {
   width: 100%;
-  max-width: 100%;
 }
 
-#registrationContent #logo-image {
-  height: auto;
+#registration-content #registration-container #form-section #div_id_name {
+  width: 50%;
+}
+
+#registration-content #registration-container #form-section #div_id_age {
+  width: 20%;
+}
+
+#registration-content #registration-container #form-section #div_id_number_of_guests {
+  width: 20%;
+}
+
+#registration-content #registration-container #form-section #div_id_phone_contact {
+  width: 50%;
+}
+
+#registration-content #registration-container #form-section #id_phone_contact_0 {
   width: 100%;
-  display: block;
-  z-index: 1;
-  -webkit-box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
-          box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#registration-content #registration-container #form-section #id_phone_contact_1 {
+  margin-top: 10px;
+  width: 100%;
+}
+
+#registration-content #registration-container #form-section #div_id_email_contact {
+  width: 40%;
+}
+
+#registration-content #registration-container #form-section #div_id_street_number {
+  width: 25%;
+}
+
+#registration-content #registration-container #form-section #div_id_route {
+  width: 70%;
+}
+
+#registration-content #registration-container #form-section #div_id_city {
+  width: 40%;
+}
+
+#registration-content #registration-container #form-section #div_id_state {
+  width: 25%;
+}
+
+#registration-content #registration-container #form-section #div_id_zip_code {
+  width: 25%;
+}
+
+#registration-content #registration-container #form-section #personal-info-div {
+  margin-bottom: 5%;
+}
+
+#registration-content #registration-container #form-section #contact-info-div {
+  margin-bottom: 5%;
+}
+
+#registration-content #registration-container #form-section #questions-div {
+  margin-top: 5%;
+}
+
+#registration-content #registration-container #form-section #submit-id-submit {
+  background-color: #00031C;
+  color: white;
+  border: none;
+  margin: auto;
+  width: 20%;
+  margin-top: 10px;
+}
+
+#registration-content #registration-container #form-section #submit-id-submit:hover {
+  background-color: #5ECBD8;
 }
 
 .registration-nav {
@@ -649,267 +893,5 @@ footer .footer-content #contact-designers:hover {
 
 .registration-link {
   color: white;
-}
-
-#dateSectionSubText {
-  font-family: futura-pt-bold, sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  width: 76%;
-  margin: auto;
-  text-align: right;
-  margin-top: 10px;
-  color: white;
-  text-align: center;
-  float: right;
-  padding-left: 14vw;
-}
-
-.info_section {
-  background: url(assets/FullRegistrationBackground-01.svg);
-  background-repeat: no-repeat;
-  background-size: 1449px;
-  background-position: center top;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  min-height: 100vh;
-}
-
-.registration-left {
-  background-color: #00031C;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  height: 100vh;
-  width: 25vw;
-  display: block;
-  z-index: 1;
-}
-
-#dateSection {
-  font-family: futura-pt-bold, sans-serif;
-  font-style: normal;
-  width: 76%;
-  margin: auto;
-  margin-top: 190px;
-  border-radius: 15px;
-  padding: 25px;
-  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-  background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
-}
-
-#dateSection #the-calendar {
-  width: 45%;
-}
-
-#dateSection #the-info {
-  width: 45%;
-}
-
-#dateSection #the-info #top {
-  padding-bottom: 10px;
-  border-bottom: 5px solid #F5AB43;
-}
-
-#dateSection #the-info #top strong {
-  font-size: 30px;
-  font-weight: 600;
-}
-
-#dateSection #the-info #top span {
-  font-weight: 400;
-  margin-bottom: 5px;
-  font-size: 22px;
-  color: #444444;
-  font-weight: bold;
-}
-
-#dateSection #the-info #middle {
-  border-bottom: 5px solid #F5AB43;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#dateSection #the-info #middle strong {
-  font-weight: 400;
-  font-size: 30px;
-  font-weight: normal;
-}
-
-#dateSection #the-info #middle span {
-  font-weight: 500;
-  margin-bottom: 5px;
-  font-size: 22px;
-  color: #444444;
-  font-weight: bold;
-}
-
-#dateSection #the-info #middle div {
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-#dateSection #the-info #middle div:first-of-type {
-  margin-top: 45px;
-}
-
-#dateSection #the-info #middle div:last-of-type {
-  margin-bottom: 45px;
-}
-
-#dateSection #the-info #bottom {
-  margin-top: 35px;
-}
-
-#dateSection #the-info #bottom strong {
-  font-size: 30px;
-  font-weight: 600;
-}
-
-#dateSection #the-info #bottom span {
-  font-weight: 600;
-  font-size: 40px;
-  color: #F5AB43;
-  font-weight: bold;
-}
-
-#contract-section {
-  margin-top: 450px;
-  margin-bottom: 5%;
-}
-
-#contract-section h2 {
-  text-align: center;
-  font-family: futura-pt, sans-serif;
-  font-weight: 600;
-  font-style: none;
-  font-size: 1.6vw;
-}
-
-#contract-section #pdf-viewer {
-  width: 60%;
-  height: 800px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-  margin-bottom: 2vh;
-  overflow: scroll;
-}
-
-#contract-section p {
-  text-align: center;
-  font-family: futura-pt, sans-serif;
-  font-weight: 400;
-  font-style: none;
-  color: #444444;
-  font-size: 20px;
-  width: 60%;
-  margin: 0 auto;
-}
-
-#contract-section .form-check-label {
-  font-family: futura-pt, sans-serif;
-  font-weight: 600;
-  font-style: none;
-  font-size: 25px;
-}
-
-#form-section {
-  font-family: futura-pt-bold, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  border-radius: 15px;
-  width: 76%;
-  margin: auto;
-  margin-top: 190px;
-  margin-bottom: 50px;
-  padding: 35px;
-  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
-  background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-}
-
-#form-section div {
-  width: 100%;
-}
-
-#form-section #div_id_name {
-  width: 50%;
-}
-
-#form-section #div_id_age {
-  width: 20%;
-}
-
-#form-section #div_id_number_of_guests {
-  width: 20%;
-}
-
-#form-section #div_id_phone_contact {
-  width: 50%;
-}
-
-#form-section #id_phone_contact_0 {
-  width: 100%;
-}
-
-#form-section #id_phone_contact_1 {
-  margin-top: 10px;
-  width: 100%;
-}
-
-#form-section #div_id_email_contact {
-  width: 40%;
-}
-
-#form-section #div_id_street_number {
-  width: 25%;
-}
-
-#form-section #div_id_route {
-  width: 70%;
-}
-
-#form-section #div_id_city {
-  width: 40%;
-}
-
-#form-section #div_id_state {
-  width: 25%;
-}
-
-#form-section #div_id_zip_code {
-  width: 25%;
-}
-
-#form-section #personal-info-div {
-  margin-bottom: 5%;
-}
-
-#form-section #contact-info-div {
-  margin-bottom: 5%;
-}
-
-#form-section #questions-div {
-  margin-top: 5%;
-}
-
-#form-section #submit-id-submit {
-  background-color: #00031C;
-  color: white;
-  border: none;
-  margin: auto;
-  width: 20%;
-  margin-top: 10px;
-}
-
-#form-section #submit-id-submit:hover {
-  background-color: #5ECBD8;
 }
 /*# sourceMappingURL=global.css.map */

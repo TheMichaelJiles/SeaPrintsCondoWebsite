@@ -3,15 +3,12 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div id="registrationContent" class="container m-0 p-0">
-    <div class="row justify-content-center">
-        <div class="col-md-3 img-column fixed-top" style="width: 50%;">
-            <img src="{% static 'assets/Sand.jpg' %}" alt="Logo Image" id="logo-image">
-        </div>
-        <div class="img-column col-md-3" style="width: 25%;"></div>
-        <div class="col-md-9 content-column offset-md-3 info_section">
-            {% include "registration/registration-navbar.html" %}
-            <div id="blur-background" class="d-flex justify-content-between align-items-center"></div>
+<div id="registration-box-shadow">
+</div>
+<div id="registration-content">
+    <div id="registration-container" class="d-flex flex-column justify-content-between">
+        {% include "registration/registration-navbar.html" %}
+        <div class="info_section">
             <div id="dateSection" class="d-flex justify-content-between align-items-center">
                 <div id="the-calendar" class="align-self-start">
                     {% include 'registration/calendar.html' %}
@@ -43,14 +40,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <p id="dateSectionSubText">
-                ** $500 due at time of booking to hold dates **<br>
-                Balance due 30 days prior to check in date
-            </p>
-            -->
-            <div id="contract-section">
-                <h2>This contract includes details concerning payment</h2>
-                
+            <div id="contract-section">           
                 <object id="pdf-viewer" data="{% static 'assets/Aqua Blast rules.pdf' %}" type="application/pdf">
                     <embed src="{% static 'assets/Aqua Blast rules.pdf' %}" type="application/pdf" />
                 </object>
@@ -77,4 +67,5 @@
 <script src="{% static 'registration/date-info-picker.js' %}"></script>
 <script src="{% static 'registration/contract.js' %}"></script>
 <script src="{% static 'registration/scripts.js' %}"></script>
+<script src="{% static 'registration/parallax.js' %}"></script>
 {% endblock %}
