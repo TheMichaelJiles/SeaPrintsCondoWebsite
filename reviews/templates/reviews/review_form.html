@@ -4,13 +4,18 @@
 
 {% block content %}
 <div id="review-form-page-container">
-    <img src="{% static 'assets/ReviewFormBackground.svg' %}" alt="How was your stay?" style="width: 100%; height: auto;">
+    <img src="{% static 'assets/review_page/ReviewFormBackground.svg' %}" alt="Thank you!" style="width: 100%; height: auto;">
     
-    <div id="review-form-page-content" class="d-flex flex-column justify-content-between align-items-center">
+    <div id="review-form-greeting">
+        <p>
+            Tell us about your stay, {{ data.corresponding_stay.name }}
+        </p>
+    </div>
+    <div id="review-form-page-content" class="d-flex flex-column justify-content-between align-items-start">
         <div id="review-form">
-            <div id="star-section" class="d-flex flex-column align-items-center">
-                <div id="star-section-text">Rate your stay!</div>
-                <div id="star-section-stars">
+            <div id="star-section" class="d-flex flex-column">
+                <div id="star-section-text">Overall Experience:</div>
+                <div id="star-section-stars" class="d-flex align-items-start">
                     {% with ''|center:5 as range %}
                     {% for _ in range %}
                     {% include 'reviews/review_star.html' with counter=forloop.counter %}

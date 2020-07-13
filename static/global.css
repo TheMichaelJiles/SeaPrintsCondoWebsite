@@ -881,12 +881,24 @@ footer .footer-content #contact-designers:hover {
   min-height: 100vh;
 }
 
+#review-form-page-container #review-form-greeting {
+  width: 50%;
+  margin-left: 5%;
+  font-weight: 800;
+  font-size: 36px;
+}
+
 #review-form-page-container #review-form-page-content {
-  width: 100%;
+  width: 50%;
+  margin-left: 5%;
+  padding: 1%;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 #review-form-page-container #review-form-page-content #review-form {
-  width: 35%;
+  width: 100%;
 }
 
 #review-form-page-container #review-form-page-content #review-form #star-section {
@@ -895,6 +907,8 @@ footer .footer-content #contact-designers:hover {
 
 #review-form-page-container #review-form-page-content #review-form #star-section #star-section-text {
   margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 #review-form-page-container #review-form-page-content #review-form #submit-id-submit {
@@ -912,7 +926,8 @@ footer .footer-content #contact-designers:hover {
 }
 
 #review-form-page-container #review-form-page-content #review-form #div_id_review_text label {
-  text-align: center;
   width: 100%;
+  font-weight: 600;
+  font-size: 20px;
 }
 /*# sourceMappingURL=global.css.map */
