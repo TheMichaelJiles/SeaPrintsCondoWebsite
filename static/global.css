@@ -57,7 +57,7 @@ body {
 }
 
 .landing-page {
-  background: url("/static/assets/LandingPicture.jpg");
+  background: url(assets/landing_page/LandingPicture.jpg);
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   height: 100vh;
@@ -129,7 +129,7 @@ body {
 }
 
 .landing-page .landing-title {
-  background-image: url("/static/assets/LandingPageLines.svg");
+  background-image: url(assets/landing_page/LandingPageLines.svg);
   background-repeat: no-repeat;
   width: 1505px;
   height: 618px;
@@ -425,7 +425,7 @@ footer .footer-content #contact-designers:hover {
   padding: 0;
   width: 100%;
   min-height: 100vh;
-  background-image: url("/static/assets/ReviewOcean.jpg");
+  background-image: url(assets/review_page/ReviewOcean.jpg);
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 25% auto;
@@ -448,7 +448,7 @@ footer .footer-content #contact-designers:hover {
 }
 
 #review-page #review-container {
-  background-image: url("/static/assets/ReviewBackground.svg");
+  background-image: url(assets/review_page/ReviewBackground.svg);
   background-position: 50% 0px;
   background-size: auto 2600px;
   background-color: white;
@@ -604,7 +604,7 @@ footer .footer-content #contact-designers:hover {
   min-width: 100%;
   width: 100%;
   max-width: 100%;
-  background: url(assets/Sand.jpg);
+  background: url(assets/registration_page/Sand.jpg);
   background-size: 25% auto;
   background-position: left top;
   background-repeat: no-repeat;
@@ -616,7 +616,7 @@ footer .footer-content #contact-designers:hover {
   margin-right: 0;
   margin-left: auto;
   text-align: center;
-  background: url(assets/RegistrationBackground-01.svg);
+  background: url(assets/registration_page/RegistrationBackground-01.svg);
   background-size: auto 6200px;
   background-position: center top;
 }
