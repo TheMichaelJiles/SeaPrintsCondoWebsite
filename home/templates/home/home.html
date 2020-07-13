@@ -22,7 +22,7 @@
                     <div class="rating-stars d-flex flex-row justify-content-center">
                         {% with ''|center:review.rating as range %}
                         {% for _ in range %}
-                        <img src="{% static 'assets/ReviewStar.svg' %}" alt="Star" style="width: 41px; height: 36px;">
+                        <img src="{% static 'assets/review_page/ReviewStar.svg' %}" alt="Star" style="width: 41px; height: 36px;">
                         {% endfor %}
                         {% endwith %}
                     </div>
@@ -33,14 +33,14 @@
             {% endfor %}
         </div>
         <div class="all-reviews-link-div d-flex flex-row justify-content-end">
-            <a class="all-reviews-link" href="#">all reviews ></a>
+            <a class="all-reviews-link" href="{% url 'all_reviews' 1 %}">all reviews ></a>
         </div>
     </div>
 
     <div class="container-fluid p-0 m-0">
         <div class="row">
             <div class="col left-column">
-                <img src="{% static 'assets/OrangeImage.png' %}" alt="Chairs on the beach" style="height: 1065px;">
+                <img src="{% static 'assets/landing_page/OrangeImage.png' %}" alt="Chairs on the beach" style="height: 1065px;">
                 <div id="room-for-everyone">
                     <strong id="room-title">Room for Everyone</strong>
                     <p>
@@ -48,7 +48,7 @@
                         family, and even a couple of friends, too.
                     </p>
                 </div>
-                <img src="{% static 'assets/NavyImage.png' %}" alt="Kitchen" style="height: 1425px;">
+                <img src="{% static 'assets/landing_page/NavyImage.png' %}" alt="Kitchen" style="height: 1425px;">
             </div>
             <div class="col right-column">
                 <div id="steps-from-the-beach">
@@ -58,7 +58,7 @@
                         Heading out for a day on the beach is only a few steps from your back door.
                     </p>
                 </div>
-                <img src="{% static 'assets/BlueImage.png' %}" alt="Living Room" style="height: 1383px;">
+                <img src="{% static 'assets/landing_page/BlueImage.png' %}" alt="Living Room" style="height: 1383px;">
                 <div id="fully-equipped-kitchen">
                     <strong id="fully-title">Fully Equipped Kitchen</strong>
                     <p>
@@ -189,12 +189,12 @@
     $("#photosLink").click(function() {
         $('html, body').animate({
             scrollTop: $("#carousel-title").offset().top
-        }, 2000);
+        }, 800);
     });
     $("#contactLink").click(function() {
         $('html, body').animate({
             scrollTop: $("#contactSection").offset().top
-        }, 2000);
+        }, 1000);
     });
 </script>
 {% endblock %}
