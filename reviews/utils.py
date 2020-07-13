@@ -38,7 +38,7 @@ def publish_review(link_key, postdata):
     return result
 
 def get_all_reviews():
-    return Review.objects.all().order_by('-publish_date')
+    return Review.objects.filter(is_published=True).order_by('-publish_date')
 
 def get_top_n_reviews(n):
     return get_all_reviews()[:n]
