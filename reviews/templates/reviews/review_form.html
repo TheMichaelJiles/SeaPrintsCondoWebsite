@@ -1,23 +1,29 @@
-{% extends 'base.html' %}
-{%load static%}
+{% extends 'base.html' %} 
+{% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-<!-- 
-    Here we have access to the data from the already created view. The variable is
-    called data. So we can say things like the following.
- -->
-
-<div id="review-form-header">
-    <nav id="review-form-nav"><a id="home-link" href="{% url 'landing' %}">home</a>
+<div id="review-form-page-container">
+    <img src="{% static 'assets/ReviewFormBackground.svg' %}" alt="How was your stay?" style="width: 100%; height: auto;">
+    
+    <div id="review-form-page-content" class="d-flex flex-column justify-content-between align-items-center">
+        <div id="review-form">
+            <div id="star-section" class="d-flex flex-column align-items-center">
+                <div id="star-section-text">Rate your stay!</div>
+                <div id="star-section-stars">
+                    {% with ''|center:5 as range %}
+                    {% for _ in range %}
+                    {% include 'reviews/review_star.html' with counter=forloop.counter %}
+                    {% endfor %}
+                    {% endwith %}
+                </div>
+            </div>
+            {% crispy form helper %}
+        </div>
+    </div>
 </div>
-<p>
-    {{ data.corresponding_stay.name }}<br>
-    {{ data.corresponding_stay.in_date|date }}<br>
-    {{ data.corresponding_stay.out_date|date }}<br>
-</p>
-<form method='post' id='review-form'>
-    {% csrf_token %}
-    {{ form }}
-    <input type='submit' id='reviewSubmit'></input>
-</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'reviews/review-form-star.js' %}"></script>
 {% endblock %}
