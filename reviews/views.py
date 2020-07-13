@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
-from reviews import forms, utils
+from reviews import forms as reviews_forms
+from reviews import utils
 from reviews.models import Review
 
 REVIEWS_PER_PAGE = 5
@@ -19,22 +20,33 @@ def get_all_reviews(request, page):
     review_list = all_reviews[start_index:end_index]
     return render(request, 'reviews/reviews.html', {
         'review_list': review_list,
-        'current_page': page,
-        'is_first_page': page == 1,
-        'is_last_page': page == max_pages,
-        'next_page': page + 1,
-        'previous_page': page - 1,
+        'current_page': target_page,
+        'is_first_page': target_page == 1,
+        'is_last_page': target_page == max_pages,
+        'next_page': target_page + 1,
+        'previous_page': target_page - 1,
     })
 
 def write_review(request, publishkey):
     if request.method == 'POST':
+        # This is when they submit the review form.
         post_result = utils.publish_review(publishkey, request.POST)
         print(post_result)
 
         result = redirect('landing')
     elif not Review.objects.filter(link_key=publishkey).exists():
+        # This means that the publish key is incorrect or does not exist.
         result = redirect('landing')
     else:
+        # This loads the initial review form page if the publish key is successful.
         review_data = Review.objects.get(link_key=publishkey)
-        result = render(request, 'reviews/review_form.html', {'form': forms.ReviewForm(), 'data': review_data})
+        if review_data.is_published:
+            # Redirect while alerting user they have already submitted their review.
+            result = redirect('landing')
+        else:
+            result = render(request, 'reviews/review_form.html', {
+                'form': reviews_forms.ReviewForm(), 
+                'helper': reviews_forms.ReviewFormHelper(), 
+                'data': review_data
+            })
     return result
