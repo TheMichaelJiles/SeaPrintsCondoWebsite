@@ -11,7 +11,7 @@ class ReviewForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['review_text'].label = 'Tell us about your stay!'
+        self.fields['review_text'].label = 'Comments:'
 
     rating = forms.IntegerField(widget=forms.HiddenInput())
 

@@ -1,5 +1,7 @@
-var starColor = "#5ECBD8";
-var defaultColor = "#ffffff";
+var starColor = "#F5AB43";
+var defaultColor = "#D4D4D4";
+
+var currentRating = 5;
 
 function colorStar(number, hexColor) {
     let starId = "#star-" + number;
@@ -23,13 +25,25 @@ function setStarClickListeners() {
         $(starId).click(function() {
             colorStarRange(i, starColor);
             $("#id_rating").val(i.toString());
+            currentRating = i;
+        });
+    }
+}
+
+function setStarHoverListeners() {
+    for (let i = 1; i <= 5; i++) {
+        let starId = "#star-" + i;
+        $(starId).hover(function() {
+            colorStarRange(i, starColor);
+        }, function() {
+            colorStarRange(currentRating, starColor);
         });
     }
 }
 
 $(document).ready(function() {
-    let initialRating = 5;
-    colorStarRange(initialRating, starColor);
-    $("#id_rating").val(initialRating.toString());
+    colorStarRange(currentRating, starColor);
+    $("#id_rating").val(currentRating.toString());
     setStarClickListeners();
+    setStarHoverListeners();
 });

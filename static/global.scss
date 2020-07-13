@@ -763,14 +763,26 @@ footer {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    #review-form-greeting {
+        width: 50%;
+        margin-left: 5%;
+        font-weight: map-get($font-weights, "bold");
+        font-size: 36px;
+    }
     #review-form-page-content {
-        width: 100%;
+        width: 50%;
+        margin-left: 5%;
+        padding: 1%;
+        border-radius: 15px;
+        box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
         #review-form {
-            width: 35%;
+            width: 100%;
             #star-section {
                 margin-bottom: 25px;
                 #star-section-text {
                     margin-bottom: 10px;
+                    font-weight: map-get($font-weights, "demi");
+                    font-size: 20px;
                 }
             }
             #submit-id-submit {
@@ -784,8 +796,9 @@ footer {
             #div_id_review_text {
                 width: 100%;
                 label {
-                    text-align: center;
                     width: 100%;
+                    font-weight: map-get($font-weights, "demi");
+                    font-size: 20px;
                 }
             }
         }
