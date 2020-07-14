@@ -930,4 +930,16 @@ footer .footer-content #contact-designers:hover {
   font-weight: 600;
   font-size: 20px;
 }
+
+@media screen and (max-width: 1137px) {
+  #review-box-shadow {
+    visibility: hidden;
+  }
+  #review-page {
+    background: none;
+  }
+  #review-page #review-container {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=global.css.map */
