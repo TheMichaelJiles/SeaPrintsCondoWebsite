@@ -806,14 +806,55 @@ footer {
     }
 }
 
+#amenities-section {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    padding-top: 4%;
+    width: 70%;
+    margin: auto;
+    ul {
+        padding: 0;
+        list-style-type: "› ";
+        li {
+            font-weight: map-get($font-weights, "regular");
+            color: map-get($site-colors, "gray");
+            font-size: 28px;
+            margin-left: 10%;
+            padding-bottom: 3%;
+        }
+    }
+    .left-list {
+        margin-right: 5%;
+    }
+    .heavy-amenities-title {
+        font-weight: map-get($font-weights, "heavy");
+        font-size: 42px;
+    }
+    .light-amenities-title {
+        font-size: 30px;
+        padding-bottom: 5%;
+    }
+    #amenities-section-lists {
+        border-radius: 15px;
+        box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+        padding: 1%;
+        margin-top: 25px;
+        #left-section {
+            width: 47%;
+        }
+        #right-section {
+            width: 47%;
+        }
+    }
+}
+
 @media screen and (max-width: 1137px) {
     #review-box-shadow {
         visibility: hidden;
     }
-
     #review-page {
         background: none;
-
         #review-container {
             width: 100%;
         }

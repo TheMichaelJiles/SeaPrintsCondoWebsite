@@ -70,41 +70,126 @@
             </div>
         </div>
     </div>
-<div id="carousel-title">CHECK OUT SOME PHOTOS</div>
-    <div id="carouselExampleIndicators" class="carousel slide custom-carousel" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="{% static 'home/assets/QueenRoom.JPG'%}" alt="First slide">
+    <div id="carousel-title">CHECK OUT SOME PHOTOS</div>
+        <div id="carouselExampleIndicators" class="carousel slide custom-carousel" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'home/assets/QueenRoom.JPG'%}" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'home/assets/Kitchen.JPG' %}" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'home/assets/TwinRoom.JPG' %}" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'home/assets/CloudSunset.jpg' %}" alt="Third slide">
+        </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'home/assets/Kitchen.JPG' %}" alt="Second slide">
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'home/assets/TwinRoom.JPG' %}" alt="Third slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'home/assets/CloudSunset.jpg' %}" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 
-    <div id="amenities">
+    <div id="amenities-section">
+        <img src="{% static 'assets/landing_page/Amenities-01.svg' %}" alt="Amenities" style="width: 100%; height: auto;">
+        <div id="amenities-section-lists" class="d-flex justify-content-around">
+            <div id="left-section">
+                <span id="general-title" class="heavy-amenities-title">General:</span>
+                <div id="general-list-container" class="d-flex justify-content-start">
+                    <ul class="left-list">
+                        <li>Air Conditioning</li>
+                        <li>No Smoking</li>
+                        <li>Washer &amp; Dryer</li>
+                        <li>Cable</li>
+                        <li>TV</li>
+                        <li>Board Games</li>
+                        <li>Novels</li>
+                        <li>Children Welcome</li>
+                        <li>Internet</li>
+                        <li>Heater</li>
+                        <li>Parking</li>
+                        <li>Deadbolt Lock</li>
+                    </ul>
+                    <ul>
+                        <li>Smoke Detector</li>
+                        <li>Fire Extinguisher</li>
+                        <li>Carbon-monoxide Detector</li>
+                        <li>Exterior Lighting</li>
+                        <li>Telephone</li>
+                        <li>Luxury linens</li>
+                        <li>Iron &amp; Board</li>
+                        <li>Hair Dryer</li>
+                        <li>Paper Towels</li>
+                        <li>Living Room</li>
+                        <li>Dining Room</li>
+                        <li>Deck/Patio</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="right-section" class="d-flex flex-column justify-content-around">
+                <div id="bathrooms-section">
+                    <span id="bathrooms-title" class="heavy-amenities-title">Bathrooms:</span>
+                    <div id="bathrooms-list-container" class="d-flex justify-content-start">
+                        <div id="bathroom-1-container" class="left-list">
+                            <span id="bathroom-1-title" class="light-amenities-title">Bathroom 1:</span>
+                            <ul>
+                                <li>Toilet</li>
+                                <li>Shower</li>
+                            </ul>
+                        </div>
+                        <div id="bathroom-2-container">
+                            <span id="bathroom-2-title" class="light-amenities-title">Bathroom 2:</span>
+                            <ul>
+                                <li>Toilet</li>
+                                <li>Combination Tub/Shower</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="kitchen-section">
+                    <span id="kitchen-title" class="heavy-amenities-title">Kitchen:</span>
+                    <div id="kitchen-list-container" class="d-flex justify-content-start">
+                        <div id="kitchen-left" class="left-list">
+                            <ul>
+                                <li>Dishwasher</li>
+                                <li>Refrigerator</li>
+                                <li>Glass Top Stove</li>
+                                <li>Oven</li>
+                                <li>Microwave</li>
+                                <li>Coffee Maker</li>
+                                <li>Toaster</li>
+                            </ul>
+                        </div>
+                        <div id="kitchen-right">
+                            <ul>
+                                <li>Blender</li>
+                                <li>Ice Maker</li>
+                                <li>Lobster pot</li>
+                                <li>Pantry Items</li>
+                                <li>Dishes &amp; Utensils</li>
+                                <li>Stainless Steel Pots/Pans</li>
+                                <li>Kettle</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} <div id="amenities">
         <h1>AMENITIES</h1>
-
                 <div id="amenities-list">
                     <div class="row">
                         <div class="col general-column">
@@ -177,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-    </div>
+    </div> {% endcomment %}
 
 <footer id="contactSection">
     <div class="footer-content">
