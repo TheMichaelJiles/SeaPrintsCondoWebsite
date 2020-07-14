@@ -328,54 +328,11 @@ body {
   color: #444444;
 }
 
-#amenities {
-  font-family: futura-pt, sans-serif;
-  font-style: normal;
-  width: 100%;
-}
-
-#amenities h1 {
-  font-family: futura-pt, sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 14vw;
-  color: #F5AB43;
-  letter-spacing: 30px;
-  text-align: center;
-  padding-top: 0;
-}
-
-#amenities #amenities-list {
-  background-color: #00031C;
-  color: white;
-  width: 100%;
-  font-size: 28px;
-}
-
-#amenities #amenities-list strong {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 40px;
-}
-
-#amenities #amenities-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#amenities #amenities-list li {
-  padding-left: 5px;
-  font-weight: 500;
-  line-height: 34px;
-  font-size: 22px;
-}
-
 footer {
   width: 100%;
   height: auto;
   background-color: #00031C;
-  margin-top: 177px;
+  margin-top: 2%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -934,7 +891,7 @@ footer .footer-content #contact-designers:hover {
 #amenities-section {
   font-family: futura-pt, sans-serif;
   font-style: normal;
-  padding-top: 4%;
+  padding-top: 2%;
   width: 70%;
   margin: auto;
 }
@@ -947,9 +904,9 @@ footer .footer-content #contact-designers:hover {
 #amenities-section ul li {
   font-weight: 400;
   color: #444444;
-  font-size: 28px;
+  font-size: 23px;
   margin-left: 10%;
-  padding-bottom: 3%;
+  margin-bottom: 3%;
 }
 
 #amenities-section .left-list {
@@ -977,6 +934,10 @@ footer .footer-content #contact-designers:hover {
 
 #amenities-section #amenities-section-lists #left-section {
   width: 47%;
+}
+
+#amenities-section #amenities-section-lists #left-section li {
+  margin-bottom: 11%;
 }
 
 #amenities-section #amenities-section-lists #right-section {
