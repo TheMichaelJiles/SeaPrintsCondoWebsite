@@ -328,13 +328,14 @@ body {
 }
 
 footer {
-    height: 100px;
     width: 100%;
+    height: auto;
     background-color: map-get($site-colors, "navy");
     margin-top: 177px;
     align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
     .footer-content {
-        align-items: center;
         width: 100%;
         text-align: center;
         color: map-get($site-colors, "orange");
@@ -342,8 +343,8 @@ footer {
         font-weight: map-get($font-weights, "medium");
         font-style: normal;
         font-size: 20px;
-        line-height: 100px;
         letter-spacing: 5px;
+        line-height: 30px;
         #contact-designers {
             cursor: pointer;
             color: white;

@@ -371,19 +371,18 @@ body {
 }
 
 footer {
-  height: 100px;
   width: 100%;
+  height: auto;
   background-color: #00031C;
   margin-top: 177px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 footer .footer-content {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 100%;
   text-align: center;
   color: #F5AB43;
@@ -391,8 +390,8 @@ footer .footer-content {
   font-weight: 500;
   font-style: normal;
   font-size: 20px;
-  line-height: 100px;
   letter-spacing: 5px;
+  line-height: 30px;
 }
 
 footer .footer-content #contact-designers {
