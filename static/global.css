@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   overflow-x: hidden;
   -webkit-animation: fadeInAnimation ease 1s;
@@ -929,6 +930,58 @@ footer .footer-content #contact-designers:hover {
   width: 100%;
   font-weight: 600;
   font-size: 20px;
+}
+
+#amenities-section {
+  font-family: futura-pt, sans-serif;
+  font-style: normal;
+  padding-top: 4%;
+  width: 70%;
+  margin: auto;
+}
+
+#amenities-section ul {
+  padding: 0;
+  list-style-type: "› ";
+}
+
+#amenities-section ul li {
+  font-weight: 400;
+  color: #444444;
+  font-size: 28px;
+  margin-left: 10%;
+  padding-bottom: 3%;
+}
+
+#amenities-section .left-list {
+  margin-right: 5%;
+}
+
+#amenities-section .heavy-amenities-title {
+  font-weight: 700;
+  font-size: 42px;
+}
+
+#amenities-section .light-amenities-title {
+  font-size: 30px;
+  padding-bottom: 5%;
+}
+
+#amenities-section #amenities-section-lists {
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+  padding: 1%;
+  margin-top: 25px;
+}
+
+#amenities-section #amenities-section-lists #left-section {
+  width: 47%;
+}
+
+#amenities-section #amenities-section-lists #right-section {
+  width: 47%;
 }
 
 @media screen and (max-width: 1137px) {
