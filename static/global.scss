@@ -1,5 +1,6 @@
 $site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
 $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
+
 body {
     overflow-x: hidden;
     animation: fadeInAnimation ease 1s;
@@ -495,7 +496,7 @@ footer {
             border: 0;
             min-height: 100vh;
             #dateSection {
-                font-family: futura-pt-bold, sans-serif;
+                font-family: futura-pt, sans-serif;
                 font-style: normal;
                 width: 76%;
                 margin: auto;
@@ -514,10 +515,11 @@ footer {
                         border-bottom: 5px solid map-get($site-colors, "orange");
                         strong {
                             font-size: 30px;
+                            color: map-get($sitecolors, "navy");
                             font-weight: map-get($font-weights, "demi");
                         }
                         span {
-                            font-weight: map-get($font-weights, "regular");
+                            font-weight: map-get($font-weights, "medium");
                             margin-bottom: 5px;
                             font-size: 22px;
                             color: map-get($site-colors, "gray");
@@ -529,7 +531,8 @@ footer {
                         padding-left: 15px;
                         padding-right: 15px;
                         strong {
-                            font-weight: map-get($font-weights, "regular");
+                            font-weight: map-get($font-weights, "medium");
+                            color: map-get($sitecolors, "navy");
                             font-size: 30px;
                             font-weight: normal;
                         }
@@ -556,6 +559,7 @@ footer {
                         strong {
                             font-size: 30px;
                             font-weight: 600;
+                            color: map-get($sitecolors, "navy");
                         }
                         span {
                             font-weight: 600;
@@ -598,7 +602,7 @@ footer {
             }
         }
         #form-section {
-            font-family: futura-pt-bold, sans-serif;
+            font-family: futura-pt, sans-serif;
             font-style: normal;
             font-weight: map-get($font-weights, "regular");
             border-radius: 15px;
@@ -696,7 +700,7 @@ footer {
 }
 
 #review-form-page-container {
-    font-family: futura-pt-bold, sans-serif;
+    font-family: futura-pt, sans-serif;
     font-style: normal;
     font-weight: map-get($font-weights, "regular");
     margin: 0;
