@@ -1,1 +1,212 @@
-/* No CSS *//*# sourceMappingURL=mobile-query.css.map */
+/* Landing Page Mobile Query */
+@media screen and (max-width: 975px) {
+  footer .footer-content {
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+  footer .footer-content a {
+    display: block;
+  }
+  #carousel-title {
+    font-size: 6vw;
+  }
+  #amenities-section {
+    margin-top: 30%;
+    margin-bottom: 10%;
+    width: 90%;
+  }
+  #amenities-section ul {
+    width: 100%;
+  }
+  #amenities-section .left-list {
+    margin-right: 0;
+  }
+  #amenities-section #amenities-section-lists {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 4%;
+  }
+  #amenities-section #amenities-section-lists #left-section {
+    width: 100%;
+  }
+  #amenities-section #amenities-section-lists #right-section {
+    width: 100%;
+  }
+  #amenities-section #amenities-section-lists #right-section #bathrooms-section {
+    width: 100%;
+  }
+  #amenities-section #amenities-section-lists #right-section #bathrooms-section #bathrooms-list-container {
+    width: 100%;
+  }
+  #amenities-section #amenities-section-lists #right-section #bathrooms-section #bathrooms-list-container div {
+    width: 100%;
+  }
+  #amenities-section #amenities-section-lists #right-section #kitchen-section {
+    width: 100%;
+  }
+  #amenities-section #amenities-section-lists #right-section #kitchen-section #kitchen-list-container {
+    width: 100%;
+  }
+  #amenities-section #amenities-section-lists #right-section #kitchen-section #kitchen-list-container div {
+    width: 100%;
+  }
+  .landing-page .landing-nav {
+    padding: 0;
+  }
+  .landing-page .landing-nav ul {
+    width: 100%;
+    padding: 0;
+  }
+  .landing-page .landing-nav ul li {
+    margin-left: 3%;
+    display: block;
+  }
+  .landing-page .book-button {
+    margin: 0;
+    top: 10px;
+    right: 11px;
+  }
+  .landing-page .landing-title {
+    margin-top: 45%;
+  }
+  .img-grid {
+    display: none;
+  }
+  #mobile-grid {
+    margin-top: 17%;
+    margin-bottom: 17%;
+    display: block !important;
+    width: 100%;
+  }
+  #room-for-everyone {
+    padding: 25px;
+    width: 90%;
+    margin: 0;
+  }
+  #room-for-everyone #room-title {
+    text-align: left;
+  }
+  #room-for-everyone p {
+    text-align: justify;
+    margin: 0;
+  }
+  #steps-from-the-beach {
+    width: 90%;
+    padding: 25px;
+    margin: 0;
+  }
+  #steps-from-the-beach #steps-title {
+    text-align: left;
+  }
+  #steps-from-the-beach p {
+    text-align: justify;
+    margin: 0;
+  }
+  #fully-equipped-kitchen {
+    width: 90%;
+    padding: 25px;
+    margin: 0;
+  }
+  #fully-equipped-kitchen #fully-title {
+    text-align: left;
+  }
+  #fully-equipped-kitchen p {
+    text-align: justify;
+    margin: 0;
+  }
+}
+
+/* Review Form Page Mobile Query */
+@media screen and (max-width: 500px) {
+  #review-form-page-container #review-form-page-content {
+    padding: 3%;
+  }
+  #review-form-page-container #review-form-page-content #review-form #submit-id-submit {
+    width: 60%;
+  }
+}
+
+/* Registration Page Mobile Query */
+@media screen and (max-width: 630px) {
+  .registration-nav li .my-nav-link {
+    color: #00031C;
+  }
+  .registration-nav li .my-nav-link:hover {
+    border-bottom: 3px #00031C solid;
+  }
+  #registration-box-shadow {
+    display: none;
+  }
+  #registration-content {
+    background: none;
+  }
+  #registration-content #registration-container {
+    width: 100%;
+  }
+  #registration-content #registration-container .info_section {
+    margin-bottom: 5%;
+  }
+  #registration-content #registration-container .info_section #dateSection {
+    margin: 0;
+    margin: auto;
+    width: 95%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #registration-content #registration-container .info_section #dateSection #the-calendar {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  #registration-content #registration-container .info_section #dateSection #the-info {
+    width: 100%;
+  }
+  #registration-content #registration-container .info_section #contract-section {
+    margin-top: 75px;
+  }
+  #registration-content #registration-container .info_section #contract-section #pdf-viewer {
+    width: 85%;
+  }
+  #registration-content #registration-container .info_section #contract-section p {
+    width: 85%;
+  }
+  #registration-content #registration-container .info_section #form-section {
+    width: 75%;
+    margin: 0;
+    margin: auto;
+    margin-top: 50px;
+  }
+  #registration-content #registration-container .info_section #form-section #personal-info-div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 30px;
+  }
+  #registration-content #registration-container .info_section #form-section #personal-info-div div {
+    width: 100%;
+  }
+  #registration-content #registration-container .info_section #form-section #street-route-div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #registration-content #registration-container .info_section #form-section #street-route-div div {
+    width: 100%;
+  }
+  #registration-content #registration-container .info_section #form-section #contact-info-div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 30px;
+  }
+  #registration-content #registration-container .info_section #form-section #contact-info-div div {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=mobile-query.css.map */

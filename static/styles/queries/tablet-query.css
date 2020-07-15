@@ -1,3 +1,4 @@
+/* Review Page Tablet Query */
 @media screen and (max-width: 1137px) {
   #review-box-shadow {
     visibility: hidden;
@@ -7,6 +8,80 @@
   }
   #review-page #review-container {
     width: 100%;
+  }
+}
+
+/* Review Form Page Tablet Query */
+@media screen and (max-width: 1137px) {
+  #review-form-page-container #review-form-greeting {
+    width: 90%;
+  }
+  #review-form-page-container #review-form-page-content {
+    width: 90%;
+  }
+}
+
+/* Landing Page Tablet Query */
+@media screen and (max-width: 1500px) {
+  #review-section .review-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #review-section .review-content .review-element {
+    margin-top: 5%;
+    width: 60%;
+  }
+}
+
+/* Registration Page Tablet Query */
+@media screen and (max-width: 1575px) {
+  .registration-nav li .my-nav-link {
+    color: #00031C;
+  }
+  .registration-nav li .my-nav-link:hover {
+    border-bottom: 3px #00031C solid;
+  }
+  #registration-box-shadow {
+    display: none;
+  }
+  #registration-content {
+    background: none;
+  }
+  #registration-content #registration-container {
+    width: 100%;
+  }
+  #registration-content #registration-container .info_section {
+    margin-bottom: 5%;
+  }
+  #registration-content #registration-container .info_section #dateSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #registration-content #registration-container .info_section #dateSection #the-calendar {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  #registration-content #registration-container .info_section #dateSection #the-info {
+    width: 100%;
+  }
+  #registration-content #registration-container .info_section #contract-section #pdf-viewer {
+    width: 75%;
+  }
+  #registration-content #registration-container .info_section #contract-section p {
+    width: 75%;
+  }
+  #registration-content #registration-container .info_section #form-section #submit-id-submit {
+    width: 50%;
   }
 }
 /*# sourceMappingURL=tablet-query.css.map */

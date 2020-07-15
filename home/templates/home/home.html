@@ -12,7 +12,7 @@
          <div class="landing-title">
             <div class="cape-san-blas-caption">CAPESANBLAS<br>FLORIDA</div>
             <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-md-10 my-auto">
+                <div>
                     <div class="sea-prints-title">Sea Prints</div>
                     <div class="sea-prints-caption">the condo formerly known as aquablast</div>
                 </div>
@@ -21,7 +21,7 @@
     </div>
     
     <div id="review-section">
-        <div class="d-flex flex-row justify-content-around review-content">
+        <div class="review-content d-flex justify-content-around">
             {% for review in reviews %}
                 <div class="review-element">
                     <div class="rating-stars d-flex flex-row justify-content-center">
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div class="container-fluid p-0 m-0">
+    <div class="img-grid container-fluid p-0 m-0">
         <div class="row">
             <div class="col left-column">
                 <img src="{% static 'assets/landing_page/OrangeImage-01.svg' %}" alt="Chairs on the beach" class="img-fluid">
@@ -75,6 +75,32 @@
             </div>
         </div>
     </div>
+
+    <div id="mobile-grid" class="mobile-grid d-flex flex-column justify-content-around align-items-center">
+        <div id="room-for-everyone">
+            <strong id="room-title">Room for Everyone</strong>
+            <p>
+                With 3 bedrooms and 2 full bathrooms, there is plenty of space for you, your
+                family, and even a couple of friends, too.
+            </p>
+        </div>
+        <div id="steps-from-the-beach">
+            <strong id="steps-title">Steps From the Beach</strong>
+            <p>
+                We have the privilege of being one of the only condos located among the dunes.
+                Heading out for a day on the beach is only a few steps from your back door.
+            </p>
+        </div>
+        <div id="fully-equipped-kitchen">
+            <strong id="fully-title">Fully Equipped Kitchen</strong>
+            <p>
+                In addition to the great restaurants around the cape, Sea Prints has a full kitchen
+                including an electric stove, oven, dishwasher, microwave, and full-size refrigerator
+                with a freezer drawer.
+            </p>
+        </div>
+    </div>
+
     <div id="carousel-title">CHECK OUT SOME PHOTOS</div>
         <div id="carouselExampleIndicators" class="carousel slide custom-carousel" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -195,8 +221,8 @@
     </div>
     <footer id="contactSection">
         <div class="footer-content">
-            189 antiqua, cape san blas FL | <a id="contact-designers">info@seaprints-csb.com</a><br>
-            website designed by luke whaley and michael jiles | <a id="contact-designers">contact designers</a>
+            189 antiqua, cape san blas FL <a id="contact-designers">info@seaprints-csb.com</a><br>
+            website designed by luke whaley and michael jiles <a id="contact-designers">contact designers</a>
         </div>
     </footer>
 {% endblock %}
