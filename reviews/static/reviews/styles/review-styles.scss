@@ -50,6 +50,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
         padding-right: auto;
         min-height: 100vh;
         padding-top: 5%;
+        margin-bottom: 0;
         #review-content {
             width: 90%;
             .review-item {
@@ -69,6 +70,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
                     font-weight: map-get($font-weights, "demi");
                     padding: 15px;
                     p {
+                        overflow-wrap: break-word;
                         text-align: justify;
                         font-size: 20px;
                     }
@@ -118,28 +120,28 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
     font-style: normal;
     position: fixed;
     top: 6%;
-    right: 0;
     width: 25%;
     height: auto;
     padding: 2%;
     padding-top: 1%;
-    text-align: right;
-    li {
-        font-size: 18pt;
-        margin-left: 20%;
-        margin-right: auto;
-        .my-nav-link {
-            text-decoration: none;
-            color: white;
-        }
-        .reviews-link:hover {
-            border-bottom: 3px map-get($site-colors, "orange") solid;
-        }
-        .photos-link:hover {
-            border-bottom: 3px map-get($site-colors, "cyan") solid;
-        }
-        .contact-link:hover {
-            border-bottom: 3px map-get($site-colors, "navy") solid;
+    ul {
+        li {
+            font-size: 18pt;
+            margin-left: 20%;
+            margin-right: auto;
+            .my-nav-link {
+                text-decoration: none;
+                color: white;
+            }
+            .reviews-link:hover {
+                border-bottom: 3px map-get($site-colors, "orange") solid;
+            }
+            .photos-link:hover {
+                border-bottom: 3px map-get($site-colors, "cyan") solid;
+            }
+            .contact-link:hover {
+                border-bottom: 3px map-get($site-colors, "navy") solid;
+            }
         }
     }
     .book-button {
