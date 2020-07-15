@@ -1,0 +1,382 @@
+/*   --------    REGISTRATION PAGE   --------    */
+#registration-box-shadow {
+  width: 25%;
+  position: fixed;
+  -webkit-box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  margin-left: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#registration-content {
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  background: url("/static/assets/registration_page/Sand.jpg");
+  background-size: 25% auto;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#registration-content #registration-container {
+  width: 75%;
+  margin-right: 0;
+  margin-left: auto;
+  text-align: center;
+  background: url("/static/assets/registration_page/RegistrationBackground-01.svg");
+  background-size: auto 6200px;
+  background-position: center top;
+}
+
+#registration-content #registration-container .info_section {
+  background-size: auto 6200px;
+  background-position: center top;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-height: 100vh;
+}
+
+#registration-content #registration-container .info_section #dateSection {
+  font-family: futura-pt-bold, sans-serif;
+  font-style: normal;
+  width: 76%;
+  margin: auto;
+  margin-top: 190px;
+  border-radius: 15px;
+  padding: 25px;
+  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+  background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+}
+
+#registration-content #registration-container .info_section #dateSection #the-calendar {
+  width: 45%;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info {
+  width: 45%;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #top {
+  padding-bottom: 10px;
+  border-bottom: 5px solid #F5AB43;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #top strong {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #top span {
+  font-weight: 400;
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: #444444;
+  font-weight: bold;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle {
+  border-bottom: 5px solid #F5AB43;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle strong {
+  font-weight: 400;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle span {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: #444444;
+  font-weight: bold;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle div {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle div:first-of-type {
+  margin-top: 45px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #middle div:last-of-type {
+  margin-bottom: 45px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #bottom {
+  margin-top: 35px;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #bottom strong {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#registration-content #registration-container .info_section #dateSection #the-info #bottom span {
+  font-weight: 600;
+  font-size: 40px;
+  color: #F5AB43;
+  font-weight: bold;
+}
+
+#registration-content #registration-container .info_section #contract-section {
+  margin-top: 550px;
+  margin-bottom: 5%;
+}
+
+#registration-content #registration-container .info_section #contract-section #pdf-viewer {
+  width: 60%;
+  height: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+  margin-bottom: 2vh;
+  overflow: scroll;
+}
+
+#registration-content #registration-container .info_section #contract-section p {
+  text-align: center;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: none;
+  color: #444444;
+  font-size: 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+#registration-content #registration-container .info_section #contract-section .form-check-label {
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: none;
+  font-size: 25px;
+}
+
+#registration-content #registration-container #form-section {
+  font-family: futura-pt-bold, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  border-radius: 15px;
+  width: 76%;
+  margin: auto;
+  margin-top: 190px;
+  margin-bottom: 50px;
+  padding: 35px;
+  -webkit-box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+          box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+  background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+#registration-content #registration-container #form-section div {
+  width: 100%;
+}
+
+#registration-content #registration-container #form-section #div_id_name {
+  width: 50%;
+}
+
+#registration-content #registration-container #form-section #div_id_age {
+  width: 20%;
+}
+
+#registration-content #registration-container #form-section #div_id_number_of_guests {
+  width: 20%;
+}
+
+#registration-content #registration-container #form-section #div_id_phone_contact {
+  width: 50%;
+}
+
+#registration-content #registration-container #form-section #id_phone_contact_0 {
+  width: 100%;
+}
+
+#registration-content #registration-container #form-section #id_phone_contact_1 {
+  margin-top: 10px;
+  width: 100%;
+}
+
+#registration-content #registration-container #form-section #div_id_email_contact {
+  width: 40%;
+}
+
+#registration-content #registration-container #form-section #div_id_street_number {
+  width: 25%;
+}
+
+#registration-content #registration-container #form-section #div_id_route {
+  width: 70%;
+}
+
+#registration-content #registration-container #form-section #div_id_city {
+  width: 40%;
+}
+
+#registration-content #registration-container #form-section #div_id_state {
+  width: 25%;
+}
+
+#registration-content #registration-container #form-section #div_id_zip_code {
+  width: 25%;
+}
+
+#registration-content #registration-container #form-section #personal-info-div {
+  margin-bottom: 5%;
+}
+
+#registration-content #registration-container #form-section #contact-info-div {
+  margin-bottom: 5%;
+}
+
+#registration-content #registration-container #form-section #questions-div {
+  margin-top: 5%;
+}
+
+#registration-content #registration-container #form-section #submit-id-submit {
+  background-color: #00031C;
+  color: white;
+  border: none;
+  margin: auto;
+  width: 20%;
+  margin-top: 10px;
+}
+
+#registration-content #registration-container #form-section #submit-id-submit:hover {
+  background-color: #5ECBD8;
+}
+
+.registration-nav {
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.registration-nav li {
+  font-size: 18pt;
+  margin-right: 1vw;
+}
+
+.registration-nav li .my-nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.registration-nav li .my-nav-link:hover {
+  border-bottom: 3px white solid;
+}
+
+.registration-link {
+  color: white;
+}
+
+#calendarContainer #monthAndYear {
+  font-family: futura-pt-bold, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28pt;
+}
+
+#calendarContainer #previous {
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  background: transparent;
+  outline: none;
+}
+
+#calendarContainer #previous:hover {
+  color: #F5AB43;
+}
+
+#calendarContainer #next {
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: transparent;
+  outline: none;
+}
+
+#calendarContainer #next:hover {
+  color: #F5AB43;
+}
+
+#calendarContainer #jumpForm {
+  width: 100%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#calendarContainer #jumpForm label {
+  display: block;
+  width: 100%;
+}
+
+#calendarContainer #jumpForm select {
+  width: 45%;
+}
+
+#calendarContainer #calendar th {
+  font-family: futura-pt, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+}
+
+#calendarContainer #calendar #calendar-body tr {
+  font-family: sofia-pro, sans-serif;
+  text-align: center;
+  font-size: 18px;
+  margin: 0;
+  border: none;
+}
+
+#calendarContainer #calendar #calendar-body td {
+  border: none;
+}
+
+#calendarContainer #calendar #calendar-body .cell {
+  background-color: transparent;
+  margin: 0;
+}
+
+#calendarContainer #calendar #calendar-body .cell-selected {
+  background-color: #5ECBD8;
+  margin: 0;
+}
+
+#calendarContainer #calendar #calendar-body .cell-selected:hover {
+  cursor: pointer;
+  background-color: #5ECBD8;
+  color: white;
+  margin: 0;
+}
+
+#calendarContainer #calendar #calendar-body .cell:hover {
+  cursor: pointer;
+  background-color: #5ECBD8;
+  margin: 0;
+}
+
+#calendarContainer #calendar #calendar-body .cell-disabled {
+  color: gray;
+  cursor: default;
+  margin: 0;
+}
+/*# sourceMappingURL=registration-styles.css.map */

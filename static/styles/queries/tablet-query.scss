@@ -1,0 +1,11 @@
+@media screen and (max-width: 1137px) {
+    #review-box-shadow {
+        visibility: hidden;
+    }
+    #review-page {
+        background: none;
+        #review-container {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,212 @@
+$site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
+$font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
+
+/*   --------    REVIEW PAGE   --------    */
+
+#review-box-shadow {
+    width: 25%;
+    position: fixed;
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    margin-right: 0;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#review-page {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/static/assets/review_page/ReviewOcean.jpg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 25% auto;
+    background-attachment: fixed;
+    background-color: map-get($site-colors, "cyan");
+    #review-navigator {
+        width: 75%;
+        text-align: center;
+        font-size: 34px;
+        padding-bottom: 40px;
+        margin-left: 10%;
+        margin-right: auto;
+        #pageNumber {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+    }
+    #review-container {
+        background-image: url('/static/assets/review_page/ReviewBackground.svg');
+        background-position: 50% 0px;
+        background-size: auto 2600px;
+        background-color: white;
+        width: 75%;
+        padding-left: 5%;
+        padding-right: auto;
+        min-height: 100vh;
+        padding-top: 5%;
+        #review-content {
+            width: 90%;
+            .review-item {
+                text-align: center;
+                width: 85%;
+                border-radius: 25px;
+                box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+                margin-bottom: 75px;
+                padding: 20px;
+                background-color: white;
+                .review-item-header-name {
+                    font-weight: map-get($font-weights, "bold");
+                    font-size: 34px;
+                    letter-spacing: 2px;
+                }
+                .review-item-content {
+                    font-weight: map-get($font-weights, "demi");
+                    padding: 15px;
+                    p {
+                        text-align: justify;
+                        font-size: 20px;
+                    }
+                }
+                .review-date {
+                    font-weight: map-get($font-weights, "medium");
+                    color: map-get($site-colors, "gray");
+                }
+                .review-item-stars {
+                    margin-bottom: 10px;
+                }
+            }
+            .review-item:nth-child(even) {
+                align-self: end;
+            }
+            .review-item:nth-child(3n-2) {
+                svg path {
+                    fill: map-get($site-colors, "cyan") !important;
+                }
+                .review-item-content {
+                    border-top: 5px solid map-get($site-colors, "cyan");
+                }
+            }
+            .review-item:nth-child(3n-1) {
+                svg path {
+                    fill: map-get($site-colors, "orange") !important;
+                }
+                .review-item-content {
+                    border-top: 5px solid map-get($site-colors, "orange");
+                }
+            }
+            .review-item:nth-child(3n) {
+                svg path {
+                    fill: map-get($site-colors, "navy") !important;
+                }
+                .review-item-content {
+                    border-top: 5px solid map-get($site-colors, "navy");
+                }
+            }
+        }
+    }
+}
+
+.review-nav {
+    font-family: futura-pt, sans-serif;
+    font-weight: map-get($font-weights, "heavy");
+    font-style: normal;
+    position: fixed;
+    top: 6%;
+    right: 0;
+    width: 25%;
+    height: auto;
+    padding: 2%;
+    padding-top: 1%;
+    text-align: right;
+    li {
+        font-size: 18pt;
+        margin-left: 20%;
+        margin-right: auto;
+        .my-nav-link {
+            text-decoration: none;
+            color: white;
+        }
+        .reviews-link:hover {
+            border-bottom: 3px map-get($site-colors, "orange") solid;
+        }
+        .photos-link:hover {
+            border-bottom: 3px map-get($site-colors, "cyan") solid;
+        }
+        .contact-link:hover {
+            border-bottom: 3px map-get($site-colors, "navy") solid;
+        }
+    }
+    .book-button {
+        background-color: map-get($site-colors, "navy");
+        border-radius: 7px;
+        max-height: 28px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 28px;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+        top: 2%;
+        right: 1%;
+        position: fixed;
+        z-index: 1;
+    }
+    .book-button:hover {
+        background-color: #48a0aa;
+    }
+}
+
+#review-form-page-container {
+    font-family: futura-pt-bold, sans-serif;
+    font-style: normal;
+    font-weight: map-get($font-weights, "regular");
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    #review-form-greeting {
+        width: 50%;
+        margin-left: 5%;
+        font-weight: map-get($font-weights, "bold");
+        font-size: 36px;
+    }
+    #review-form-page-content {
+        width: 50%;
+        margin-left: 5%;
+        padding: 1%;
+        border-radius: 15px;
+        box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+        #review-form {
+            width: 100%;
+            #star-section {
+                margin-bottom: 25px;
+                #star-section-text {
+                    margin-bottom: 10px;
+                    font-weight: map-get($font-weights, "demi");
+                    font-size: 20px;
+                }
+            }
+            #submit-id-submit {
+                background-color: map-get($site-colors, "navy");
+                border: none;
+                width: 30%;
+            }
+            #submit-id-submit:hover {
+                background-color: map-get($site-colors, "cyan");
+            }
+            #div_id_review_text {
+                width: 100%;
+                label {
+                    width: 100%;
+                    font-weight: map-get($font-weights, "demi");
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

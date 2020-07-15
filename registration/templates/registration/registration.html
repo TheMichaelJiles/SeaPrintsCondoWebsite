@@ -2,11 +2,15 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'registration/styles/registration-styles.css' %}">
+{% endblock %}
+
 {% block content %}
 <div id="registration-box-shadow">
 </div>
 <div id="registration-content">
-    <div id="registration-container" class="d-flex flex-column justify-content-between">
+    <div id="registration-container" class="d-flex flex-column justify-content-between parallax-background">
         {% include "registration/registration-navbar.html" %}
         <div class="info_section">
             <div id="dateSection" class="d-flex justify-content-between align-items-center">
@@ -64,8 +68,8 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'registration/date-info-picker.js' %}"></script>
-<script src="{% static 'registration/contract.js' %}"></script>
-<script src="{% static 'registration/scripts.js' %}"></script>
-<script src="{% static 'registration/parallax.js' %}"></script>
+<script src="{% static 'registration/scripts/date-info-picker.js' %}"></script>
+<script src="{% static 'registration/scripts/contract.js' %}"></script>
+<script src="{% static 'registration/scripts/scripts.js' %}"></script>
+<script src="{% static 'scripts/parallax.js' %}"></script>
 {% endblock %}

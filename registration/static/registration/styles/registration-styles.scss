@@ -1,0 +1,328 @@
+$site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
+$font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
+
+/*   --------    REGISTRATION PAGE   --------    */
+
+#registration-box-shadow {
+    width: 25%;
+    position: fixed;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    margin-left: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#registration-content {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    background: url('/static/assets/registration_page/Sand.jpg');
+    background-size: 25% auto;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    #registration-container {
+        width: 75%;
+        margin-right: 0;
+        margin-left: auto;
+        text-align: center;
+        background: url('/static/assets/registration_page/RegistrationBackground-01.svg');
+        background-size: auto 6200px;
+        background-position: center top;
+        .info_section {
+            background-size: auto 6200px;
+            background-position: center top;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            min-height: 100vh;
+            #dateSection {
+                font-family: futura-pt-bold, sans-serif;
+                font-style: normal;
+                width: 76%;
+                margin: auto;
+                margin-top: 190px;
+                border-radius: 15px;
+                padding: 25px;
+                box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+                background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+                #the-calendar {
+                    width: 45%;
+                }
+                #the-info {
+                    width: 45%;
+                    #top {
+                        padding-bottom: 10px;
+                        border-bottom: 5px solid map-get($site-colors, "orange");
+                        strong {
+                            font-size: 30px;
+                            font-weight: map-get($font-weights, "demi");
+                        }
+                        span {
+                            font-weight: map-get($font-weights, "regular");
+                            margin-bottom: 5px;
+                            font-size: 22px;
+                            color: map-get($site-colors, "gray");
+                            font-weight: bold;
+                        }
+                    }
+                    #middle {
+                        border-bottom: 5px solid map-get($site-colors, "orange");
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        strong {
+                            font-weight: map-get($font-weights, "regular");
+                            font-size: 30px;
+                            font-weight: normal;
+                        }
+                        span {
+                            font-weight: 500;
+                            margin-bottom: 5px;
+                            font-size: 22px;
+                            color: map-get($site-colors, "gray");
+                            font-weight: bold;
+                        }
+                        div {
+                            margin-top: 25px;
+                            margin-bottom: 25px;
+                        }
+                        div:first-of-type {
+                            margin-top: 45px;
+                        }
+                        div:last-of-type {
+                            margin-bottom: 45px;
+                        }
+                    }
+                    #bottom {
+                        margin-top: 35px;
+                        strong {
+                            font-size: 30px;
+                            font-weight: 600;
+                        }
+                        span {
+                            font-weight: 600;
+                            font-size: 40px;
+                            color: map-get($site-colors, "orange");
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            #contract-section {
+                margin-top: 550px;
+                margin-bottom: 5%;
+                #pdf-viewer {
+                    width: 60%;
+                    height: 800px;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+                    margin-bottom: 2vh;
+                    overflow: scroll;
+                }
+                p {
+                    text-align: center;
+                    font-family: futura-pt, sans-serif;
+                    font-weight: map-get($font-weights, "regular");
+                    font-style: none;
+                    color: map-get($site-colors, "gray");
+                    font-size: 20px;
+                    width: 60%;
+                    margin: 0 auto;
+                }
+                .form-check-label {
+                    font-family: futura-pt, sans-serif;
+                    font-weight: map-get($font-weights, "demi");
+                    font-style: none;
+                    font-size: 25px;
+                }
+            }
+        }
+        #form-section {
+            font-family: futura-pt-bold, sans-serif;
+            font-style: normal;
+            font-weight: map-get($font-weights, "regular");
+            border-radius: 15px;
+            width: 76%;
+            margin: auto;
+            margin-top: 190px;
+            margin-bottom: 50px;
+            padding: 35px;
+            box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.32);
+            background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+            box-sizing: content-box;
+            div {
+                width: 100%;
+            }
+            #div_id_name {
+                width: 50%;
+            }
+            #div_id_age {
+                width: 20%;
+            }
+            #div_id_number_of_guests {
+                width: 20%;
+            }
+            #div_id_phone_contact {
+                width: 50%;
+            }
+            #id_phone_contact_0 {
+                width: 100%;
+            }
+            #id_phone_contact_1 {
+                margin-top: 10px;
+                width: 100%;
+            }
+            #div_id_email_contact {
+                width: 40%;
+            }
+            #div_id_street_number {
+                width: 25%;
+            }
+            #div_id_route {
+                width: 70%;
+            }
+            #div_id_city {
+                width: 40%;
+            }
+            #div_id_state {
+                width: 25%;
+            }
+            #div_id_zip_code {
+                width: 25%;
+            }
+            #personal-info-div {
+                margin-bottom: 5%;
+            }
+            #contact-info-div {
+                margin-bottom: 5%;
+            }
+            #questions-div {
+                margin-top: 5%;
+            }
+            #submit-id-submit {
+                background-color: map-get($site-colors, "navy");
+                color: white;
+                border: none;
+                margin: auto;
+                width: 20%;
+                margin-top: 10px;
+            }
+            #submit-id-submit:hover {
+                background-color: map-get($site-colors, "cyan");
+            }
+        }
+    }
+}
+
+.registration-nav {
+    font-family: futura-pt, sans-serif;
+    font-weight: map-get($font-weights, "heavy");
+    font-style: normal;
+    li {
+        font-size: 18pt;
+        margin-right: 1vw;
+        .my-nav-link {
+            text-decoration: none;
+            color: white;
+        }
+        .my-nav-link:hover {
+            border-bottom: 3px white solid;
+        }
+    }
+}
+
+.registration-link {
+    color: white;
+}
+
+#calendarContainer {
+    #monthAndYear {
+        font-family: futura-pt-bold, sans-serif;
+        font-style: normal;
+        font-weight: map-get($font-weights, "heavy");
+        font-size: 28pt;
+    }
+    #previous {
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        background: transparent;
+        outline: none;
+    }
+    #previous:hover {
+        color: map-get($site-colors, "orange");
+    }
+    #next {
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-right: 10px;
+        background: transparent;
+        outline: none;
+    }
+    #next:hover {
+        color: map-get($site-colors, "orange");
+    }
+    #jumpForm {
+        width: 100%;
+        font-weight: bold;
+        font-size: 20px;
+        label {
+            display: block;
+            width: 100%;
+        }
+        select {
+            width: 45%;
+        }
+    }
+    #calendar {
+        th {
+            font-family: futura-pt, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            border: none;
+        }
+        #calendar-body {
+            tr {
+                font-family: sofia-pro, sans-serif;
+                text-align: center;
+                font-size: 18px;
+                margin: 0;
+                border: none;
+            }
+            td {
+                border: none;
+            }
+            .cell {
+                background-color: transparent;
+                margin: 0;
+            }
+            .cell-selected {
+                background-color: map-get($site-colors, "cyan");
+                margin: 0;
+            }
+            .cell-selected:hover {
+                cursor: pointer;
+                background-color: map-get($site-colors, "cyan");
+                color: white;
+                margin: 0;
+            }
+            .cell:hover {
+                cursor: pointer;
+                background-color: map-get($site-colors, "cyan");
+                margin: 0;
+            }
+            .cell-disabled {
+                color: gray;
+                cursor: default;
+                margin: 0;
+            }
+        }
+    }
+}
