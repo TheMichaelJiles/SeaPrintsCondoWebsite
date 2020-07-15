@@ -69,7 +69,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
         -o-background-size: 100% 100%;
         background-size: 100% 100%;
         width: 87%;
-        height: 64%;
+        height: 32vw;
         margin: auto;
         margin-top: 5%;
         overflow: hidden;
@@ -78,11 +78,11 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
             font-family: sirenne-text-mvb, serif;
             font-weight: map-get($font-weights, "heavy");
             font-style: normal;
-            font-size: 10vw;
+            font-size: 13vw;
             color: white;
-            border-bottom: 7px white solid;
+            border-bottom: 0.5vw white solid;
             padding-bottom: 0px;
-            height: 10%;
+            height: 15vw;
             margin-bottom: 0px;
         }
         .sea-prints-caption {
@@ -104,7 +104,9 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
             top: 12px;
             left: 15px;
             letter-spacing: 5px;
-            line-height: 35px;
+            line-height: 2vw;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
         }
     }
 }

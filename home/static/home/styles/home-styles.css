@@ -75,7 +75,7 @@
   background: url("/static/assets/landing_page/LandingPageLines.png") no-repeat;
   background-size: 100% 100%;
   width: 87%;
-  height: 64%;
+  height: 32vw;
   margin: auto;
   margin-top: 5%;
   overflow: hidden;
@@ -86,11 +86,11 @@
   font-family: sirenne-text-mvb, serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 10vw;
+  font-size: 13vw;
   color: white;
-  border-bottom: 7px white solid;
+  border-bottom: 0.5vw white solid;
   padding-bottom: 0px;
-  height: 10%;
+  height: 15vw;
   margin-bottom: 0px;
 }
 
@@ -114,7 +114,9 @@
   top: 12px;
   left: 15px;
   letter-spacing: 5px;
-  line-height: 35px;
+  line-height: 2vw;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 #review-section {
