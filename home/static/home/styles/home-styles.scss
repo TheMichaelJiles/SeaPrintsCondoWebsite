@@ -1,0 +1,324 @@
+$site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
+$font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
+
+/*   --------    LANDING PAGE   --------    */
+
+.landing-page {
+    background: url('/static/assets/landing_page/LandingPicture.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    a {
+        cursor: pointer;
+    }
+    label {
+        font-size: 18pt;
+        margin-left: 30px;
+        margin-right: 135px;
+        margin-top: 3px;
+        color: white;
+    }
+    .landing-nav {
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "heavy");
+        font-style: normal;
+        li {
+            font-size: 18pt;
+            margin-left: 66px;
+            color: white;
+            .my-nav-link {
+                text-decoration: none;
+                color: white;
+            }
+            .reviews-link:hover {
+                border-bottom: 3px map-get($site-colors, "orange") solid;
+            }
+            .photos-link:hover {
+                border-bottom: 3px map-get($site-colors, "cyan") solid;
+            }
+            .contact-link:hover {
+                border-bottom: 3px map-get($site-colors, "navy") solid;
+            }
+        }
+    }
+    .book-button {
+        background-color: map-get($site-colors, "navy");
+        border-radius: 7px;
+        max-height: 28px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 28px;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 30px;
+        position: fixed;
+        right: 23px;
+        top: 18px;
+        z-index: 1;
+    }
+    .book-button:hover {
+        background-color: #48a0aa;
+    }
+    .landing-title {
+        background: url('/static/assets/landing_page/LandingPageLines.png') no-repeat;
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
+        width: 87%;
+        height: 64%;
+        margin: auto;
+        margin-top: 5%;
+        overflow: hidden;
+        .sea-prints-title {
+            text-align: center;
+            font-family: sirenne-text-mvb, serif;
+            font-weight: map-get($font-weights, "heavy");
+            font-style: normal;
+            font-size: 10vw;
+            color: white;
+            border-bottom: 7px white solid;
+            padding-bottom: 0px;
+            height: 10%;
+            margin-bottom: 0px;
+        }
+        .sea-prints-caption {
+            font-family: skolar-sans-latin-extended, sans-serif;
+            font-weight: map-get($font-weights, "regular");
+            font-style: normal;
+            font-size: 3vw;
+            text-align: center;
+            color: white;
+            letter-spacing: 3px;
+        }
+        .cape-san-blas-caption {
+            font-family: futura-pt, sans-serif;
+            font-weight: map-get($font-weights, "heavy");
+            font-style: normal;
+            position: relative;
+            color: white;
+            font-size: 2vw;
+            top: 12px;
+            left: 15px;
+            letter-spacing: 5px;
+            line-height: 35px;
+        }
+    }
+}
+
+#review-section {
+    font-family: futura-pt, sans-serif;
+    font-weight: map-get($font-weights, "regular");
+    font-style: normal;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+    background-color: map-get($site-colors, "navy");
+    height: 11%;
+    .review-content {
+        width: 80%;
+        margin: auto;
+        .review-element {
+            width: 25%;
+            .rating-text {
+                text-align: center;
+                font-size: 20px;
+            }
+            .rating-stars {
+                border-bottom: 5px solid white;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                img {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .all-reviews-link-div {
+        .all-reviews-link {
+            margin-right: 50px;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+    }
+}
+
+#carousel-title {
+    font-family: futura-pt, sans-serif;
+    font-weight: map-get($font-weights, "bold");
+    font-style: normal;
+    font-size: 80px;
+    color: map-get($site-colors, "navy");
+    width: 100%;
+    text-align: right;
+    padding-right: 1vw;
+    padding-top: 4vw;
+}
+
+.carousel-inner>.item {
+    height: 939px;
+}
+
+#steps-from-the-beach {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    width: 75%;
+    margin-top: 30%;
+    margin-bottom: 15%;
+    margin-left: auto;
+    margin-right: 5%;
+    #steps-title {
+        font-weight: map-get($font-weights, "heavy");
+        color: map-get($site-colors, "navy");
+        border-bottom: 7px solid map-get($site-colors, "orange");
+        width: 100%;
+        display: block;
+        font-size: 60px;
+        text-align: right;
+        letter-spacing: 4px;
+    }
+    p {
+        font-weight: map-get($font-weights, "medium");
+        margin-top: 20px;
+        text-align: right;
+        font-size: 30px;
+        width: 90%;
+        margin-left: auto;
+        color: map-get($site-colors, "gray");
+    }
+}
+
+#room-for-everyone {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    width: 75%;
+    margin-top: 30%;
+    margin-bottom: 35%;
+    margin-right: auto;
+    margin-left: 5%;
+    #room-title {
+        font-weight: map-get($font-weights, "heavy");
+        color: map-get($site-colors, "navy");
+        border-bottom: 7px solid map-get($site-colors, "cyan");
+        width: 100%;
+        display: block;
+        font-size: 60px;
+        text-align: left;
+        letter-spacing: 4px;
+    }
+    p {
+        font-weight: map-get($font-weights, "medium");
+        margin-top: 20px;
+        text-align: left;
+        font-size: 30px;
+        width: 90%;
+        margin-right: auto;
+        color: map-get($site-colors, "gray");
+    }
+}
+
+#fully-equipped-kitchen {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    width: 85%;
+    margin-top: 35%;
+    margin-left: auto;
+    margin-right: 5%;
+    #fully-title {
+        font-weight: map-get($font-weights, "heavy");
+        color: map-get($site-colors, "navy");
+        border-bottom: 7px solid map-get($site-colors, "navy");
+        width: 100%;
+        display: block;
+        font-size: 60px;
+        text-align: right;
+        letter-spacing: 4px;
+    }
+    p {
+        font-weight: map-get($font-weights, "medium");
+        margin-top: 20px;
+        text-align: right;
+        font-size: 30px;
+        width: 90%;
+        margin-left: auto;
+        color: map-get($site-colors, "gray");
+    }
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: map-get($site-colors, "navy");
+    margin-top: 2%;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .footer-content {
+        width: 100%;
+        text-align: center;
+        color: map-get($site-colors, "orange");
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "medium");
+        font-style: normal;
+        font-size: 20px;
+        letter-spacing: 5px;
+        line-height: 30px;
+        #contact-designers {
+            cursor: pointer;
+            color: white;
+        }
+        #contact-designers:hover {
+            color: map-get($site-colors, "orange");
+        }
+    }
+}
+
+#amenities-section {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    padding-top: 2%;
+    width: 70%;
+    margin: auto;
+    ul {
+        padding: 0;
+        list-style-type: "› ";
+        li {
+            font-weight: map-get($font-weights, "regular");
+            color: map-get($site-colors, "gray");
+            font-size: 23px;
+            margin-left: 10%;
+            margin-bottom: 3%;
+        }
+    }
+    .left-list {
+        margin-right: 5%;
+    }
+    .heavy-amenities-title {
+        font-weight: map-get($font-weights, "heavy");
+        font-size: 42px;
+    }
+    .light-amenities-title {
+        font-size: 30px;
+        padding-bottom: 5%;
+    }
+    #amenities-section-lists {
+        border-radius: 15px;
+        box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(-45deg, #eeeeee, #f7f7f7 40%, white 60%, white);
+        padding: 1%;
+        margin-top: 25px;
+        #left-section {
+            width: 47%;
+            li {
+                margin-bottom: 11%;
+            }
+        }
+        #right-section {
+            width: 47%;
+        }
+    }
+}

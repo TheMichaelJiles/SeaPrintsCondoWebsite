@@ -1,12 +1,16 @@
 {% extends 'base.html' %} 
 {% load static %} 
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'reviews/styles/review-styles.css' %}">
+{% endblock %}
+
 {% block content %}
 <div id="review-box-shadow">
     {% include 'reviews/review_navbar.html' %}
 </div>
 <div id="review-page">
-    <div id="review-container">
+    <div id="review-container" class="parallax-background">
         <div id="review-content" class="d-flex flex-column justify-content-between">
             {% for review in review_list %}
                 <div class="review-item">
@@ -42,5 +46,5 @@
 {% endblock%} 
 
 {% block scripts %}
-<script src="{% static 'reviews/parallax.js' %}"></script>
+<script src="{% static 'scripts/parallax.js' %}"></script>
 {% endblock %}

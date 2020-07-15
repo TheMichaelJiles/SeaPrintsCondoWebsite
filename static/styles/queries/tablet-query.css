@@ -1,0 +1,12 @@
+@media screen and (max-width: 1137px) {
+  #review-box-shadow {
+    visibility: hidden;
+  }
+  #review-page {
+    background: none;
+  }
+  #review-page #review-container {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=tablet-query.css.map */

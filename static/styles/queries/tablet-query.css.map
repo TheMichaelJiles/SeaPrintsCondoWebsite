@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EAChC,AAAA,kBAAkB,CAAC;IACf,UAAU,EAAE,MAAM;GACrB;EACD,AAAA,YAAY,CAAC;IACT,UAAU,EAAE,IAAI;GAInB;EALD,AAEI,YAFQ,CAER,iBAAiB,CAAC;IACd,KAAK,EAAE,IAAI;GACd",
+    "sources": [
+        "tablet-query.scss"
+    ],
+    "names": [],
+    "file": "tablet-query.css"
+}

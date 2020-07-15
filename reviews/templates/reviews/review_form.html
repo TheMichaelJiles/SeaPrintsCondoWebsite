@@ -2,6 +2,10 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'reviews/styles/review-styles.css' %}">
+{% endblock %}
+
 {% block content %}
 <div id="review-form-page-container">
     <img src="{% static 'assets/review_page/ReviewFormBackground.svg' %}" alt="Thank you!" style="width: 100%; height: auto;">
@@ -30,5 +34,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'reviews/review-form-star.js' %}"></script>
+<script src="{% static 'reviews/scripts/review-form-star.js' %}"></script>
 {% endblock %}
