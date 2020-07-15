@@ -1,6 +1,223 @@
 $site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
 $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
 
+/* Landing Page Mobile Query */
+
+@media screen and (max-width: 975px) {
+    footer {
+        .footer-content {
+            font-size: 16px;
+            letter-spacing: 4px;
+            a {
+                display: block;
+            }
+        }
+    }
+    #carousel-title {
+        font-size: 6vw;
+    }
+    #amenities-section {
+        margin-top: 30%;
+        margin-bottom: 10%;
+        width: 90%;
+        ul {
+            width: 100%;
+        }
+        .left-list {
+            margin-right: 0;
+        }
+        #amenities-section-lists {
+            flex-direction: column;
+            padding: 4%;
+            #left-section {
+                width: 100%;
+            }
+            #right-section {
+                width: 100%;
+                #bathrooms-section {
+                    width: 100%;
+                    #bathrooms-list-container {
+                        width: 100%;
+                        div {
+                            width: 100%;
+                        }
+                    }
+                }
+                #kitchen-section {
+                    width: 100%;
+                    #kitchen-list-container {
+                        width: 100%;
+                        div {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .landing-page {
+        .landing-nav {
+            padding: 0;
+            ul {
+                width: 100%;
+                padding: 0;
+                li {
+                    margin-left: 3%;
+                    display: block;
+                }
+            }
+        }
+        .book-button {
+            margin: 0;
+            top: 10px;
+            right: 11px;
+        }
+        .landing-title {
+            margin-top: 45%;
+        }
+    }
+    .img-grid {
+        display: none;
+    }
+    #mobile-grid {
+        margin-top: 17%;
+        margin-bottom: 17%;
+        display: block !important;
+        width: 100%;
+    }
+    #room-for-everyone {
+        padding: 25px;
+        width: 90%;
+        margin: 0;
+        #room-title {
+            text-align: left;
+        }
+        p {
+            text-align: justify;
+            margin: 0;
+        }
+    }
+    #steps-from-the-beach {
+        width: 90%;
+        padding: 25px;
+        margin: 0;
+        #steps-title {
+            text-align: left;
+        }
+        p {
+            text-align: justify;
+            margin: 0;
+        }
+    }
+    #fully-equipped-kitchen {
+        width: 90%;
+        padding: 25px;
+        margin: 0;
+        #fully-title {
+            text-align: left;
+        }
+        p {
+            text-align: justify;
+            margin: 0;
+        }
+    }
+}
+
+
+/* Review Form Page Mobile Query */
+
+@media screen and (max-width: 500px) {
+    #review-form-page-container {
+        #review-form-page-content {
+            padding: 3%;
+            #review-form {
+                #submit-id-submit {
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+
+
+/* Registration Page Mobile Query */
+
+@media screen and (max-width: 630px) {
+    .registration-nav {
+        li {
+            .my-nav-link {
+                color: map-get($site-colors, "navy");
+            }
+            .my-nav-link:hover {
+                border-bottom: 3px map-get($site-colors, "navy") solid;
+            }
+        }
+    }
+    #registration-box-shadow {
+        display: none;
+    }
+    #registration-content {
+        background: none;
+        #registration-container {
+            width: 100%;
+            .info_section {
+                margin-bottom: 5%;
+                #dateSection {
+                    margin: 0;
+                    margin: auto;
+                    width: 95%;
+                    flex-direction: column;
+                    #the-calendar {
+                        width: 100%;
+                        margin-bottom: 10%;
+                    }
+                    #the-info {
+                        width: 100%;
+                    }
+                }
+                #contract-section {
+                    margin-top: 75px;
+                    #pdf-viewer {
+                        width: 85%;
+                    }
+                    p {
+                        width: 85%;
+                    }
+                }
+                #form-section {
+                    width: 75%;
+                    margin: 0;
+                    margin: auto;
+                    margin-top: 50px;
+                    #personal-info-div {
+                        flex-direction: column;
+                        margin-bottom: 30px;
+                        div {
+                            width: 100%;
+                        }
+                    }
+                    #street-route-div {
+                        flex-direction: column;
+                        div {
+                            width: 100%;
+                        }
+                    }
+                    #contact-info-div {
+                        flex-direction: column;
+                        margin-bottom: 30px;
+                        div {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Review Page Mobile Query */
+
 @media screen and (max-width: 600px) {
     #review-box-shadow {
         box-shadow: none;
@@ -11,6 +228,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
     }
     #review-page {
         background: none;
+        margin: 0;
         #review-navigator {
             width: 75%;
             text-align: center;
@@ -92,7 +310,6 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
             }
         }
     }
-
     .review-nav {
         font-family: futura-pt, sans-serif;
         font-weight: map-get($font-weights, "heavy");

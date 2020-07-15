@@ -90,12 +90,14 @@ class CombinedFormHelper(FormHelper):
                 'street_number',
                 'route',
                 css_class='d-flex justify-content-between flex-wrap',
+                id='street-route-div',
             ),
             Div(
                 'city',
                 'state',
                 'zip_code',
                 css_class='d-flex justify-content-between flex-wrap',
+                id='city-state-div',
             ),
             Div(
                 'country',

@@ -142,6 +142,7 @@
 #review-section .review-content .review-element .rating-text {
   text-align: center;
   font-size: 20px;
+  overflow-wrap: break-word;
 }
 
 #review-section .review-content .review-element .rating-stars {
@@ -165,7 +166,7 @@
   font-family: futura-pt, sans-serif;
   font-weight: 800;
   font-style: normal;
-  font-size: 80px;
+  font-size: 4vw;
   color: #00031C;
   width: 100%;
   text-align: right;
@@ -356,5 +357,9 @@ footer .footer-content #contact-designers:hover {
 
 #amenities-section #amenities-section-lists #right-section {
   width: 47%;
+}
+
+#mobile-grid {
+  display: none !important;
 }
 /*# sourceMappingURL=home-styles.css.map */

@@ -1,6 +1,8 @@
 $site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
 $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
 
+/* Review Page Tablet Query */
+
 @media screen and (max-width: 1137px) {
     #review-box-shadow {
         box-shadow: none;
@@ -15,7 +17,6 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
             width: 100%;
         }
     }
-
     .review-nav {
         font-family: futura-pt, sans-serif;
         font-weight: map-get($font-weights, "heavy");
@@ -64,6 +65,88 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
         }
         .book-button:hover {
             background-color: #48a0aa;
+        }
+    }
+}
+
+
+/* Review Form Page Tablet Query */
+
+@media screen and (max-width: 1137px) {
+    #review-form-page-container {
+        #review-form-greeting {
+            width: 90%;
+        }
+        #review-form-page-content {
+            width: 90%;
+        }
+    }
+}
+
+
+/* Landing Page Tablet Query */
+
+@media screen and (max-width: 1500px) {
+    #review-section {
+        .review-content {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .review-element {
+                margin-top: 5%;
+                width: 60%;
+            }
+        }
+    }
+}
+
+
+/* Registration Page Tablet Query */
+
+@media screen and (max-width: 1575px) {
+    .registration-nav {
+        li {
+            .my-nav-link {
+                color: map-get($site-colors, "navy");
+            }
+            .my-nav-link:hover {
+                border-bottom: 3px map-get($site-colors, "navy") solid;
+            }
+        }
+    }
+    #registration-box-shadow {
+        display: none;
+    }
+    #registration-content {
+        background: none;
+        #registration-container {
+            width: 100%;
+            .info_section {
+                margin-bottom: 5%;
+                #dateSection {
+                    flex-direction: column;
+                    #the-calendar {
+                        width: 100%;
+                        margin-bottom: 10%;
+                    }
+                    #the-info {
+                        width: 100%;
+                    }
+                }
+                #contract-section {
+                    #pdf-viewer {
+                        width: 75%;
+                    }
+                    p {
+                        width: 75%;
+                    }
+                }
+                #form-section {
+                    #submit-id-submit {
+                        width: 50%;
+                    }
+                }
+            }
         }
     }
 }

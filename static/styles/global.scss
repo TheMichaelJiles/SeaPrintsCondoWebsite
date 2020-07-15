@@ -1,5 +1,11 @@
 $site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
 $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     overflow-x: hidden;
     animation: fadeInAnimation ease 1s;

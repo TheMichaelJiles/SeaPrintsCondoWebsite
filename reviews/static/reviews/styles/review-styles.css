@@ -51,6 +51,7 @@
   padding-right: auto;
   min-height: 100vh;
   padding-top: 5%;
+  margin-bottom: 0;
 }
 
 #review-page #review-container #review-content {
@@ -80,6 +81,7 @@
 }
 
 #review-page #review-container #review-content .review-item .review-item-content p {
+  overflow-wrap: break-word;
   text-align: justify;
   font-size: 20px;
 }

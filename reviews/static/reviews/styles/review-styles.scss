@@ -50,6 +50,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
         padding-right: auto;
         min-height: 100vh;
         padding-top: 5%;
+        margin-bottom: 0;
         #review-content {
             width: 90%;
             .review-item {
@@ -69,6 +70,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
                     font-weight: map-get($font-weights, "demi");
                     padding: 15px;
                     p {
+                        overflow-wrap: break-word;
                         text-align: justify;
                         font-size: 20px;
                     }
