@@ -103,7 +103,7 @@ body {
   background: url(assets/landing_page/LandingPageLines.png) no-repeat;
   background-size: 100% 100%;
   width: 87%;
-  height: 64%;
+  height: 33vw;
   margin: auto;
   margin-top: 5%;
   overflow: hidden;
@@ -114,11 +114,11 @@ body {
   font-family: sirenne-text-mvb, serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 10vw;
+  font-size: 13vw;
   color: white;
   border-bottom: 7px white solid;
   padding-bottom: 0px;
-  height: 10%;
+  height: 8%;
   margin-bottom: 0px;
 }
 
@@ -130,6 +130,7 @@ body {
   text-align: center;
   color: white;
   letter-spacing: 3px;
+  padding: 0px;
 }
 
 .landing-page .landing-title .cape-san-blas-caption {
@@ -142,7 +143,7 @@ body {
   top: 12px;
   left: 15px;
   letter-spacing: 5px;
-  line-height: 35px;
+  line-height: 2vw;
 }
 
 #review-section {
@@ -582,6 +583,7 @@ footer .footer-content #contact-designers:hover {
 
 #registration-content #registration-container .info_section #dateSection #the-info #top strong {
   font-size: 30px;
+  color: #00031C;
   font-weight: 600;
 }
 
@@ -601,6 +603,7 @@ footer .footer-content #contact-designers:hover {
 
 #registration-content #registration-container .info_section #dateSection #the-info #middle strong {
   font-weight: 500;
+  color: #00031C;
   font-size: 30px;
   font-weight: normal;
 }
@@ -633,6 +636,7 @@ footer .footer-content #contact-designers:hover {
 #registration-content #registration-container .info_section #dateSection #the-info #bottom strong {
   font-size: 30px;
   font-weight: 600;
+  color: #00031C;
 }
 
 #registration-content #registration-container .info_section #dateSection #the-info #bottom span {

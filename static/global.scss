@@ -86,7 +86,7 @@ body {
         -o-background-size: 100% 100%;
         background-size: 100% 100%;
         width: 87%;
-        height: 64%;
+        height: 33vw;
         margin: auto;
         margin-top: 5%;
         overflow: hidden;
@@ -95,11 +95,11 @@ body {
             font-family: sirenne-text-mvb, serif;
             font-weight: map-get($font-weights, "heavy");
             font-style: normal;
-            font-size: 10vw;
+            font-size: 13vw;
             color: white;
             border-bottom: 7px white solid;
             padding-bottom: 0px;
-            height: 10%;
+            height: 8%;
             margin-bottom: 0px;
         }
         .sea-prints-caption {
@@ -110,6 +110,7 @@ body {
             text-align: center;
             color: white;
             letter-spacing: 3px;
+            padding: 0px;
         }
         .cape-san-blas-caption {
             font-family: futura-pt, sans-serif;
@@ -121,7 +122,7 @@ body {
             top: 12px;
             left: 15px;
             letter-spacing: 5px;
-            line-height: 35px;
+            line-height: 2vw;
         }
     }
 }
@@ -515,7 +516,7 @@ footer {
                         border-bottom: 5px solid map-get($site-colors, "orange");
                         strong {
                             font-size: 30px;
-                            color: map-get($sitecolors, "navy");
+                            color: map-get($site-colors, "navy");
                             font-weight: map-get($font-weights, "demi");
                         }
                         span {
@@ -532,7 +533,7 @@ footer {
                         padding-right: 15px;
                         strong {
                             font-weight: map-get($font-weights, "medium");
-                            color: map-get($sitecolors, "navy");
+                            color: map-get($site-colors, "navy");
                             font-size: 30px;
                             font-weight: normal;
                         }
@@ -559,7 +560,7 @@ footer {
                         strong {
                             font-size: 30px;
                             font-weight: 600;
-                            color: map-get($sitecolors, "navy");
+                            color: map-get($site-colors, "navy");
                         }
                         span {
                             font-weight: 600;
