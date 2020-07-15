@@ -1,0 +1,148 @@
+$site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
+$font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
+
+@media screen and (max-width: 600px) {
+    #review-box-shadow {
+        box-shadow: none;
+        position: absolute;
+        width: 100%;
+        height: 20%;
+        left: 0;
+    }
+    #review-page {
+        background: none;
+        #review-navigator {
+            width: 75%;
+            text-align: center;
+            font-size: 34px;
+            margin-left: 10%;
+            margin-right: auto;
+            #pageNumber {
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+        }
+        #review-container {
+            padding-top: 50px;
+            width: 100%;
+            background-size: auto 2000px;
+            margin-bottom: 400px;
+            #review-content {
+                width: 100%;
+                margin-left: 0px;
+                margin-right: auto;
+                .review-item {
+                    text-align: center;
+                    width: 85%;
+                    border-radius: 25px;
+                    box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+                    margin-bottom: 40px;
+                    padding: 20px;
+                    margin-left: 18px;
+                    background-color: white;
+                    font-size: 12pt;
+                    .review-item-header-name {
+                        font-weight: map-get($font-weights, "bold");
+                        font-size: 34px;
+                        letter-spacing: 2px;
+                    }
+                    .review-item-content {
+                        font-weight: map-get($font-weights, "demi");
+                        padding: 16px;
+                        padding-top: 8px;
+                        p {
+                            text-align: justify;
+                            font-size: 14px;
+                        }
+                    }
+                    .review-date {
+                        font-weight: map-get($font-weights, "medium");
+                        color: map-get($site-colors, "gray");
+                    }
+                    .review-item-stars {
+                        margin-bottom: 10px;
+                    }
+                }
+                .review-item:nth-child(even) {
+                    align-self: auto;
+                }
+                .review-item:nth-child(3n-2) {
+                    svg path {
+                        fill: map-get($site-colors, "cyan") !important;
+                    }
+                    .review-item-content {
+                        border-top: 5px solid map-get($site-colors, "cyan");
+                    }
+                }
+                .review-item:nth-child(3n-1) {
+                    svg path {
+                        fill: map-get($site-colors, "orange") !important;
+                    }
+                    .review-item-content {
+                        border-top: 5px solid map-get($site-colors, "orange");
+                    }
+                }
+                .review-item:nth-child(3n) {
+                    svg path {
+                        fill: map-get($site-colors, "navy") !important;
+                    }
+                    .review-item-content {
+                        border-top: 5px solid map-get($site-colors, "navy");
+                    }
+                }
+            }
+        }
+    }
+
+    .review-nav {
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "heavy");
+        font-style: normal;
+        position: static;
+        width: 100%;
+        ul {
+            flex-direction: row;
+            justify-content: center;
+            margin-left: 20vw !important;
+            width: 60%;
+            li {
+                font-size: 21px;
+                display: inline-block;
+                margin-left: 15px;
+                margin-right: 15px;
+                .my-nav-link {
+                    text-decoration: none;
+                    color: white;
+                }
+                .reviews-link:hover {
+                    border-bottom: 3px map-get($site-colors, "orange") solid;
+                }
+                .photos-link:hover {
+                    border-bottom: 3px map-get($site-colors, "cyan") solid;
+                }
+                .contact-link:hover {
+                    border-bottom: 3px map-get($site-colors, "navy") solid;
+                }
+            }
+        }
+        .book-button {
+            background-color: map-get($site-colors, "navy");
+            background-size: 100% auto;
+            border-radius: 7px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            line-height: 0.5vw;
+            top: 96%;
+            right: 34%;
+            margin: 0 !important;
+            position: fixed;
+            z-index: 1;
+            font-size: 21px;
+        }
+        .book-button:hover {
+            background-color: #48a0aa;
+        }
+    }
+}

@@ -129,34 +129,32 @@
   font-style: normal;
   position: fixed;
   top: 6%;
-  right: 0;
   width: 25%;
   height: auto;
   padding: 2%;
   padding-top: 1%;
-  text-align: right;
 }
 
-.review-nav li {
+.review-nav ul li {
   font-size: 18pt;
   margin-left: 20%;
   margin-right: auto;
 }
 
-.review-nav li .my-nav-link {
+.review-nav ul li .my-nav-link {
   text-decoration: none;
   color: white;
 }
 
-.review-nav li .reviews-link:hover {
+.review-nav ul li .reviews-link:hover {
   border-bottom: 3px #F5AB43 solid;
 }
 
-.review-nav li .photos-link:hover {
+.review-nav ul li .photos-link:hover {
   border-bottom: 3px #5ECBD8 solid;
 }
 
-.review-nav li .contact-link:hover {
+.review-nav ul li .contact-link:hover {
   border-bottom: 3px #00031C solid;
 }
 

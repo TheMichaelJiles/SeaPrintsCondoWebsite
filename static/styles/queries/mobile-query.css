@@ -1,1 +1,148 @@
-/* No CSS *//*# sourceMappingURL=mobile-query.css.map */
+@media screen and (max-width: 600px) {
+  #review-box-shadow {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    left: 0;
+  }
+  #review-page {
+    background: none;
+  }
+  #review-page #review-navigator {
+    width: 75%;
+    text-align: center;
+    font-size: 34px;
+    margin-left: 10%;
+    margin-right: auto;
+  }
+  #review-page #review-navigator #pageNumber {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  #review-page #review-container {
+    padding-top: 50px;
+    width: 100%;
+    background-size: auto 2000px;
+    margin-bottom: 400px;
+  }
+  #review-page #review-container #review-content {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: auto;
+  }
+  #review-page #review-container #review-content .review-item {
+    text-align: center;
+    width: 85%;
+    border-radius: 25px;
+    -webkit-box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    padding: 20px;
+    margin-left: 18px;
+    background-color: white;
+    font-size: 12pt;
+  }
+  #review-page #review-container #review-content .review-item .review-item-header-name {
+    font-weight: 800;
+    font-size: 34px;
+    letter-spacing: 2px;
+  }
+  #review-page #review-container #review-content .review-item .review-item-content {
+    font-weight: 600;
+    padding: 16px;
+    padding-top: 8px;
+  }
+  #review-page #review-container #review-content .review-item .review-item-content p {
+    text-align: justify;
+    font-size: 14px;
+  }
+  #review-page #review-container #review-content .review-item .review-date {
+    font-weight: 500;
+    color: #444444;
+  }
+  #review-page #review-container #review-content .review-item .review-item-stars {
+    margin-bottom: 10px;
+  }
+  #review-page #review-container #review-content .review-item:nth-child(even) {
+    -ms-flex-item-align: auto;
+        -ms-grid-row-align: auto;
+        align-self: auto;
+  }
+  #review-page #review-container #review-content .review-item:nth-child(3n-2) svg path {
+    fill: #5ECBD8 !important;
+  }
+  #review-page #review-container #review-content .review-item:nth-child(3n-2) .review-item-content {
+    border-top: 5px solid #5ECBD8;
+  }
+  #review-page #review-container #review-content .review-item:nth-child(3n-1) svg path {
+    fill: #F5AB43 !important;
+  }
+  #review-page #review-container #review-content .review-item:nth-child(3n-1) .review-item-content {
+    border-top: 5px solid #F5AB43;
+  }
+  #review-page #review-container #review-content .review-item:nth-child(3n) svg path {
+    fill: #00031C !important;
+  }
+  #review-page #review-container #review-content .review-item:nth-child(3n) .review-item-content {
+    border-top: 5px solid #00031C;
+  }
+  .review-nav {
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    position: static;
+    width: 100%;
+  }
+  .review-nav ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 20vw !important;
+    width: 60%;
+  }
+  .review-nav ul li {
+    font-size: 21px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .review-nav ul li .my-nav-link {
+    text-decoration: none;
+    color: white;
+  }
+  .review-nav ul li .reviews-link:hover {
+    border-bottom: 3px #F5AB43 solid;
+  }
+  .review-nav ul li .photos-link:hover {
+    border-bottom: 3px #5ECBD8 solid;
+  }
+  .review-nav ul li .contact-link:hover {
+    border-bottom: 3px #00031C solid;
+  }
+  .review-nav .book-button {
+    background-color: #00031C;
+    background-size: 100% auto;
+    border-radius: 7px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    line-height: 0.5vw;
+    top: 96%;
+    right: 34%;
+    margin: 0 !important;
+    position: fixed;
+    z-index: 1;
+    font-size: 21px;
+  }
+  .review-nav .book-button:hover {
+    background-color: #48a0aa;
+  }
+}
+/*# sourceMappingURL=mobile-query.css.map */

@@ -1,12 +1,72 @@
 @media screen and (max-width: 1137px) {
   #review-box-shadow {
-    visibility: hidden;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    left: 0;
   }
   #review-page {
     background: none;
   }
   #review-page #review-container {
     width: 100%;
+  }
+  .review-nav {
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    position: static;
+    width: 100%;
+  }
+  .review-nav ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    margin-right: 10vw;
+    width: 60%;
+  }
+  .review-nav ul li {
+    font-size: 2.2vw;
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .review-nav ul li .my-nav-link {
+    text-decoration: none;
+    color: white;
+  }
+  .review-nav ul li .reviews-link:hover {
+    border-bottom: 3px #F5AB43 solid;
+  }
+  .review-nav ul li .photos-link:hover {
+    border-bottom: 3px #5ECBD8 solid;
+  }
+  .review-nav ul li .contact-link:hover {
+    border-bottom: 3px #00031C solid;
+  }
+  .review-nav .book-button {
+    background-color: #00031C;
+    background-size: 100% auto;
+    border-radius: 7px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 1vw;
+    line-height: 0.5vw;
+    top: 1.4vw;
+    right: 1vw;
+    position: fixed;
+    z-index: 1;
+    font-size: 1.5vw;
+  }
+  .review-nav .book-button:hover {
+    background-color: #48a0aa;
   }
 }
 /*# sourceMappingURL=tablet-query.css.map */

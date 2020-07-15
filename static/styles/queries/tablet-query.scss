@@ -1,11 +1,69 @@
+$site-colors: ("navy": #00031C, "cyan": #5ECBD8, "orange": #F5AB43, "gray": #444444);
+$font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold": 800, "extra-bold": 900);
+
 @media screen and (max-width: 1137px) {
     #review-box-shadow {
-        visibility: hidden;
+        box-shadow: none;
+        position: absolute;
+        width: 100%;
+        height: 20%;
+        left: 0;
     }
     #review-page {
         background: none;
         #review-container {
             width: 100%;
+        }
+    }
+
+    .review-nav {
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "heavy");
+        font-style: normal;
+        position: static;
+        width: 100%;
+        ul {
+            flex-direction: row;
+            justify-content: right;
+            margin-right: 10vw;
+            width: 60%;
+            li {
+                font-size: 2.2vw;
+                display: inline-block;
+                margin-left: 15px;
+                margin-right: 15px;
+                .my-nav-link {
+                    text-decoration: none;
+                    color: white;
+                }
+                .reviews-link:hover {
+                    border-bottom: 3px map-get($site-colors, "orange") solid;
+                }
+                .photos-link:hover {
+                    border-bottom: 3px map-get($site-colors, "cyan") solid;
+                }
+                .contact-link:hover {
+                    border-bottom: 3px map-get($site-colors, "navy") solid;
+                }
+            }
+        }
+        .book-button {
+            background-color: map-get($site-colors, "navy");
+            background-size: 100% auto;
+            border-radius: 7px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            padding: 1vw;
+            line-height: 0.5vw;
+            top: 1.4vw;
+            right: 1vw;
+            position: fixed;
+            z-index: 1;
+            font-size: 1.5vw;
+        }
+        .book-button:hover {
+            background-color: #48a0aa;
         }
     }
 }
