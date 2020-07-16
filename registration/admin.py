@@ -5,7 +5,7 @@ from django.utils.translation import ngettext
 from django.utils.html import format_html
 from django.urls import reverse
 
-from registration.models import Stay, Address, SeasonPricing, Globals
+from registration.models import Stay, Address, SeasonPricing, Globals, Guest, GuestNotes
 from registration import utils as registration_utils
 
 class StayAdmin(admin.ModelAdmin):
@@ -69,3 +69,5 @@ class SeasonPricingAdmin(admin.ModelAdmin):
 admin.site.register(Stay, StayAdmin)
 admin.site.register(Address, AddressAdmin)
 admin.site.register(SeasonPricing, SeasonPricingAdmin)
+admin.site.register(Guest)
+admin.site.register(GuestNotes)
