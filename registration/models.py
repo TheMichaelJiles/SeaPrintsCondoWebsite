@@ -109,7 +109,7 @@ class Stay(models.Model):
         ordering = ['is_approved', 'in_date', 'guest']
         verbose_name_plural = 'Stays'
 
-    guest = models.OneToOneField(Guest, on_delete=models.PROTECT)
+    guest = models.ForeignKey(Guest, on_delete=models.PROTECT)
     in_date = models.DateField('check-in date', unique=True)
     out_date = models.DateField('check-out date', unique=True)
     total_price = models.FloatField(default=0, validators=[validators.MinValueValidator(0),])

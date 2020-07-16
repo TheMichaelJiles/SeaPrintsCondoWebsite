@@ -4,16 +4,37 @@ from django import forms
 from django.utils.translation import ngettext
 from django.utils.html import format_html
 from django.urls import reverse
+from datetime import datetime
+from django.db.models import Q
 
 from registration.models import Stay, Address, SeasonPricing, Globals, Guest
 from registration import utils as registration_utils
 
-import datetime
+class StayFilter(admin.SimpleListFilter):
+    title = 'Date Stayed'
+
+    parameter_name = 'date'
+
+    def lookups(self, request, stay_admin):
+        return(
+            ('past', ('past stays')),
+            ('present', ('current stays')),
+            ('future', ('future stays')),
+        )
+    
+    def queryset(self, request, queryset):
+        if self.value() == 'present':
+            return queryset.filter(Q(out_date=datetime.date(datetime.now())) | Q(in_date=datetime.date(datetime.now())))
+        elif self.value() == 'past':
+            return queryset.filter(out_date__lte=datetime.date(datetime.now()))
+        elif self.value() =='future':
+            return queryset.filter(in_date__gte=datetime.date(datetime.now()))
 
 class StayAdmin(admin.ModelAdmin):
     list_display = ['modify_stay', 'show_guest_link', 'in_date', 'out_date', 'is_approved', 'show_total_price', 'is_fully_paid']
+    list_filter = (StayFilter, )
     exclude = ('is_approved', 'total_price',)
-    actions = ['approve_selected_stays']
+    actions = ['approve_selected_stays', 'show_past_stays']
 
     def modify_stay(self, obj):
         return 'View'
