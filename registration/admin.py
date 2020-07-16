@@ -8,6 +8,8 @@ from django.urls import reverse
 from registration.models import Stay, Address, SeasonPricing, Globals, Guest
 from registration import utils as registration_utils
 
+import datetime
+
 class StayAdmin(admin.ModelAdmin):
     list_display = ['modify_stay', 'show_guest_link', 'in_date', 'out_date', 'is_approved', 'show_total_price', 'is_fully_paid']
     exclude = ('is_approved', 'total_price',)

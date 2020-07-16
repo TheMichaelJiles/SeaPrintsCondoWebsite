@@ -1,4 +1,5 @@
 import datetime
+import pytz
 
 from django.db import models
 from django.core.exceptions import ValidationError
@@ -154,10 +155,14 @@ class Stay(models.Model):
     def _ensure_no_conflicts_with_existing_stays(self):
         num_days = (self.out_date - self.in_date).days
         taken_dates = data.get_taken_dates()
-        for x in range(0, num_days):
+        for x in range(0, num_days + 1):
             current_date = self.in_date + datetime.timedelta(days=x)
-            if current_date in taken_dates:
-                raise ValidationError(('One or more dates of stay conflict with a current approved visit.'))
+            current_date = datetime.datetime.combine(current_date, datetime.datetime.min.time()).astimezone(pytz.utc)
+            print(current_date)
+            for taken_date in taken_dates:
+                print(f'Checking against {taken_date}')
+                if current_date == taken_date:
+                    raise ValidationError(('One or more dates of stay conflict with a current approved visit.'))
 
     def _ensure_valid_number_of_guests(self):
         if self.number_of_guests < 1:
