@@ -16,7 +16,7 @@ class AddressForm(forms.ModelForm):
 class StayForm(forms.ModelForm):
     class Meta():
         model = Stay
-        exclude = ["is_approved", "address", "total_price"]
+        exclude = ["is_approved", "is_fully_paid", "address", "total_price"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
