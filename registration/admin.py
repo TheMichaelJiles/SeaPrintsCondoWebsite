@@ -9,7 +9,7 @@ from registration.models import Stay, Address, SeasonPricing, Globals, Guest, Gu
 from registration import utils as registration_utils
 
 class StayAdmin(admin.ModelAdmin):
-    list_display = ['name', 'in_date', 'out_date', 'is_approved', 'show_total_price']
+    list_display = ['name', 'in_date', 'out_date', 'is_approved', 'show_total_price', 'is_fully_paid']
     exclude = ('is_approved', 'total_price',)
     actions = ['approve_selected_stays']
 

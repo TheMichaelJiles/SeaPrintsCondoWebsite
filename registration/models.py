@@ -104,6 +104,8 @@ class Stay(models.Model):
     total_price = models.FloatField(default=0, validators=[validators.MinValueValidator(0),])
     number_of_guests = models.PositiveIntegerField(default=1, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(6)])
     is_approved = models.BooleanField(default=False)
+    is_fully_paid = models.BooleanField(default=False)
+    address = models.ForeignKey(Address, on_delete=models.PROTECT)
     additional_questions_or_concerns = models.TextField(default='', blank=True)
 
     def __str__(self):
