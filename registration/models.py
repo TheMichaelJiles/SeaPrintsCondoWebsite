@@ -74,6 +74,18 @@ class Address(models.Model):
     def __str__(self):
         return f'{self.street_number} {self.route}\n{self.city}, {self.state} {self.zip_code}\n{self.country}'
 
+class Guest(models.Model):
+    name = models.CharField(max_length=20)
+    age = models.PositiveIntegerField(default=25, validators=[validators.MinValueValidator(25),])
+    phone_contact = PhoneNumberField(null=False, blank=False, unique=False)
+    email_contact = models.EmailField()
+    address = models.ForeignKey(Address, on_delete=models.PROTECT)
+    is_discount_eligible = models.BooleanField(default=False)
+
+class GuestNotes(models.Model):
+    guest = models.OneToOneField(Guest, on_delete=models.CASCADE)
+    notes = models.TextField(default='', blank=True)
+
 class Stay(models.Model):
     '''
     This is the model field that stores information about a stay.
@@ -84,15 +96,12 @@ class Stay(models.Model):
     ensure the Stay is created with valid data.
     '''
     class Meta:
-        ordering = ['is_approved', 'in_date', 'name']
+        ordering = ['is_approved', 'in_date', 'guest']
 
-    name = models.CharField(max_length=20)
+    guest = models.OneToOneField(Guest, on_delete=models.PROTECT)
     in_date = models.DateField('check-in date', unique=True)
     out_date = models.DateField('check-out date', unique=True)
     total_price = models.FloatField(default=0, validators=[validators.MinValueValidator(0),])
-    age = models.PositiveIntegerField(default=25, validators=[validators.MinValueValidator(25),])
-    phone_contact = PhoneNumberField(null=False, blank=False, unique=False)
-    email_contact = models.EmailField()
     number_of_guests = models.PositiveIntegerField(default=1, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(6)])
     is_approved = models.BooleanField(default=False)
     is_fully_paid = models.BooleanField(default=False)
@@ -100,7 +109,7 @@ class Stay(models.Model):
     additional_questions_or_concerns = models.TextField(default='', blank=True)
 
     def __str__(self):
-        return f'{self.name}: {"APPROVED" if self.is_approved else "PENDING"}'
+        return f'{self.guest.name}: {"APPROVED" if self.is_approved else "PENDING"}'
 
     def clean(self):
         '''
