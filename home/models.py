@@ -8,6 +8,9 @@ class Globals(models.Model):
     site wide data related to registration that the registration services
     rely on.
     '''
+    class Meta:
+        verbose_name_plural = 'Globals'
+
     default_price_per_night = models.FloatField(default=175, validators=[MinValueValidator(0),])
     minimum_days_of_stay = models.IntegerField(default=4, validators=[MinValueValidator(0),])
     cleaning_fee = models.FloatField(default=150, validators=[MinValueValidator(0),])

@@ -9,9 +9,17 @@ from registration.models import Stay, Address, SeasonPricing, Globals, Guest
 from registration import utils as registration_utils
 
 class StayAdmin(admin.ModelAdmin):
-    list_display = ['guest', 'in_date', 'out_date', 'is_approved', 'show_total_price', 'is_fully_paid']
+    list_display = ['modify_stay', 'show_guest_link', 'in_date', 'out_date', 'is_approved', 'show_total_price', 'is_fully_paid']
     exclude = ('is_approved', 'total_price',)
     actions = ['approve_selected_stays']
+
+    def modify_stay(self, obj):
+        return 'View'
+    modify_stay.short_description = 'Modify'
+
+    def show_guest_link(self, obj):
+        return format_html(f'<a href="{reverse("admin:registration_guest_change", args=(obj.guest.pk,))}">{obj.guest.name}</a>')
+    show_guest_link.short_description = 'Guest'
 
     def show_total_price(self, obj):
         return '${:,.2f}'.format(obj.total_price)

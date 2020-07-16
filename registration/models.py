@@ -14,6 +14,9 @@ class SeasonPricing(models.Model):
     through the admin page; therefore, a SeasonPricing object should never be created manually.
     Instead, it should be created through the use of a ModelForm.
     '''
+    class Meta:
+        verbose_name_plural = 'Seasonal Pricings'
+
     start_date = models.DateField('season start date', unique=True)
     end_date = models.DateField('season end date', unique=True)
     price_per_night = models.FloatField()
@@ -64,6 +67,9 @@ class Address(models.Model):
     zip_code = '30118'
     country = 'United States'
     '''
+    class Meta:
+        verbose_name_plural = "Addresses"
+
     street_number = models.CharField(max_length=10)
     route = models.CharField(max_length=25)
     city = models.CharField(max_length=25)
@@ -75,6 +81,9 @@ class Address(models.Model):
         return f'{self.street_number} {self.route}\n{self.city}, {self.state} {self.zip_code}\n{self.country}'
 
 class Guest(models.Model):
+    class Meta:
+        verbose_name_plural = 'Guests'
+
     name = models.CharField(max_length=20)
     age = models.PositiveIntegerField(default=25, validators=[validators.MinValueValidator(25),])
     phone_contact = PhoneNumberField(null=False, blank=False, unique=False)
@@ -85,6 +94,7 @@ class Guest(models.Model):
 
     def __str__(self):
         return self.name
+
 class Stay(models.Model):
     '''
     This is the model field that stores information about a stay.
@@ -96,6 +106,7 @@ class Stay(models.Model):
     '''
     class Meta:
         ordering = ['is_approved', 'in_date', 'guest']
+        verbose_name_plural = 'Stays'
 
     guest = models.OneToOneField(Guest, on_delete=models.PROTECT)
     in_date = models.DateField('check-in date', unique=True)
