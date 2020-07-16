@@ -83,6 +83,8 @@ class Guest(models.Model):
     is_discount_eligible = models.BooleanField(default=False)
     notes = models.TextField(default='', blank=True)
 
+    def __str__(self):
+        return self.name
 class Stay(models.Model):
     '''
     This is the model field that stores information about a stay.
