@@ -10,7 +10,7 @@ from django.db.models import Q
 from registration.models import Stay, Address, SeasonPricing, Globals, Guest
 from registration import utils as registration_utils
 
-class StayFilter(admin.SimpleListFilter):
+class DateFilter(admin.SimpleListFilter):
     title = 'Date Stayed'
 
     parameter_name = 'date'
@@ -21,7 +21,7 @@ class StayFilter(admin.SimpleListFilter):
             ('present', ('current stays')),
             ('future', ('future stays')),
         )
-    
+
     def queryset(self, request, queryset):
         if self.value() == 'present':
             return queryset.filter(Q(out_date=datetime.date(datetime.now())) | Q(in_date=datetime.date(datetime.now())))
@@ -30,9 +30,40 @@ class StayFilter(admin.SimpleListFilter):
         elif self.value() =='future':
             return queryset.filter(in_date__gte=datetime.date(datetime.now()))
 
+class NameFilter(admin.SimpleListFilter):
+    title = 'Name'
+    template = 'admin/name_filter.html'
+
+    parameter_name = 'name'
+
+    def lookups(self, request, stay_admin):
+        return ((),)
+
+    def queryset(self, request, queryset):
+        term = self.value()
+
+        if term == "":
+            return queryset
+    
+        result = queryset.filter(guest__name=term)
+
+        if not result:
+            return Stay.objects.none()
+        else:
+            return result
+
+    def choices(self, changelist):
+        all_choice = next(super().choices(changelist))
+        all_choice['query_parts'] = (
+            (k, v)
+            for k, v in changelist.get_filters_params().items()
+            if k != self.parameter_name
+        )
+        yield all_choice
+
 class StayAdmin(admin.ModelAdmin):
     list_display = ['modify_stay', 'show_guest_link', 'in_date', 'out_date', 'is_approved', 'show_total_price', 'is_fully_paid']
-    list_filter = (StayFilter, )
+    list_filter = (DateFilter, NameFilter, )
     exclude = ('is_approved', 'total_price',)
     actions = ['approve_selected_stays', 'show_past_stays']
 
