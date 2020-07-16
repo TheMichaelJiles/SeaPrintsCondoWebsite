@@ -81,9 +81,6 @@ class Guest(models.Model):
     email_contact = models.EmailField()
     address = models.ForeignKey(Address, on_delete=models.PROTECT)
     is_discount_eligible = models.BooleanField(default=False)
-
-class GuestNotes(models.Model):
-    guest = models.OneToOneField(Guest, on_delete=models.CASCADE)
     notes = models.TextField(default='', blank=True)
 
 class Stay(models.Model):
