@@ -27,7 +27,7 @@ class DateFilter(admin.SimpleListFilter):
             return queryset.filter(Q(out_date=datetime.date(datetime.now())) | Q(in_date=datetime.date(datetime.now())))
         elif self.value() == 'past':
             return queryset.filter(out_date__lte=datetime.date(datetime.now()))
-        elif self.value() =='future':
+        elif self.value() == 'future':
             return queryset.filter(in_date__gte=datetime.date(datetime.now()))
 
 class NameFilter(admin.SimpleListFilter):
@@ -44,13 +44,10 @@ class NameFilter(admin.SimpleListFilter):
 
         if term == "":
             return queryset
-    
-        result = queryset.filter(guest__name=term)
 
-        if not result:
-            return Stay.objects.none()
-        else:
-            return result
+        result = queryset.filter(guest__name__icontains=term)
+
+        return result
 
     def choices(self, changelist):
         all_choice = next(super().choices(changelist))
