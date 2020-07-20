@@ -42,7 +42,7 @@ class NameFilter(admin.SimpleListFilter):
     def queryset(self, request, queryset):
         term = self.value()
 
-        if term == "":
+        if term == "" or term is None:
             return queryset
 
         result = queryset.filter(guest__name__icontains=term)
