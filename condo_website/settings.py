@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'registration.apps.RegistrationConfig',
     'reviews.apps.ReviewsConfig',
+    'rangefilter',
 ]
 
 MIDDLEWARE = [

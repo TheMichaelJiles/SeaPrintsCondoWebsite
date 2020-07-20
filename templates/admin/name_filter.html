@@ -3,6 +3,7 @@
 
 <ul>
   <li>
+    {% with choices.0 as all_choice %}
     <form method="GET" action="">
         {% for k, v in all_choice.query_parts %}
         <input type="hidden" name="{{ k }}" value="{{ v }}" />
@@ -17,5 +18,6 @@
         <strong><a href="{{ all_choice.query_string }}">⨉ {% trans 'Remove' %}</a></strong>
         {% endif %}
     </form>
+    {% endwith %}
   </li>
 </ul>
