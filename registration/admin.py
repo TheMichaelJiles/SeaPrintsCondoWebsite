@@ -59,9 +59,9 @@ class NameFilter(admin.SimpleListFilter):
         yield all_choice
 
 class StayAdmin(admin.ModelAdmin):
-    list_display = ['modify_stay', 'show_guest_link', 'in_date', 'out_date', 'is_approved', 'show_total_price', 'is_fully_paid']
+    list_display = ['modify_stay', 'show_guest_link', 'is_approved', 'in_date', 'out_date', 'show_total_price', 'is_using_custom_price', 'is_fully_paid']
     list_filter = (DateFilter, NameFilter, )
-    exclude = ('is_approved', 'total_price',)
+    exclude = ('is_approved',)
     actions = ['approve_selected_stays', 'show_past_stays']
 
     def modify_stay(self, obj):

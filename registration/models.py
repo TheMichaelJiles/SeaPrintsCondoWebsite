@@ -112,6 +112,7 @@ class Stay(models.Model):
     guest = models.ForeignKey(Guest, on_delete=models.PROTECT)
     in_date = models.DateField('check-in date', unique=True)
     out_date = models.DateField('check-out date', unique=True)
+    is_using_custom_price = models.BooleanField(default=False)
     total_price = models.FloatField(default=0, validators=[validators.MinValueValidator(0),])
     number_of_guests = models.PositiveIntegerField(default=1, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(6)])
     is_approved = models.BooleanField(default=False)
@@ -129,7 +130,8 @@ class Stay(models.Model):
         '''
         super().clean()
         self._perform_additional_validation()
-        self._set_calculated_total_price()
+        if not self.is_using_custom_price:
+            self._set_calculated_total_price()
     
     def _perform_additional_validation(self):
         self._ensure_checkout_occurs_before_checkin()
