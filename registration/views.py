@@ -1,4 +1,4 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 
@@ -11,6 +11,16 @@ def get_taken_dates(request):
 
 def get_rates(request):
     return JsonResponse(data.get_rates(), safe=False)
+
+def get_tax_info(request):
+    if request.method == 'POST':
+        filtered_stays = utils.get_filtered_stays_for_tax(request.POST)
+        tax_info = utils.TaxInfo(stays=filtered_stays)
+        pdf_buffer = utils.get_tax_pdf_buffer(tax_info)
+        result = FileResponse(pdf_buffer, as_attachment=True, filename='tax-information.pdf')
+    else:
+        result = redirect(reverse('landing'))
+    return result
 
 def approve_stay(request, staypk):
     utils.approve_stay(staypk)

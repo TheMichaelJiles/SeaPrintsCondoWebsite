@@ -2,26 +2,34 @@ from django.core.exceptions import ValidationError
 
 from dateutil import parser
 
+from reportlab.platypus import SimpleDocTemplate, Table, Paragraph
+from reportlab.lib.styles import ParagraphStyle
+import io
+
 from registration.models import Stay, Address
 from home.models import Globals
 from reviews import utils as reviews_utils
 
 class TaxInfo:
-    def __init__(self, stays_qs=Stay.objects.all()):
-        self.stays_qs = stays_qs
+    def __init__(self, stays=Stay.objects.all()):
+        self.stays = stays
         self.global_obj = Globals.objects.get(pk=1)
+
+    def get_stays(self):
+        return self.stays
 
     def get_nights_rented(self):
         total_nights = 0
-        for curr_stay in self.stays_qs:
-            date_delta = curr_stay.out_date - curr_stay.in_date
-            total_nights += date_delta.days
+        for curr_stay in self.stays:
+            if curr_stay.total_price > 0:
+                date_delta = curr_stay.out_date - curr_stay.in_date
+                total_nights += date_delta.days
         return total_nights
 
     def get_total_income(self):
         total_income = 0
-        for curr_stay in self.stays_qs:
-            curr_total_price = curr_stay.total_price / ((self.global_obj.state_tax_rate_percent + self.global_obj.county_tax_rate_percent) / 100)
+        for curr_stay in self.stays:
+            curr_total_price = curr_stay.total_price / ((self.global_obj.state_tax_rate_percent + self.global_obj.county_tax_rate_percent + 100) / 100)
             total_income += curr_total_price
         return total_income
 
@@ -36,6 +44,57 @@ class TaxInfo:
 
     def get_adjusted_state_tax(self):
         return self.get_unadjusted_state_tax() * 0.975
+
+def get_tax_pdf_buffer(tax_info):
+    pdf_buffer = io.BytesIO()
+    pdf = SimpleDocTemplate(pdf_buffer, rightMargin=72, leftMargin=72, topMargin=72, bottomMargin=18)
+    title_para_style = ParagraphStyle(
+        name='title',
+        fontSize=24,
+        spaceAfter=30,
+    )
+    header_para_style = ParagraphStyle(
+        name='header',
+        fontSize=16,
+        spaceBefore=25,
+        spaceAfter=15,
+    )
+    cell_header_para_style = ParagraphStyle(
+        name='cell-header',
+        fontSize=12,
+    )
+    tax_data = [
+        ['Total Nights Rented: ', f'{tax_info.get_nights_rented()}'],
+        ['Total Income: ', f'{"${:,.2f}".format(tax_info.get_total_income())}'],
+        ['Unadjusted County Tax: ', f'{"${:,.2f}".format(tax_info.get_unadjusted_county_tax())}'],
+        ['Adjusted County Tax: ', f'{"${:,.2f}".format(tax_info.get_adjusted_county_tax())}'],
+        ['Unadjusted State Tax: ', f'{"${:,.2f}".format(tax_info.get_unadjusted_state_tax())}'],
+        ['Adjusted State Tax: ', f'{"${:,.2f}".format(tax_info.get_adjusted_state_tax())}']
+    ]
+    stay_data = [
+        [Paragraph('Name', style=cell_header_para_style), Paragraph('Check-In', style=cell_header_para_style), Paragraph('Check-Out', style=cell_header_para_style)],
+    ]
+    for stay in tax_info.get_stays():
+        row = [stay.guest.name, str(stay.in_date), str(stay.out_date)]
+        stay_data.append(row)
+    elements = [ 
+        Paragraph('Sea Prints', style=title_para_style),
+        Paragraph('Tax Information', style=header_para_style),
+        Table(tax_data, hAlign='LEFT'),
+        Paragraph('Information calculated from the following stays: ', style=header_para_style),
+        Table(stay_data, hAlign='LEFT'),
+    ]
+    pdf.build(elements)
+    pdf_buffer.seek(0)
+    return pdf_buffer
+
+def get_filtered_stays_for_tax(postdata):
+    filtered_stays = []
+    for key, value in postdata.items():
+        if key.startswith('in-date'):
+            in_date = parser.parse(value.strip()).date()
+            filtered_stays.append(Stay.objects.get(in_date=in_date))
+    return filtered_stays
 
 def register_unapproved_stay(postdata):
     '''

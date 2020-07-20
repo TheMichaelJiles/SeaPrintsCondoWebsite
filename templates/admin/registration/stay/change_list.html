@@ -1,0 +1,52 @@
+{% extends 'admin/change_list.html' %}
+{% block additional_content %}
+
+<form method="post" action="{% url 'tax_info' %}" target="_blank" id="print-form">
+    {% csrf_token %}
+    <button type="submit" id="print-button">Print</button>
+</form>
+
+<script>
+
+if (!$) {
+    $ = django.jQuery;
+}
+
+$("#print-form").submit(function() {
+    $(".field-in_date").each(function(index) {
+        let currentDate = $(this).html();
+        $("<input>").attr({
+            name: `in-date-${index}`,
+            id: `in-date-${index}`,
+            type: 'hidden',
+            value: currentDate
+        }).appendTo("#print-form")
+    });
+});
+
+</script>
+
+<style>
+
+#print-button {
+    border-radius: 5px;
+    background-color: white;
+    color: #34393b;
+    text-decoration: none;
+    border: 1px solid #34393b;
+    padding: 10px;
+    cursor: pointer;
+    width: 5%;
+    font-size: 18px;
+    margin-top: 75px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+#print-button:hover {
+    background-color: #34393b;
+    color: white;
+}
+
+</style>
+
+{% endblock %}
