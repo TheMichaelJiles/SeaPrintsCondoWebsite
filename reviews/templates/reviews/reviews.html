@@ -14,7 +14,7 @@
         <div id="review-content" class="d-flex flex-column justify-content-between">
             {% for review in review_list %}
                 <div class="review-item">
-                    <span class="review-item-header-name">{{ review.corresponding_stay.name }}</span>
+                    <span class="review-item-header-name">{{ review.corresponding_stay.guest.name }}</span>
                     <div class="review-item-stars">
                         {% with ''|center:review.rating as range %}
                         {% for _ in range %}

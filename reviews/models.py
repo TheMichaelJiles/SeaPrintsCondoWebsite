@@ -15,7 +15,7 @@ class Review(models.Model):
     link_key = models.CharField(max_length=30, blank=True)
 
     def __str__(self):
-        return f'{self.corresponding_stay.name}: {"Reviewed" if self.is_published else "Not Reviewed"}'
+        return f'{self.corresponding_stay.guest.name}: {"Reviewed" if self.is_published else "Not Reviewed"}'
 
     def clean(self):
         super().clean()

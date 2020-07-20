@@ -12,7 +12,7 @@ class ReviewAdmin(admin.ModelAdmin):
     modify_review.short_description = 'Customer Reviews'
 
     def get_stay_name(self, obj):
-        anchor = f'<a href="{reverse("admin:registration_stay_change", args=(obj.corresponding_stay.pk,))}">{obj.corresponding_stay.name}</a>'
+        anchor = f'<a href="{reverse("admin:registration_stay_change", args=(obj.corresponding_stay.pk,))}">{obj.corresponding_stay.guest.name}</a>'
         return format_html(anchor)
     get_stay_name.short_description = 'Customer Name'
 
