@@ -7,7 +7,7 @@ from django.urls import reverse
 from datetime import datetime
 from django.db.models import Q
 
-from registration.models import Stay, Address, SeasonPricing, Globals, Guest
+from registration.models import Stay, Address, SeasonPricing, Guest
 from registration import utils as registration_utils
 
 class DateFilter(admin.SimpleListFilter):

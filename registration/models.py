@@ -179,7 +179,7 @@ class Stay(models.Model):
             self.total_price += price_for_day
         global_obj = Globals.objects.get(pk=1)
         self.total_price += global_obj.cleaning_fee
-        self.total_price *= ((global_obj.tax_rate_percent / 100.0) + 1)
+        self.total_price *= (((global_obj.state_tax_rate_percent + global_obj.county_tax_rate_percent) / 100.0) + 1)
 
     def _get_rate(self, date):
         price = Globals.objects.get(pk=1).default_price_per_night

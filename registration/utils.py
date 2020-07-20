@@ -3,7 +3,39 @@ from django.core.exceptions import ValidationError
 from dateutil import parser
 
 from registration.models import Stay, Address
+from home.models import Globals
 from reviews import utils as reviews_utils
+
+class TaxInfo:
+    def __init__(self, stays_qs=Stay.objects.all()):
+        self.stays_qs = stays_qs
+        self.global_obj = Globals.objects.get(pk=1)
+
+    def get_nights_rented(self):
+        total_nights = 0
+        for curr_stay in self.stays_qs:
+            date_delta = curr_stay.out_date - curr_stay.in_date
+            total_nights += date_delta.days
+        return total_nights
+
+    def get_total_income(self):
+        total_income = 0
+        for curr_stay in self.stays_qs:
+            curr_total_price = curr_stay.total_price / ((self.global_obj.state_tax_rate_percent + self.global_obj.county_tax_rate_percent) / 100)
+            total_income += curr_total_price
+        return total_income
+
+    def get_unadjusted_county_tax(self):
+        return self.get_total_income() * (self.global_obj.county_tax_rate_percent / 100)
+
+    def get_adjusted_county_tax(self):
+        return self.get_unadjusted_county_tax() * 0.975
+
+    def get_unadjusted_state_tax(self):
+        return self.get_total_income() * (self.global_obj.state_tax_rate_percent / 100)
+
+    def get_adjusted_state_tax(self):
+        return self.get_unadjusted_state_tax() * 0.975
 
 def register_unapproved_stay(postdata):
     '''

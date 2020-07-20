@@ -14,7 +14,8 @@ class Globals(models.Model):
     default_price_per_night = models.FloatField(default=175, validators=[MinValueValidator(0),])
     minimum_days_of_stay = models.IntegerField(default=4, validators=[MinValueValidator(0),])
     cleaning_fee = models.FloatField(default=150, validators=[MinValueValidator(0),])
-    tax_rate_percent = models.IntegerField(default=12, validators=[MinValueValidator(0), MaxValueValidator(100),])
+    state_tax_rate_percent = models.IntegerField(default=7, validators=[MinValueValidator(0), MaxValueValidator(100),])
+    county_tax_rate_percent = models.IntegerField(default=5, validators=[MinValueValidator(0), MaxValueValidator(100),])
 
     def __str__(self):
         return 'Site Setting'

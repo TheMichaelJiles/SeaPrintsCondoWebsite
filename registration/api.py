@@ -21,7 +21,7 @@ def get_rates():
         },
         'seasons': seasons,
         'cleaning_fee': global_obj.cleaning_fee,
-        'tax_rate': global_obj.tax_rate_percent,
+        'tax_rate': global_obj.state_tax_rate_percent + global_obj.county_tax_rate_percent,
     }
 
 def get_taken_dates():
