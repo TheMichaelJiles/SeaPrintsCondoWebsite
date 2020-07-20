@@ -1,4 +1,5 @@
 from django.contrib import admin, messages
+from rangefilter.filter import DateRangeFilter
 from django.contrib.admin.views.main import ChangeList
 from django import forms
 from django.utils.translation import ngettext
@@ -48,7 +49,7 @@ class NameFilter(admin.SimpleListFilter):
         result = queryset.filter(guest__name__icontains=term)
 
         return result
-
+    
     def choices(self, changelist):
         all_choice = next(super().choices(changelist))
         all_choice['query_parts'] = (
@@ -60,7 +61,9 @@ class NameFilter(admin.SimpleListFilter):
 
 class StayAdmin(admin.ModelAdmin):
     list_display = ['modify_stay', 'show_guest_link', 'is_approved', 'in_date', 'out_date', 'show_total_price', 'is_using_custom_price', 'is_fully_paid']
-    list_filter = (DateFilter, NameFilter, )
+    list_filter = (DateFilter, NameFilter, 
+        ('in_date', DateRangeFilter),
+    )
     exclude = ('is_approved',)
     actions = ['approve_selected_stays', 'show_past_stays']
 
