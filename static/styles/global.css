@@ -31,4 +31,24 @@ body {
     opacity: 1;
   }
 }
+
+#message-box {
+  font-family: futura-pt-bold, sans-serif;
+  font-style: normal;
+  position: absolute;
+  z-index: 150;
+  top: 6%;
+  right: 1%;
+  width: 30%;
+  margin: auto;
+  background-color: white;
+  border-radius: 15px;
+}
+
+#message-box .message-content {
+  margin: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
 /*# sourceMappingURL=global.css.map */

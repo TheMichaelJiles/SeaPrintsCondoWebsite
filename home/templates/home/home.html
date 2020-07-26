@@ -6,6 +6,15 @@
 {% endblock %}
 
 {% block content %}
+
+    {% if messages %}
+        <div id="message-box" class="d-flex flex-column align-items-center justify-content-between">
+            {% for message in messages %}
+            <p class="message-content">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <div class="landing-page">
         {% include 'home/navbar.html' %}
 
