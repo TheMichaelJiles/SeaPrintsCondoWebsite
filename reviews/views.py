@@ -34,17 +34,18 @@ def write_review(request, publishkey):
     if request.method == 'POST':
         # This is when they submit the review form.
         post_result = utils.publish_review(publishkey, request.POST)
-        print(post_result)
-
+        print('Review Posted')
         result = redirect('landing')
     elif not Review.objects.filter(link_key=publishkey).exists():
         # This means that the publish key is incorrect or does not exist.
+        print('Review Publish Key Does Not Exist.')
         result = redirect('landing')
     else:
         # This loads the initial review form page if the publish key is successful.
         review_data = Review.objects.get(link_key=publishkey)
         if review_data.is_published:
             # Redirect while alerting user they have already submitted their review.
+            print('Review with specified published key already posted.')
             result = redirect('landing')
         else:
             result = render(request, 'reviews/review_form.html', {

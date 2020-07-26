@@ -1,0 +1,39 @@
+{% extends "admin/change_form.html" %}
+{% block approve_form %}
+<button id="reviewLinkButton" onclick="copyToClipboard()">Copy Review Link</button>
+<style>
+    #reviewLinkButton {
+        border-radius: 5px;
+        background-color: Green;
+        text-decoration: none;
+        border: none;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+        width: 10%;
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    #reviewLinkButton:hover {
+        background-color: DarkGreen;
+    }
+</style>
+<script>
+    if (!$) {
+        $ = django.jQuery;
+    }
+
+    function copyToClipboard() {
+        let $temp = $("<input>");
+        $("body").append($temp);
+        let link = "http://localhost:8000/reviews/publish/{{original.link_key}}/"
+        $temp.val(link).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        alert("Review Link Copied To Clipboard.");
+    }
+</script>
+
+{% endblock %}

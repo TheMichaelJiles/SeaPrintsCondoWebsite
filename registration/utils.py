@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail, mail_admins
 
 from dateutil import parser
 
@@ -9,6 +10,27 @@ import io
 from registration.models import Stay, Address, Guest
 from home.models import Globals
 from reviews import utils as reviews_utils
+
+from condo_website import settings as site_settings
+
+class EmailSender:
+    def send_guest(self, subject='', message='', guests=[], html_message=None):
+        send_mail(
+            subject,
+            message,
+            site_settings.EMAIL_HOST_USER,
+            guests,
+            fail_silently=True,
+            html_message=html_message
+        )
+    
+    def send_admin(self, subject='', message='', html_message=None):
+        mail_admins(
+            subject,
+            message,
+            fail_silently=True,
+            html_message=html_message
+        )
 
 class TaxInfo:
     def __init__(self, stays=Stay.objects.all()):
@@ -163,7 +185,8 @@ def register_unapproved_stay(postdata):
         new_stay.full_clean()
         new_stay.save()
 
-        result = {'success': True}
+        result = {'success': True, 'stay': new_stay}
+        
     except ValidationError as e:
         result = {
             'success': False,

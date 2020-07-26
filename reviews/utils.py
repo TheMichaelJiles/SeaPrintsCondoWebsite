@@ -12,7 +12,7 @@ def create_unpublished_review(stay_pk):
         unpub_review.full_clean()
         unpub_review.save()
 
-        result = {'success': True}
+        result = {'success': True, 'stay': target_stay}
     except ValidationError as e:
         result = {
             'success': False,
