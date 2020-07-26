@@ -238,14 +238,31 @@
     </div>
     <footer id="contactSection">
         <div class="footer-content">
-            189 antiqua, cape san blas FL | <a id="contact-designers">seaprints.csb@gmail.com</a><br>
-            website designed by luke whaley and michael jiles | <a id="contact-designers">contact designers</a>
+            189 antiqua, cape san blas FL | <a id="site-email" class="contact-designers">seaprints.csb@gmail.com</a><br>
+            website designed by luke whaley and michael jiles | <a id="designer-email" class="contact-designers">contact designers</a>
         </div>
     </footer>
 {% endblock %}
 
 {% block scripts %}
 <script>
+    function copyToClipboard(email, alertText) {
+        let $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(email).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        alert(alertText);
+    }
+
+    $("#site-email").click(function() {
+        copyToClipboard("seaprints.csb@gmail.com", "SeaPrints Email Copied to Clipboard.");
+    });
+    $("#designer-email").click(function() {
+        // copyToClipboard(insert desginer email here, "Designer Email Copied to Clipboard.");
+    });
+
     $("#photosLink").click(function() {
         $('html, body').animate({
             scrollTop: $("#carousel-title").offset().top
