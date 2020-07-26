@@ -28,6 +28,7 @@ def get_all_reviews(request, page):
         'is_last_page': target_page == max_pages,
         'next_page': target_page + 1,
         'previous_page': target_page - 1,
+        'is_reviews_empty': all_reviews.count() == 0,
     })
 
 def write_review(request, publishkey):

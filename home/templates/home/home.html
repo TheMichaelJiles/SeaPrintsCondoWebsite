@@ -31,6 +31,7 @@
     
     <div id="review-section">
         <div class="review-content d-flex justify-content-around">
+            {% if reviews %}
             {% for review in reviews %}
                 <div class="review-element">
                     <div class="rating-stars d-flex flex-row justify-content-center">
@@ -45,6 +46,13 @@
                     </div>
                 </div>
             {% endfor %}
+            {% else %}
+                <div class="review-element">
+                    <div class="rating-text">
+                        <p>No Published Reviews Available</p>
+                    </div>
+                </div>
+            {% endif %}
         </div>
         <div class="all-reviews-link-div d-flex flex-row justify-content-end">
             <a class="all-reviews-link" href="{% url 'all_reviews' 1 %}">all reviews ></a>
