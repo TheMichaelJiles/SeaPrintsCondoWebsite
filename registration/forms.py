@@ -6,17 +6,23 @@ from crispy_forms.layout import Layout, Submit, Row, Column, Div
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
 from phonenumber_field.formfields import PhoneNumberField
 
-from registration.models import Stay, Address
+from registration.models import Stay, Address, Guest
 
 class AddressForm(forms.ModelForm):
     class Meta():
         model = Address
         exclude = []
 
+class GuestForm(forms.ModelForm):
+    class Meta():
+        model = Guest
+        exclude = ["address"]
+
+
 class StayForm(forms.ModelForm):
     class Meta():
         model = Stay
-        exclude = ["is_approved", "is_fully_paid", "address", "total_price"]
+        exclude = ["is_approved", "is_fully_paid", "address", "total_price", "guest"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -29,7 +35,7 @@ class StayForm(forms.ModelForm):
     number_of_guests = forms.IntegerField(min_value=1)
 
 class CombinedStayAddressForm(forms.Form):
-    form_classes = [StayForm, AddressForm]
+    form_classes = [GuestForm, StayForm, AddressForm]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

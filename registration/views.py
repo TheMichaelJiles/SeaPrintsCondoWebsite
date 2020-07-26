@@ -1,6 +1,7 @@
 from django.http import JsonResponse, FileResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from django.contrib import messages
 
 from registration import api as data
 from registration import utils

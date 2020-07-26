@@ -6,7 +6,7 @@ from reportlab.platypus import SimpleDocTemplate, Table, Paragraph
 from reportlab.lib.styles import ParagraphStyle
 import io
 
-from registration.models import Stay, Address
+from registration.models import Stay, Address, Guest
 from home.models import Globals
 from reviews import utils as reviews_utils
 
@@ -67,9 +67,9 @@ def get_tax_pdf_buffer(tax_info):
         ['Total Nights Rented: ', f'{tax_info.get_nights_rented()}'],
         ['Total Income: ', f'{"${:,.2f}".format(tax_info.get_total_income())}'],
         ['Unadjusted County Tax: ', f'{"${:,.2f}".format(tax_info.get_unadjusted_county_tax())}'],
-        ['Adjusted County Tax: ', f'{"${:,.2f}".format(tax_info.get_adjusted_county_tax())}'],
+        ['  Adjusted County Tax: ', f'{"${:,.2f}".format(tax_info.get_adjusted_county_tax())}'],
         ['Unadjusted State Tax: ', f'{"${:,.2f}".format(tax_info.get_unadjusted_state_tax())}'],
-        ['Adjusted State Tax: ', f'{"${:,.2f}".format(tax_info.get_adjusted_state_tax())}']
+        ['  Adjusted State Tax: ', f'{"${:,.2f}".format(tax_info.get_adjusted_state_tax())}']
     ]
     stay_data = [
         [Paragraph('Name', style=cell_header_para_style), Paragraph('Check-In', style=cell_header_para_style), Paragraph('Check-Out', style=cell_header_para_style)],
@@ -133,15 +133,19 @@ def register_unapproved_stay(postdata):
             country=country)
         new_address.save()
 
-        new_stay = Stay(
+        new_guest = Guest(
             name=name,
             age=age,
+            phone_contact=phone,
+            email_contact=email,
+            address=new_address)
+        new_guest.save()
+
+        new_stay = Stay(
+            guest=new_guest,
             in_date=in_date, 
             out_date=out_date, 
-            phone_contact=phone, 
-            email_contact=email, 
             number_of_guests=num_guests, 
-            address=new_address, 
             additional_questions_or_concerns=additional)
         new_stay.full_clean()
         new_stay.save()

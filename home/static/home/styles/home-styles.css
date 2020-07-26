@@ -38,19 +38,13 @@
   color: white;
 }
 
-.landing-page .landing-nav li .reviews-link:hover {
-  border-bottom: 3px #F5AB43 solid;
+.landing-page .landing-nav li .my-nav-link:hover {
+  border-bottom: 3px white solid;
 }
 
-.landing-page .landing-nav li .photos-link:hover {
-  border-bottom: 3px #5ECBD8 solid;
-}
+@-webkit-keyframes nav-link {}
 
-.landing-page .landing-nav li .contact-link:hover {
-  border-bottom: 3px #00031C solid;
-}
-
-.landing-page .book-button {
+@keyframes nav-link {}.landing-page .book-button {
   background-color: #00031C;
   border-radius: 7px;
   max-height: 28px;
@@ -68,7 +62,7 @@
 }
 
 .landing-page .book-button:hover {
-  background-color: #48a0aa;
+  background-color: #5ECBD8;
 }
 
 .landing-page .landing-title {

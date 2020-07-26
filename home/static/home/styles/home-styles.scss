@@ -32,15 +32,13 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
                 text-decoration: none;
                 color: white;
             }
-            .reviews-link:hover {
-                border-bottom: 3px map-get($site-colors, "orange") solid;
+            .my-nav-link:hover {
+                border-bottom: 3px white solid;
             }
-            .photos-link:hover {
-                border-bottom: 3px map-get($site-colors, "cyan") solid;
-            }
-            .contact-link:hover {
-                border-bottom: 3px map-get($site-colors, "navy") solid;
-            }
+        }
+
+        @keyframes nav-link {
+
         }
     }
     .book-button {
@@ -60,7 +58,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
         z-index: 1;
     }
     .book-button:hover {
-        background-color: #48a0aa;
+        background-color: map-get($site-colors, "cyan");
     }
     .landing-title {
         background: url('/static/assets/landing_page/LandingPageLines.png') no-repeat;
