@@ -47,7 +47,7 @@ def register(request):
     if request.method == 'POST':
         register_result = utils.register_unapproved_stay(request.POST)
         if register_result['success']:
-            messages.success(request, 'Successfully Processed Stay Request.')
+            messages.success(request, 'Thanks! You should hear from us within 24 hours!')
             new_stay = register_result['stay']
             email_sender = utils.EmailSender()
             link = f'http://localhost:8000{reverse("admin:registration_stay_change", args=(new_stay.pk,))}'
