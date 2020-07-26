@@ -133,23 +133,36 @@ def register_unapproved_stay(postdata):
             country=country)
         new_address.save()
 
-        new_guest = Guest(
-            name=name,
-            age=age,
-            phone_contact=phone,
-            email_contact=email,
-            address=new_address)
-        new_guest.save()
+        existing_guest=Guest.objects.filter(phone_contact=phone)[0]
+
+        guest = None
+
+        if not existing_guest:
+            guest = Guest(
+                name=name,
+                age=age,
+                phone_contact=phone,
+                email_contact=email,
+                address=new_address)
+            guest.save()
+
+        else:
+            existing_guest.name=name
+            existing_guest.age=age
+            existing_guest.email_contact = email
+            existing_guest.address = new_address
+            existing_guest.save()
+
+            guest = existing_guest
 
         new_stay = Stay(
-            guest=new_guest,
+            guest=guest,
             in_date=in_date, 
             out_date=out_date, 
             number_of_guests=num_guests, 
             additional_questions_or_concerns=additional)
         new_stay.full_clean()
         new_stay.save()
-
 
         result = {'success': True}
     except ValidationError as e:

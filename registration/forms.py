@@ -27,12 +27,14 @@ class StayForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['number_of_guests'].label = '# Guests'
+        self.fields['is_repeat_guest'].label = 'I haved stayed at Sea Prints before'
 
     in_date = forms.DateField(widget=forms.HiddenInput())
     out_date = forms.DateField(widget=forms.HiddenInput())
     phone_contact = PhoneNumberField(widget=PhoneNumberPrefixWidget())
     age = forms.IntegerField(min_value=25)
     number_of_guests = forms.IntegerField(min_value=1)
+    is_repeat_guest = forms.BooleanField(required=False)
 
 class CombinedStayAddressForm(forms.Form):
     form_classes = [GuestForm, StayForm, AddressForm]
@@ -113,6 +115,11 @@ class CombinedFormHelper(FormHelper):
                 'additional_questions_or_concerns',
                 css_class='d-flex justify-content-between',
                 id='questions-div',
+            ),
+            Div(
+                'is_repeat_guest',
+                css_class='d-flex justify-content-between',
+                id='repeat-div',
             ),
             Div(
                 Submit('submit', 'Request Stay'),
