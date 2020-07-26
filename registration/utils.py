@@ -134,7 +134,6 @@ def register_unapproved_stay(postdata):
         new_address.save()
 
         existing_guest=Guest.objects.filter(phone_contact=phone)[0]
-
         guest = None
 
         if not existing_guest:
