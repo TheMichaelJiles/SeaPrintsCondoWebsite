@@ -4,6 +4,7 @@ var cleaningFee;
 var defaultPricePerNight;
 var seasons;
 var taxRate;
+var minimumDaysOfStay;
 
 function hideInformation() {
     $("#nights-text").html("Select Dates");
@@ -44,5 +45,6 @@ $(document).ready(function() {
         defaultPricePerNight = data.default.price;
         seasons = data.seasons;
         taxRate = data.tax_rate / 100;
+        minimumDaysOfStay = data.minimum_days_of_stay;
     });
 });
