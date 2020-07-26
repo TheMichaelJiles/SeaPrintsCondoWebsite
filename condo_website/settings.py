@@ -132,3 +132,16 @@ STATICFILES_DIRS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# Email Settings
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'seaprints.csb@gmail.com'
+EMAIL_HOST_PASSWORD = '189AntiquaCSB2020'
+
+ADMINS = [
+    ('SeaPrints Administrators', EMAIL_HOST_USER),
+]
