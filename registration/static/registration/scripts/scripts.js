@@ -115,7 +115,23 @@ function showCalendar(month, year) {
  */
 
 function dateIsAvailable(date, month, year) {
-    return !dateIsTaken(date, month, year) && !dateIsInPast(date, month, year);
+    return !dateIsTaken(date, month, year) && !dateIsInPast(date, month, year) && dateIsPossibleInOrOutDate(date, month, year);
+}
+
+function dateIsPossibleInOrOutDate(date, month, year) {
+    temp_date = new Date(year, month, date);
+    invalid_start = new Date(temp_date.getTime() - (minimumDaysOfStay * 24 * 60 * 60 * 1000));
+    invalid_end = new Date(temp_date.getTime() + (minimumDaysOfStay * 24 * 60 * 60 * 1000));
+    taken_date_before = false;
+    for (let taken of takenDates) {
+        if (invalid_start <= taken.getTime()) {
+            taken_date_before = true;
+        }
+        if (invalid_start <= taken.getTime()) {
+            taken_date_before = true;
+        }
+    }
+    return true;
 }
 
 /**
