@@ -115,23 +115,25 @@ function showCalendar(month, year) {
  */
 
 function dateIsAvailable(date, month, year) {
-    return !dateIsTaken(date, month, year) && !dateIsInPast(date, month, year) && dateIsPossibleInOrOutDate(date, month, year);
+    return !dateIsTaken(date, month, year) && !dateIsInPast(date, month, year) && !dateIsUnpickable(date, month, year);
 }
 
-function dateIsPossibleInOrOutDate(date, month, year) {
-    temp_date = new Date(year, month, date);
-    invalid_start = new Date(temp_date.getTime() - (minimumDaysOfStay * 24 * 60 * 60 * 1000));
-    invalid_end = new Date(temp_date.getTime() + (minimumDaysOfStay * 24 * 60 * 60 * 1000));
-    taken_date_before = false;
-    for (let taken of takenDates) {
-        if (invalid_start <= taken.getTime()) {
-            taken_date_before = true;
-        }
-        if (invalid_start <= taken.getTime()) {
-            taken_date_before = true;
+/**
+ * Checks if a given date is unpickable, meaning that a stay could not be picked because there is
+ * not at least the minimum days of stay available after this date.
+ * @param date 
+ * @param month 
+ * @param year 
+ */
+function dateIsUnpickable(date, month, year) {
+    let targetDate = new Date(year, month, date);
+    let endDate = targetDate.addDays(minimumDaysOfStay);
+    for (let currentDate = targetDate; currentDate.getTime() <= endDate.getTime(); currentDate.setDate(currentDate.getDate() + 1)) {
+        if (dateIsTaken(currentDate.getUTCDate(), currentDate.getMonth(), currentDate.getFullYear())) {
+            return true;
         }
     }
-    return true;
+    return false;
 }
 
 /**

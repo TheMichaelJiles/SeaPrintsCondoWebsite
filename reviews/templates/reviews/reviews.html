@@ -20,6 +20,11 @@
 <div id="review-page">
     <div id="review-container" class="parallax-background">
         <div id="review-content" class="d-flex flex-column justify-content-between">
+            {% if is_reviews_empty is True %}
+                <div class="review-item">
+                    <span class="review-item-header-name">No Published Reviews Available</span>
+                </div>
+            {% else %}
             {% for review in review_list %}
                 <div class="review-item">
                     <span class="review-item-header-name">{{ review.corresponding_stay.guest.name }}</span>
@@ -37,6 +42,7 @@
                     </div>
                 </div>
             {% endfor %}
+            {% endif %}
         </div>
         <div id="review-navigator">
             {% if is_first_page is False %}
