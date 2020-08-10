@@ -6,6 +6,7 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
 .landing-page {
     background: url('/static/assets/landing_page/LandingPicture.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     position: relative;
@@ -250,34 +251,6 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
     }
 }
 
-footer {
-    width: 100%;
-    height: auto;
-    background-color: map-get($site-colors, "navy");
-    margin-top: 2%;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    .footer-content {
-        width: 100%;
-        text-align: center;
-        color: map-get($site-colors, "orange");
-        font-family: futura-pt, sans-serif;
-        font-weight: map-get($font-weights, "medium");
-        font-style: normal;
-        font-size: 20px;
-        letter-spacing: 5px;
-        line-height: 30px;
-        #contact-designers {
-            cursor: pointer;
-            color: white;
-        }
-        #contact-designers:hover {
-            color: map-get($site-colors, "orange");
-        }
-    }
-}
-
 #amenities-section {
     font-family: futura-pt, sans-serif;
     font-style: normal;
@@ -320,6 +293,34 @@ footer {
         }
         #right-section {
             width: 47%;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: map-get($site-colors, "navy");
+    margin-top: 2%;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .footer-content {
+        width: 100%;
+        text-align: center;
+        color: map-get($site-colors, "orange");
+        font-family: futura-pt, sans-serif;
+        font-weight: map-get($font-weights, "medium");
+        font-style: normal;
+        font-size: 20px;
+        letter-spacing: 5px;
+        line-height: 30px;
+        .contact-designers {
+            color: white;
+        }
+        .contact-designers:hover {
+            color: map-get($site-colors, "orange");
+            cursor: pointer;
         }
     }
 }

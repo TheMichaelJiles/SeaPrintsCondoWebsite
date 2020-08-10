@@ -52,6 +52,9 @@
   #amenities-section #amenities-section-lists #right-section #kitchen-section #kitchen-list-container div {
     width: 100%;
   }
+  .landing-page .landing-title {
+    margin-top: 30vh;
+  }
   .landing-page .landing-nav {
     padding: 0;
   }
@@ -68,14 +71,10 @@
     top: 10px;
     right: 11px;
   }
-  .landing-page .landing-title {
-    margin-top: 45%;
-  }
   .img-grid {
     display: none;
   }
   #mobile-grid {
-    margin-top: 17%;
     margin-bottom: 17%;
     display: block !important;
     width: 100%;
@@ -83,38 +82,38 @@
   #room-for-everyone {
     padding: 25px;
     width: 90%;
-    margin: 0;
+    margin: auto;
   }
   #room-for-everyone #room-title {
-    text-align: left;
+    text-align: center;
   }
   #room-for-everyone p {
-    text-align: justify;
-    margin: 0;
+    text-align: center;
+    margin: auto;
   }
   #steps-from-the-beach {
     width: 90%;
     padding: 25px;
-    margin: 0;
+    margin: auto;
   }
   #steps-from-the-beach #steps-title {
-    text-align: left;
+    text-align: center;
   }
   #steps-from-the-beach p {
-    text-align: justify;
-    margin: 0;
+    text-align: center;
+    margin: auto;
   }
   #fully-equipped-kitchen {
     width: 90%;
     padding: 25px;
-    margin: 0;
+    margin: auto;
   }
   #fully-equipped-kitchen #fully-title {
-    text-align: left;
+    text-align: center;
   }
   #fully-equipped-kitchen p {
-    text-align: justify;
-    margin: 0;
+    text-align: center;
+    margin: auto;
   }
 }
 

@@ -3,6 +3,7 @@
 .landing-page {
   background: url("/static/assets/landing_page/LandingPicture.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -264,39 +265,6 @@
   color: #444444;
 }
 
-footer {
-  width: 100%;
-  height: auto;
-  background-color: #00031C;
-  margin-top: 2%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-footer .footer-content {
-  width: 100%;
-  text-align: center;
-  color: #F5AB43;
-  font-family: futura-pt, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 20px;
-  letter-spacing: 5px;
-  line-height: 30px;
-}
-
-footer .footer-content #contact-designers {
-  cursor: pointer;
-  color: white;
-}
-
-footer .footer-content #contact-designers:hover {
-  color: #F5AB43;
-}
-
 #amenities-section {
   font-family: futura-pt, sans-serif;
   font-style: normal;
@@ -351,6 +319,39 @@ footer .footer-content #contact-designers:hover {
 
 #amenities-section #amenities-section-lists #right-section {
   width: 47%;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #00031C;
+  margin-top: 2%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer .footer-content {
+  width: 100%;
+  text-align: center;
+  color: #F5AB43;
+  font-family: futura-pt, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 5px;
+  line-height: 30px;
+}
+
+footer .footer-content .contact-designers {
+  color: white;
+}
+
+footer .footer-content .contact-designers:hover {
+  color: #F5AB43;
+  cursor: pointer;
 }
 
 #mobile-grid {

@@ -56,6 +56,9 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
         }
     }
     .landing-page {
+        .landing-title {
+            margin-top: 30vh;
+        }
         .landing-nav {
             padding: 0;
             ul {
@@ -72,15 +75,11 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
             top: 10px;
             right: 11px;
         }
-        .landing-title {
-            margin-top: 45%;
-        }
     }
     .img-grid {
         display: none;
     }
     #mobile-grid {
-        margin-top: 17%;
         margin-bottom: 17%;
         display: block !important;
         width: 100%;
@@ -88,37 +87,37 @@ $font-weights: ("regular": 400, "medium": 500, "demi": 600, "heavy": 700, "bold"
     #room-for-everyone {
         padding: 25px;
         width: 90%;
-        margin: 0;
+        margin: auto;
         #room-title {
-            text-align: left;
+            text-align: center;
         }
         p {
-            text-align: justify;
-            margin: 0;
+            text-align: center;
+            margin: auto;
         }
     }
     #steps-from-the-beach {
         width: 90%;
         padding: 25px;
-        margin: 0;
+        margin: auto;
         #steps-title {
-            text-align: left;
+            text-align: center;
         }
         p {
-            text-align: justify;
-            margin: 0;
+            text-align: center;
+            margin: auto;
         }
     }
     #fully-equipped-kitchen {
         width: 90%;
         padding: 25px;
-        margin: 0;
+        margin: auto;
         #fully-title {
-            text-align: left;
+            text-align: center;
         }
         p {
-            text-align: justify;
-            margin: 0;
+            text-align: center;
+            margin: auto;
         }
     }
 }
