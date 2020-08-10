@@ -35,7 +35,14 @@ function showInformation(avgNightlyCost, numNights) {
 
     $("#tax-total-fee").html("$" + taxAmount.toFixed(2));
     $("#total-fee").html("$" + total.toFixed(2));
-
+    
+    if (numNights < minimumDaysOfStay) {
+        $("#nights-text").html("Please choose at least " + minimumDaysOfStay + " nights for your stay");
+        $("#price-per-night").css('visibility', 'hidden');
+        $("#middle").css("visibility", "hidden");
+        $("#bottom").css("visibility", "hidden");
+        $("#nights-text").css("visibility", 'visible');
+    }
 }
 
 $(document).ready(function() {
